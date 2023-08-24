@@ -1,0 +1,357 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Slider Settings - NovelAI Documentation</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Text Generation</a></li><li class="chapter-item expanded "><a href="glossary.html"><strong aria-hidden="true">1.</strong> Glossary</a></li><li class="chapter-item expanded "><a href="editor.html"><strong aria-hidden="true">2.</strong> Editor</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="story_settings.html"><strong aria-hidden="true">2.1.</strong> Story Settings</a></li><li class="chapter-item expanded "><a href="advanced_settings.html"><strong aria-hidden="true">2.2.</strong> Advanced Settings</a></li><li class="chapter-item expanded "><a href="slider_settings.html" class="active"><strong aria-hidden="true">2.3.</strong> Slider Settings</a></li></ol></li><li class="chapter-item expanded "><a href="lorebook.html"><strong aria-hidden="true">3.</strong> Lorebook</a></li><li class="chapter-item expanded "><a href="text_adventure.html"><strong aria-hidden="true">4.</strong> Text Adventure</a></li><li class="chapter-item expanded "><a href="user_settings.html"><strong aria-hidden="true">5.</strong> User Settings</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ai_settings.html"><strong aria-hidden="true">5.1.</strong> AI Settings</a></li><li class="chapter-item expanded "><a href="interface.html"><strong aria-hidden="true">5.2.</strong> Interface</a></li><li class="chapter-item expanded "><a href="text_to_speach.html"><strong aria-hidden="true">5.3.</strong> Text To Speech</a></li><li class="chapter-item expanded "><a href="advanced_debug_settings.html"><strong aria-hidden="true">5.4.</strong> Advanced: Debug Settings</a></li></ol></li><li class="chapter-item expanded "><a href="module_training.html"><strong aria-hidden="true">6.</strong> Module Training</a></li><li class="chapter-item expanded "><a href="guide_chat_format.html"><strong aria-hidden="true">7.</strong> Guide: Chat Format</a></li><li class="chapter-item expanded "><a href="advanced_special_symbols.html"><strong aria-hidden="true">8.</strong> Advanced: Special Symbols</a></li><li class="chapter-item expanded "><a href="advanced_cfg.html"><strong aria-hidden="true">9.</strong> Advanced: CFG</a></li><li class="chapter-item expanded "><a href="advanced_phrase_repetition_penalty.html"><strong aria-hidden="true">10.</strong> Advanced: Phrase Repetition Penalty</a></li><li class="chapter-item expanded "><a href="advanced_special_modules.html"><strong aria-hidden="true">11.</strong> Advanced: Special Modules</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">NovelAI Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="slider-settings"><a class="header" href="#slider-settings">Slider Settings</a></h1>
+<img src="./SlidersTab.gif" style="float: right; height: 800px; width: 40%; margin: 10px;">
+<ul>
+<li><a href="#config-preset">Config Preset</a></li>
+<li><a href="#generation-options">Generation Options</a>
+<ul>
+<li><a href="#randomness">Randomness</a></li>
+<li><a href="#output-length">Output Length</a></li>
+<li><a href="#repetition-penalty">Repetition Penalty</a></li>
+</ul>
+</li>
+<li><a href="#sampling">Sampling</a>
+<ul>
+<li><a href="#cfg-scale">CFG Scale</a></li>
+<li><a href="#mirostat">Mirostat</a></li>
+<li><a href="#nucleus">Nucleus</a></li>
+<li><a href="#tail-free">Tail Free</a></li>
+<li><a href="#top-a">Top A</a></li>
+<li><a href="#top-k">Top K</a></li>
+<li><a href="#top-g">Top G</a></li>
+<li><a href="#typical">Typical</a></li>
+<li><a href="#change-settings-order">Sampling Order</a></li>
+</ul>
+</li>
+<li><a href="#repetition-penalty-1">Repetition Penalty</a></li>
+<li><a href="#alternative-repetition-penalty">Alternative Repetition Penalty</a></li>
+</ul>
+<h2 id="config-preset"><a class="header" href="#config-preset">Config Preset</a></h2>
+<img src="./SliderPresetsDropdown.png" style="width: 300px; max-width=100%">
+<p>상단의 <strong>Config Preset</strong> 드롭다운 메뉴는 사용자가 저장하거나 임포트한 모든 프리셋들이 표시되며, 그 아래에 NovelAI의 기본 프리셋들이 나열됩니다. 각 모델은 모델들이 가진 다양한 기본 프리셋이 딸려있으며 이들은 주로 창의적인 글쓰기를, 일부는 특정 글쓰기나 생성 스타일을 위해서 튜닝되었습니다. 드롭다운 메뉴 옆의 펜 아이콘은 선택한 프리셋의 이름을 변경하기 위한 것입니다.</p>
+<p><strong>Import</strong> 및 <strong>Export</strong> 버튼은 여러분의 프리셋을 공유하거나 다른 사람이 공유한 프리셋을 가져올 때 사용될 수 있으며 아래 세팅 중에 하나를 수정할 때마다 <strong>Update active Preset</strong> 팝업이 드롭다운 아래에 나타납니다. <strong>Update active Preset</strong> 드롭다운에서 현재 프리셋을 저장하고, <strong>Reset Changes</strong>를 통해 프리셋을 원래 설정으로 되돌리거나 새 프리셋에 현재 변경점을 저장할 수 있습니다!</p>
+<h2 id="generation-options"><a class="header" href="#generation-options">Generation Options</a></h2>
+<p align="center"><img src="./GenerationOptions.png" width="350"></p>
+<p>이 페이지의 <strong>Generation Options</strong> 섹션은 세가지의 기본 생성 세팅을 포함하고 있습니다: <strong>Randomness</strong>, <strong>Output Length</strong> 그리고 <strong>Repetition Penalty</strong>. 이 세팅들은 대부분 아래의 <a href="#sampling">Sampler</a>의 어느 것도 조절할 필요 없이 그때그때 봐가면서 조절하기 명확하고 쉬운 것들 입니다.</p>
+<h3 id="randomness"><a class="header" href="#randomness"><strong>Randomness</strong><p></a></h3>
+<p>가장 단순하게, <strong>Randomness</strong> 값은 생성되는 다른 토큰들의 확률이 얼마나 <em>균등</em>한지를 결정하며, 토큰 확률 간의 <em>차이</em>를 늘리거나 줄이지만 <em>결코</em> 토큰들의 초기 순서는 재배열하지 않습니다.</p><p>
+값이 1보다 <strong>크다면</strong>, 낮은 확률의 토큰은 <strong>더 높은 확률</strong>의 토큰에 가까워지도록 기회<em>chance</em>가 <strong>증가</strong>합니다. 값이 1보다 <strong>작다면</strong>, <strong>더 높은 확률</strong>의 토큰은 <strong>더 낮은 확률</strong>의 토큰에서 더 멀어지도록 기회<em>chance</em>가 증가합니다.</p><p align="center"><img src="./Samplersample1.png"></p>
+예를 들어, 만약 위 이미지를 프롬프트로 사용하고 생성될 토큰의 <a href="./editor.html#token-probabilities">확률</a>을 보면...</p>
+<p align="center">
+<table style="border: 1px solid">
+<tr>
+<td>
+<img src="./randomness1.png" width="300">
+</td>
+<td>
+<img src="./randomness125.png" width="300">
+</td>
+</tr>
+<tr>
+<td>
+Randomness 1.0 
+</td>
+<td>
+Randomness 1.25 
+</td>
+</tr>
+</table>
+</p>
+</p>
+<p><strong>상위</strong> 토큰의 <strong>after</strong> 확률이 상당히 <strong>낮아</strong>진 것을 볼 수 있는 반면, 그 다음에 이어지는 토큰들은 그렇게 심하게 떨어지지 않을 것을 볼 수 있습니다. 해당 수치를 높임으로써 상위 토큰들이 전보다 낮은 확률을 갖게 됨에도 불구하고, 낮은 확률의 토큰에게 더 커진 생성 기회를 주게 됩니다.</p>
+<h3 id="output-length"><a class="header" href="#output-length"><strong>Output Length</strong><p></a></h3>
+<p><strong>Output Length</strong>는 AI가 출력당 생성할 수 있는 텍스트 문자의 최대량을 조절합니다. 최소 4자에서 최대 600자까지입니다. AI 생성의 특성 때문에 긴 출력길이는 품질이 달라질 수 있으니 주의해야 하며, 짧은 출력 길이가 주제를 더 잘 유지하는 경향이 있습니다.</p>
+</p>
+<h3 id="repetition-penalty"><a class="header" href="#repetition-penalty"><strong>Repetition Penalty</strong><p></a></h3>
+<p><strong>Repetition Penalty</strong> 슬라이더는 <strong>context</strong>에서 토큰이 나타날 <strong>확률</strong>에 패널티를 적용하며, 여러번 나타나는 것에는 더 심한 패널티를 부과합니다. 해당 값이 높다면 더욱 심한 패널티를 적용하므로 이 슬라이더를 너무 높이면 출력이 저하되거나 다른 의도치않은 동작을 발생할 수 있습니다. 반면에 너무 낮은 세팅 값에서는 AI가 계속 같은 단어나 구두점을 반복할 수 있습니다. 해당 세팅을 살짝 조절하여 스토리의 페이스나 포커스에 대해 안내하는데 도움이 될 수도 있습니다. 예를 들어, 만약 AI가 특정 캐릭터의 이름이나 세부 사항을 더욱 자주 언급하게 하고 싶다면 해당 슬라이더를 낮추고, 더 다양한 단어 선택을 사용하게 하고 싶다면 이 슬라이더를 높이십시오.</p>
+</p>
+<h2 id="sampling"><a class="header" href="#sampling">Sampling</a></h2>
+<p align="center"><img src="./Sampling.png" width="350"></p>
+<p>아래의 샘플링 옵션은 생성될 때 토큰이 어떻게 재분배되는지, 어떻게 트리밍<em>trimming</em>되는지를 변경합니다.</p>
+<h3 id="cfg-scale"><a class="header" href="#cfg-scale">CFG Scale</a></h3>
+<p><a href="./advanced_cfg.html">Advanced: CFG Scale</a>를 참조하십시오.</p>
+<h3 id="mirostat"><a class="header" href="#mirostat">Mirostat</a></h3>
+<p><strong>Mirostat</strong>에는 <strong>Tau</strong>와 <strong>Learning Rate</strong>라는 두개의 슬라이더가 있습니다. 이 샘플러는 Tau 값으로 지정된 주어진 복잡도로 텍스트를 유지하려고 시도하며, 세팅이 높을수록 더욱 복잡한 텍스트를 제공하려고 시도합니다. Learning Rate 슬라이더는 샘플러가 컨텍스트에 얼마나 빠르게 적응할지를 지정합니다. 1로 설정하면 즉각적이고, 낮은 세팅일수록 완화됩니다. 이 샘플러와 <a href="#change-settings-order">Settings Order</a>의 다른 샘플러와 함께 사용하는 것은 권장되지 않습니다.</p>
+<h3 id="nucleus"><a class="header" href="#nucleus">Nucleus</a></h3>
+<p><strong>Nucleus</strong> 샘플링은 <strong>Top-P</strong>라고도 하며, <strong>가장 높은</strong> 확률의 토큰을 선택하고 각각의 후속 토큰들의 확률의 합이 설정한 <strong>Nucleus</strong> 값에 도달할 때까지 후속 토큰들의 확률을 더합니다. 나머지 토큰들은 모두 <strong>잘려서</strong> 출력의 일관성은 높아지지만, 이 과정에서 많은 <strong>낮은</strong> 확률의 토큰들이 <strong>사라지게</strong>되어 창의성이 희생됩니다. 해당 슬라이더를 <strong>낮게</strong> 설정할 경우 더 많은 토큰이 사라지므로, 해당 값을 실험할 때는 조금만 조정하는 것을 추천합니다.</p>
+<h3 id="tail-free"><a class="header" href="#tail-free">Tail Free</a></h3>
+<p><strong>Top K</strong>와 <strong>Nucleus</strong> 샘플링을 대체하기 위해 고안된 <strong>Tail Free</strong>은 출력의 확률의 '꼬리'를 계산하기 위해 수학 공식을 사용합니다. 꼬리, 그리고 <strong>Tail Free</strong> 샘플러에 대한 자세한 설명은 <a href="https://www.trentonbricken.com/Tail-Free-Sampling/">이</a> 블로그 게시글에서 자세히 설명되어 있습니다. 이 샘플러는 가장 낮은 확률의 임계점을 출력 확률 분포의 '<strong>꼬리</strong>'로 결정한 다음 이를 제거합니다. 이렇게 제거된 후에 살아남은 토큰들은 보상을 위해 확률을 재조정합니다.</p>
+<p>간단하게 말해, 이 세팅은 출력의 <a href="./editor.html#token-probabilities">Logical Probabilities</a> 하단에서 수식<em>formula</em>이 최악의 가능성의 토큰으로 간주한 것의 일부를 잘라내는데 도움을 줍니다. 이 슬라이더를 조절할 때는 조금만 조정하는 것을 추천합니다. <strong>Tail-Free</strong>를 0에 가깝게 설정할수록 <strong>최악</strong>의 토큰으로 간주되는 임계점이 더 커지고 강해지기 때문입니다.</p>
+<h3 id="top-a"><a class="header" href="#top-a">Top A</a></h3>
+<p><strong>Top-A</strong> 샘플링에서 설정한 값은, 허용되는 <strong>가장 낮은</strong> 토큰 확률을 자르는 기준점을 정의합니다. Top A 값이 <strong>높을수록</strong> 더 엄격해져 더 많은 토큰을 잘라내는 반면, Top A를 <strong>낮게</strong> 설정하면 더 적은 토큰을 잘라냅니다. 이 제한은 <strong>가장 높은</strong> 확률 토큰을 기준으로 조정됩니다. 예를 들어 한 토큰의 집합에서 상위 토큰이 낮은 확률을 갖는다면, <strong>Top-A</strong> 값이 같을지라도 상위 토큰이 <strong>더 높은</strong> 확률을 가진 집합의 경우보다 잘라내는 토큰의 제한은 <strong>더 낮게</strong> 조정됩니다.</p>
+<h3 id="top-k"><a class="header" href="#top-k">Top K</a></h3>
+<p><strong>Top K</strong>는 사용과 조정이 가장 간단한 샘플러입니다. <strong>Top K</strong>가 적용되면, 생성되는 토큰의 풀이 슬라이더 설정에 맞게 제한됩니다. 예를 들어, <strong>Top K</strong>가 10으로 설정되어 있다면, 이 샘플러는 최상위 10개의 토큰을 제외한 모든 토큰을 제거합니다. 이 샘플러의 단점은 풀에 있는 토큰의 수가 처음에 설정한 <strong>Top K</strong> 세팅보다 적으면 이 샘플러는 아무런 효과가 없다는 것입니다.</p>
+<blockquote>
+<p><img src="./goose.png" alt="" /> <strong>Goose tip:</strong>
+<strong>Top K</strong>을 1로 설정하면 생성을 다시 시도할 때마다 <strong>같은</strong> 토큰을 얻게 되요!</p>
+</blockquote>
+<h3 id="top-g"><a class="header" href="#top-g">Top G</a></h3>
+<p><strong>Top G</strong>는 <strong>Top K</strong>와 비슷하게 기능하지만, 가능한 토큰의 최대 수를 제한하는 대신 토큰 <strong>그룹</strong>의 최대 수를 제한하는 설정을 합니다. 여기서 그룹이란 <strong>같은</strong> 확률 값을 공유하는 토큰의 집합을 말합니다. 이 기능은 Kayra 모델에서만 지원합니다.</p>
+<h3 id="typical"><a class="header" href="#typical">Typical</a></h3>
+<p><strong>Typical</strong> 샘플링은 약간 더 복잡한 옵션 중에 하나입니다. 각각 생성된 출력 토큰에 대해 <strong>conditional entropy</strong>라는 것을 계산하는데, 이는 예상되는 <strong>다음</strong> 토큰의 <strong>information content</strong>의 척도입니다. 계산된 값이 <strong>Typical</strong> 세팅과 같거나 <strong>더 높을</strong> 경우, 혹은 <strong>Typical</strong> 세팅의 <strong>음수</strong> 값보다 <strong>낮으면</strong> 토큰이 잘립니다.</p>
+<h3 id="change-settings-order"><a class="header" href="#change-settings-order">Change Settings Order</a></h3>
+<p align="center"><img src="./OrderSettings.png"></p>
+<p><strong>Order Settings</strong> 창을 통해 <strong>샘플러</strong>의 순서를 바꿀 수 있습니다. 샘플러는 위에서부터 아래로 적용됩니다. 화살표 버튼을 사용하거나 개별 박스를 드래그하여 샘플러 순서를 바꾸고 오른쪽의 버튼을 눌러 토글하십시오. Temperature(Randomness)는 비활성화<strong>할 수 없습니다.</strong></p>
+<p>샘플러는 적용하는 순서는 예상할 수 없는 효과를 일으킬 수 있으므로 기본 구성 프리셋으로 시작하여 실험을 해보십시오.</p>
+<h2 id="repetition-penalty-1"><a class="header" href="#repetition-penalty-1">Repetition Penalty</a></h2>
+<p align="center"><img src="./RepetitionPenalty.png" width="300"></p>
+<p><strong>Repetition</strong> 섹션과 아래의 <a href="#alternative-repetition-penalty">Alternative Repetition Penalty</a> 옵션들은 모두 글 생성을 덜 반복적으로 만들기 위한 것입니다.</p>
+<ul>
+<li><strong>Phrase Repetition Penalty</strong><p>
+더 자세한 설명을 위해 <a href="./advanced_phrase_repetition_penalty.html">Advanced: Phrase Repetition Penalty</a>을 참조하십시오.</li>
+</ul>
+</p>
+<ul>
+<li><strong>Use Default Whitelist</strong><p>
+화이트리스트 토큰의 전체 리스트를 보려면 <a href="https://docs.novelai.net/text/reppenwhitelist.html">Repetition Penalty Whitelist</a>를 참조하십시오.</li>
+</ul>
+</p>
+<ul>
+<li><strong>Range</strong><p>
+<strong>Repetition Penalty Range</strong>는 <strong>Story Context</strong>의 아래부터 시작해서 몇 개의 토큰에 <strong>Repetition Penalty</strong> 설정이 적용될 것인지를 나타냅니다. 이 값을 최소치인 0(off)로 설정하면, 반복 패널티는 출력 전체에 걸쳐 적용되며, 이는 슬라이더를 <strong>Subscription Tier</strong>의 최대로 설정한 것과 같습니다. 이 슬라이더는 <strong>Dynamic Range</strong>가 비활성화된 경우에만 작동합니다.</li>
+</ul>
+</p>
+<ul>
+<li><strong>Slope</strong><p>
+<strong>Slope</strong> 슬라이더는 컨텍스트의 가장 최근 토큰과의 거리에 따라, 설정한 <strong>Repetition Penalties</strong>(<strong>Phrase Repetition Penalty</strong>는 <strong>제외</strong>)의 몇퍼센트를 컨텍스트의 토큰에 적용할 지를 지정합니다. 비활성화되면 기울기가 적용되지 않으며 모든 패널티가 평범하게 적용됩니다.<p>
+<strong>Slope</strong>가 1과 <strong>같거나</strong> 1보다 <strong>작은</strong> 값으로 설정된다면, <strong>마지막</strong> 토큰만 100%의 패널티 값을 받고, 이전 토큰들은 <strong>줄어든</strong> 패널티 퍼센트를 겪게 됩니다. 이 감소는 <strong>Slope</strong>를 0에 가깝게 설정할 수록 완만하고 점진적이 됩니다. 값을 정확하게 1로 설정하면, 각 토큰에 대한 퍼센트 감소는 <strong>동일</strong>한 양이 되고 기울기가 곧은 상향선이 됩니다.<p>
+만약 값이 1보다 <strong>크다면</strong>, <strong>Slope</strong>는 직선에서 계단 모양으로 바뀌고, <strong>Slope</strong> 값이 최대값인 10에 가까워질수록 <em>더</em> 강렬<em>intense</em>해집니다. 이 범위에서, 가장 최근의 여러 토큰이 100%의 패널티 값을 받을 수 있지만, 이전 토큰은 갑자기 패널티 비율이 크게 감소하는 &quot;절벽&quot;이 형성됩니다. <strong>Slope</strong>가 10이면, 컨텍스트의 절반은 100%의 패널티 값을 받는 반면, 나머지 절반은 패널티를 전혀 받지 않습니다.</li>
+</ul>
+</p></p></p>
+<ul>
+<li><strong>Dynamic Range</strong><p>
+해당 값이 활성화되면 <strong>Dynamic Range</strong> 토글은 <strong>Repetition Penalty</strong> 설정을 <strong>Story</strong> 텍스트에만 적용되도록 만듭니다. 즉, <strong>Memory</strong>, <strong>Author's Note</strong>, <strong>Lorebook</strong> 텍스트 내에는 적용되지 않음을 의미합니다. 이것을 활성화하면 AI는 해당 세션에서 언급된 설명 등을 더 자주 언급할 수 있으며 <strong>Range</strong> 슬라이더가 조절되는 것을 방지할 수 있습니다.</li>
+</ul>
+</p>
+<h2 id="alternative-repetition-penalty"><a class="header" href="#alternative-repetition-penalty">Alternative Repetition Penalty</a></h2>
+<p align="center"><img src="./AlternativeRepPen.png" width="300"></p>
+<p><strong>Alternative Repetition Penalty</strong> 섹션의 이 설정은 매우 고급 기능입니다. 아주 약간 슬라이더를 조절해도 AI에 커다란 영향을 줄 수 있으며, 너무 많은 토큰을 잘라내어 자주 헛소리하는 결과가 나올 것입니다. 이 값을 실험할 때는 매우 작은 조정만을 사용하고, <strong>범위</strong> 설정을 조심하십시오.</p>
+<ul>
+<li>
+<p><strong>Presence</strong><p>
+<strong>Presence</strong> 패널티는 기본 <strong>Repetition Penalty</strong>와 비슷하게 동작하지만, 토큰이 얼마나 자주 나타나는지 조정하는 대신 토큰이 나타날 때마다 일정한<em>flat</em> 패널티를 적용합니다. <strong>Presence</strong> 패널티를 실험할 때는 매우 작은 조정만을 하는 걸 추천하는데, 이 값을 너무 높게 설정할 경우 구두점 토큰이 빠르게 패널티를 받아 생성되지 않을 수 있습니다.</p></p>
+</li>
+<li>
+<p><strong>Frequency</strong><p>
+<strong>Frequency</strong> 패널티는 얼마나 자주 토큰이 나타나는지에 따라 적용되며, 더 일반적인 토큰에는 패널티를 부과하고 덜 일반적인 토큰에는 덜 부과합니다. 만약 이 값이 너무 높다면, <strong>Frequency</strong>는 빠르게 출력의 품질을 저하시킬 수 있으므로, 이것을 실험할 때는 매우 작은 조정만을 해야 합니다. </p></p>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="advanced_settings.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="lorebook.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="advanced_settings.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="lorebook.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

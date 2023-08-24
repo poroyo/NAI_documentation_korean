@@ -1,0 +1,367 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Advanced: Special Symbols - NovelAI Documentation</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Text Generation</a></li><li class="chapter-item expanded "><a href="glossary.html"><strong aria-hidden="true">1.</strong> Glossary</a></li><li class="chapter-item expanded "><a href="editor.html"><strong aria-hidden="true">2.</strong> Editor</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="story_settings.html"><strong aria-hidden="true">2.1.</strong> Story Settings</a></li><li class="chapter-item expanded "><a href="advanced_settings.html"><strong aria-hidden="true">2.2.</strong> Advanced Settings</a></li><li class="chapter-item expanded "><a href="slider_settings.html"><strong aria-hidden="true">2.3.</strong> Slider Settings</a></li></ol></li><li class="chapter-item expanded "><a href="lorebook.html"><strong aria-hidden="true">3.</strong> Lorebook</a></li><li class="chapter-item expanded "><a href="text_adventure.html"><strong aria-hidden="true">4.</strong> Text Adventure</a></li><li class="chapter-item expanded "><a href="user_settings.html"><strong aria-hidden="true">5.</strong> User Settings</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ai_settings.html"><strong aria-hidden="true">5.1.</strong> AI Settings</a></li><li class="chapter-item expanded "><a href="interface.html"><strong aria-hidden="true">5.2.</strong> Interface</a></li><li class="chapter-item expanded "><a href="text_to_speach.html"><strong aria-hidden="true">5.3.</strong> Text To Speech</a></li><li class="chapter-item expanded "><a href="advanced_debug_settings.html"><strong aria-hidden="true">5.4.</strong> Advanced: Debug Settings</a></li></ol></li><li class="chapter-item expanded "><a href="module_training.html"><strong aria-hidden="true">6.</strong> Module Training</a></li><li class="chapter-item expanded "><a href="guide_chat_format.html"><strong aria-hidden="true">7.</strong> Guide: Chat Format</a></li><li class="chapter-item expanded "><a href="advanced_special_symbols.html" class="active"><strong aria-hidden="true">8.</strong> Advanced: Special Symbols</a></li><li class="chapter-item expanded "><a href="advanced_cfg.html"><strong aria-hidden="true">9.</strong> Advanced: CFG</a></li><li class="chapter-item expanded "><a href="advanced_phrase_repetition_penalty.html"><strong aria-hidden="true">10.</strong> Advanced: Phrase Repetition Penalty</a></li><li class="chapter-item expanded "><a href="advanced_special_modules.html"><strong aria-hidden="true">11.</strong> Advanced: Special Modules</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">NovelAI Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="advanced-special-symbols"><a class="header" href="#advanced-special-symbols">Advanced: Special Symbols</a></h1>
+<p>NovelAI의 데이터셋에는 이야기의 특정 부분을 표시하기 위해 일부 <strong>symbols</strong>이 일관적으로 사용되었습니다. 텍스트 생성을 위한 프롬프팅을 할 때 이런 <strong>tokens</strong>를 직접 사용하면 특정 데이터의 분류를 끌어올 수 있습니다.</p>
+<h2 id="arrowing"><a class="header" href="#arrowing"><code>&gt;</code> Arrowing</a></h2>
+<p>&quot;~를 초과하는&quot;이라는 사인인 <code>&gt;</code>을 문장 앞에 <em><strong>right-pointing arrow</strong></em>로 사용하는 것은 문맥에 따라 다양한 용도로 사용됩니다.</p>
+<p>가장 일반적인 용법은 <a href="./text_adventure.html">Text Adventure</a> 플레이어의 명령입니다만, 일반적인 <strong>text messages</strong>, <strong>email quotes</strong>, <strong>computer output</strong>에도 사용할 수 있습니다. 보통 텍스트 앞에 공백을 둡니다.</p>
+<h2 id="asterisking"><a class="header" href="#asterisking"><code>*</code>Asterisking<code>*</code></a></h2>
+<p>애스터리크로 둘러쌓인 텍스느는 <code>*bang*</code>이나 <code>*Kaboom!*</code>와 같은 소리 효과나 <code>*ahem</code>이나 <code>*sigh*</code>처럼 특정한 발성을 신호화하여 나타냅니다.</p>
+<p><code>&quot;Oh you know I just *love* chocolate milk.&quot;</code>와 같이 말의 특정 부분을 강조할 때도 쓰일 수 있습니다.</p>
+<h2 id="chevronning"><a class="header" href="#chevronning"><code>&lt;</code>Chevronning<code>&gt;</code></a></h2>
+<p>일반적인 <code>&quot;</code>따옴표<code>&quot;</code> 대신, 꺽쇠 괄호로 알려진 <strong>chevrons</strong>로 <code>&lt;</code>보다 작고, 보다 큼<code>&gt;</code>을 사용하면 텔레파시 혹은 수화나 글<em>writing</em> 같은 비음성적 대화에 태그를 지정할 수 있습니다.</p>
+<p>예를 들어: <code>&lt;Be not afraid,&gt; the creature's inner voice resonated inside my mind.</code></p>
+<h2 id="-dinkusing"><a class="header" href="#-dinkusing"><code>***</code> Dinkusing</a></h2>
+<p>재미있는 이름을 한 <code>***</code> <strong>dinkus</strong>는 <em>장면</em>이나 <em>챕터를 나누는</em>데 사용됩니다.</p>
+<p>스토리에 <code>***</code>만 있는 줄을 작성하면 사용자는 다음에 오는 내용을 건너뛰고 싶다는 것을 AI에게 이해시킬 수 있습니다.</p>
+<h2 id="-asterisming"><a class="header" href="#-asterisming"><code>⁂</code> Asterisming</a></h2>
+<p>Dinkus의 큰 형님인 <code>⁂</code> <strong>asterism</strong>은 완전히 새로운 이야기로의 전환을 가리키는데 사용됩니다.</p>
+<p>다음 줄에서 완전히 다른 캐릭터와 플롯으로 다른 이야기의 시작이 되길 원하는 경우에만 <code>⁂</code>을 한줄에 단독으로 사용하세요. 단편 모음집에서 유용합니다.</p>
+<p><em>NovelAI의 텍스트 편집기에서 <strong>마우스 오른쪽 버튼 클릭 메뉴</strong>를 통해 이 문자에 쉽게 접근할 수 있습니다.</em></p>
+<h2 id="-curly-bracing--instructions"><a class="header" href="#-curly-bracing--instructions">{ Curly Bracing } <em>Instructions</em></a></h2>
+<p>중괄호 사이에 빈 공백과 텍스트가 채워진 <strong>{ 중괄호 }</strong> 는 AI에게 <strong>직접적인 지시</strong>를 내리는데 사용됩니다.</p>
+<p><a href="./advanced_special_modules.html#instruct">Special Modules</a> 페이지에서 광범위하게 다뤄집니다.</p>
+<h2 id="-spaced-bracketing-"><a class="header" href="#-spaced-bracketing-">[ Spaced Bracketing ]</a></h2>
+<p>대괄호 사이에 빈 공백과 텍스트가 채워진 <strong>[ 대괄호 ]</strong> 는 다양한 케이스에서 사용될 수 있습니다..</p>
+<ol>
+<li>
+<p><strong>ATTG</strong>: [ <strong>A</strong>uthor: ; <strong>T</strong>itle: ; <strong>T</strong>ags: ; <strong>G</strong>enre: ]<p>
+스토리에 대한 선택적인 초기자로 사용될 수 있습니다. <strong>ATTG</strong>는 새로운 이야기와 강하게 관련이 되어있으므로, AI가 장기기억 문제를 겪지 않게 하려면 가장 위에 이것을 두십시오. <strong>Memory</strong>의 첫번째 행이 좋은 위치입니다. <em>Author</em>와 <em>Title</em>은 유용도가 가장 떨어지므로 원하지 않는다면 생략할 수 있습니다. <p>
+Example: <code>[ Tags: London, 1820s, dragons; Genre: steampunk, drama ]</code><p>
+(고유명사는 대문자로, 나머지는 소문자로)</p>
+</li>
+<li>
+<p><strong>장면</strong>을 전환하거나 설정<p>
+<code>[ London, 1821 ]</code>, <code>[ Woodstock, 1969, 22:30 ]</code>, <code>[ New York, 1935, Night Club ]</code>, <code>[ Monday, 8:00 A.M. ]</code>, <code>[ Five Minutes Later ]</code> 등. 이것은 <em>Author's Note</em>를 포함한 아무 곳에서 사용할 수 있습니다.</p>
+</li>
+<li>
+<p>캐릭터 간의 <strong>시점</strong>을 전환<p>
+<code>[ John ]</code>, <code>[ Batman ]</code> 등. AI가 이름으로 인식하지 않으면 작동하지 않을 겁니다. Memory에 사용하여 AI가 주인공을 추적하는데 도움을 줄 수도 있습니다.</p>
+</li>
+<li>
+<p><strong>스타일</strong> 태그 (<strong>Krake</strong>, <strong>Clio</strong>와 <strong>Kayra</strong> 전용)<p>
+Examples: <code>[ Style: essay, nonfiction ]</code>, <code>[ Style: verbose ]</code>, <code>[ Style: poetry ]</code>,<code> [ Style: text adventure ]</code>, <code>[ Style: chat ]</code>, 심지어 <code>[ Style: SFW ]</code> 등의 스타일 태그를 지정하면 AI가 <strong>더욱 더</strong> 스타일을 깔끔한 상태를 유지하는데 도움이 됩니다.<p>
+이것은 작가노트에 넣어도 스토리 진행을 방해하지 않습니다.</p>
+</li>
+<li>
+<p><strong>지식</strong> 태그 (<strong>Clio</strong>와 <strong>Kayra</strong> 전용)<p>
+<code>[ Knowledge: paradoxes ]</code>, <code>[ Knowledge: anime in 90s ]</code>. 이것은 모델이 표시된 주제에 대한 이야기를 하도록 유도합니다. 위의 스타일 태그와 결합하여 다양한 효과를 낼 수 있습니다.<p>
+Examples: <code>[ Knowledge: CRPGs; Style: blog post ]</code>, <code>[ Knowledge: supernatural; Style: podcast, transcript ]</code> 등.</p>
+</li>
+<li>
+<p><em>일반 컨텍스트</em>와 <em>작가노트/메모리/로어북</em>을 <strong>구분</strong><p>
+때떄로 AI이 숨겨진 컨텍스트의 내용을 그대로 <em>복사</em>하는 경우가 있는데, 이를 이처럼 공백있는 대괄호로 묶어두면 이를 피하는데 도움이 될 수 있습니다. <strong>Clio</strong>와 <strong>Kayra</strong>와 같은 최신 모델에서는 이런 일이 잘 발생하지 않으므로 이것이 필용하지 않을 수도 있습니다.</p>
+</li>
+<li>
+<p><code>[ An Unexpected Quest ]</code>, <code>[ The End of Many Things ]</code>, <code>[ Into the Wastes ]</code>, <code>[ Time Loop (3rd Restart) ]</code> 등과 같이 <em><strong>챕터의 제목</strong></em>으로 사용할 수도 있습니다. 비록 그 결과는 예측할 수 없지만요.<p>
+<code>[ Prologue ]</code>나 <code>[ Epilogue ]</code>는 다소 일관된 효과를 보인다는 점은 주목할만 합니다.<p>
+<em>dinkus 다음에 나올 때 가장 잘 작동해야 합니다.</em></p>
+</li>
+</ol>
+<p>Note: 이러한 용도의 경우, 대괄호는 <strong>항상</strong> 텍스트의 시작과 끝을 공백으로 채워야 합니다. 간격을 두지 않은 대괄호는 <strong>주석</strong>이나 <strong>설명</strong> 등에서 주로 사용되는 용도입니다.</p>
+<blockquote>
+<p><img src="./goose.png" alt="" /> <strong>Goose tip:</strong>
+다른 사용법으로 자유롭게 실험해보세요. 하지만 플라시보 효과를 주의해야해요. 위 용도를 제외하면 괄호를 제거하는 것이 더 좋은 결과를 얻을 수도 있어요.</p>
+</blockquote>
+<h2 id="-----horizontal-lining"><a class="header" href="#-----horizontal-lining">---- Horizontal Lining</a></h2>
+<p>한 줄에 <code>----</code> 이렇게 &quot;네개의 하이픈&quot;만 있으면 일반 스토리텔링이 아니라 정보를 제공하는 텍스트임을 가리킨다.</p>
+<p>예를 들어, 다음과 같은 정보를 덤프하는데 사용할 수 있다</p>
+<pre><code>----
+Elves are very proud.
+They have pointy ears.
+***
+</code></pre>
+<p>그리고나서 <code>***</code> dinkus와 함께 보통의 산문 스토리텔링을 다시 시작할 수 있고, 다른 정보 항목을 작성하고 싶은 경우에는 <strong>다른 수평 라인</strong> <code>----</code>을 다시 사용할 수도 있다.</p>
+<p>예를 들어 다음과 같이  <strong>수평 줄</strong> 바로 뒷 줄에 정보의 카테고리를 단독으로 작성하여 범주를 가리키는데 사용할 수도 있다:</p>
+<pre><code>----
+Characters:
+Sigurd, a strong warrior who wields a mighty sword.
+Euterpe, a skilled bard who plays a tooty horn.
+Goose, a handsome scholar full of valuable advice.
+----
+Glossary:
+Infinibag: A magic pouch that can contain infinite items as long as they fit.
+Xenoarchaeologist: A scientist that studies ancient relics of alien origins. 
+Peach Festival: A peach-themed festival that celebrates a bountiful harvest.
+***
+</code></pre>
+<p>카테고리에 <code>?</code>를 추가하여 AI가 틀리기 쉬운 것에 대해 &quot;추가적인 정보를 제공&quot;할 수도 있습니다. 예시:</p>
+<pre><code>----
+Snake
+Type: animal, reptile
+Legs?: None (squamous land tetrapods are legless)
+***
+
+</code></pre>
+<blockquote>
+<p><img src="./goose.png" alt="" /> <strong>Goose tip:</strong>
+항상 ----를 포함하도록 컨텍스트 설정의 접두사 및/또는 접미사를 변경할 수 있어요. ***은 정보 항목에서 일반 스토리텔링으로 이동할 때만 사용해야 한다는 것을 기억하세요.</p>
+</blockquote>
+<blockquote>
+<p><img src="./goose.png" alt="" /> <strong>Goose tip:</strong>
+문맥에 ----가 너무 많다면 AI는 ---- 자체를 출력으로 뱉기 시작할 수도 있어요. 그것을 막고 싶다면 해당 토큰에 대해 bias를 사용하거나 밴하는 것을 추천해요.</p>
+</blockquote>
+<h2 id="-horizontal-barring"><a class="header" href="#-horizontal-barring">====== Horizontal Barring</a></h2>
+<p><strong>Clio</strong>와 <strong>Kayra</strong> 전용으로, 6개의 등호로 이루어진 <strong>수평 막대</strong> <code>======</code>는 포럼의 게시글 구분자처럼 사용되는데 아래에 <strong>유저명</strong>을 입력하여 게시자를 가리키고 그 위에 <strong>스레드</strong>의 이름(선택 사항)을 입력할 수 있습니다.</p>
+<pre><code>Thread: Let's chat about AI!
+======
+Kurumuz
+</code></pre>
+<p>수평 막대는 이메일의 구분자로도 사용될 수 있습니다.</p>
+<h2 id="wide-spacing"><a class="header" href="#wide-spacing">Wide spacing</a></h2>
+<p>데이터셋의 일부 위치에 <em>&quot;보통보다 넓은&quot;</em> 두개의 공백 문자 타입이 사용되었습니다. 필요하다면 NovelAI 에디터에서 마우스 오른쪽 버튼 메뉴를 띄워 쉽게 둘 다 입력할 수 있습니다.</p>
+<h3 id="en-spacing"><a class="header" href="#en-spacing">En Spacing</a></h3>
+<p>(<code> </code>) En Space는 따옴표, 문자, 기호 등 텍스트 안의 다양한 상황에서 사용됩니다.</p>
+<h3 id="em-spacing"><a class="header" href="#em-spacing">Em Spacing</a></h3>
+<p>(<code> </code>) Em Space는 시나 음악의 가사에서 사용됩니다.</p>
+<blockquote>
+<p><img src="./goose.png" alt="" /> <strong>Goose tip:</strong>
+해당 띄어쓰기가 어떤 띄어쓰기인지 기억하기 쉬운 방법은 문자 <code>n</code>이 문자 <code>m</code>보다 더 얇은 글자이기 때문에 en spacing이 더 얇은 공백이고, em spacing이 더 넓은 공백이라고 기억하는 거에요.</p>
+</blockquote>
+<h2 id="-litrpging"><a class="header" href="#-litrpging"><code>─</code> LitRPGing</a></h2>
+<p><code>─</code> 문자는 기술적으로 <em>&quot;Box Drawings Light Horizontal&quot;</em> 이라고 불리지만 일반적으로는 <strong>&quot;LitRPG Line&quot;</strong> 이라고 불립니다. <code>─</code> 문자는 줄의 시작 부분에서 캐릭터의 스탯이나 속성, 소유하고 있는 것들 등, 일부 LitRPG 관련 텍스트를 표시할 때 사용됩니다.</p>
+<pre><code>─ You gained a level in Dragoon! You earned the Class Perk: Dragon Slayer!
+─ Dragon Slayer: your attacks deal bonus damage on reptile and aquatic targets.
+</code></pre>
+<p><em>NovelAI의 텍스트 에디터에서 <strong>마우스 오른쪽 버튼의 메뉴</strong>를 통해 쉽게 이 문자를 입력할 수 있습니다.</em></p>
+<h2 id="noting-experimental"><a class="header" href="#noting-experimental">Noting: <em>Experimental</em></a></h2>
+<p><strong>Clio</strong>와 <strong>Kayra</strong>에서만 다음과 같이 작성하여</p>
+<pre><code>Notes:
+- 
+</code></pre>
+<p>이를 컨텍스트 하단의 새로운 줄에 입력하면 AI에게 앞의 텍스트와 관련된 <em>주석 스타일의 주석</em>와 <em>관찰 내용</em>을 생성하도록 유도할 수 있습니다.</p>
+<p>상당히 비일관적이고 랜덤하게 뭔가를 만들어내는 경향이 있자만 재미로는 사용해볼 수 있습니다.</p>
+<p>이것을 사용하는 것 대신에 <a href="./advanced_special_modules.html#instruct">Instruct Module</a>을 사용하여 사용자가 원하는 것에 대한 적절한 노트를 요청하는 것을 추천합니다.</p>
+<h2 id="commenting-out"><a class="header" href="#commenting-out"><code>##</code> Commenting out</a></h2>
+<p>이것은 엄밀히 말하면 데이터셋에서 특정 이유로 사용되는 <strong>기호</strong>는 아닙니다만, <strong>에디터의 텍스트 영역</strong> 자체에서 제공하는 기능의 문자열입니다.</p>
+<p>줄 제일 처음에 <code>##</code>를 사용하면 AI의 컨텍스트로부터 해당 줄을 주석처리를 할 수 있습니다.</p>
+<p>예를 들어, 다음과 같은 글이 있다고 해봅시다</p>
+<pre><code>Dwarves are very proud.
+##just like the elves lol
+They have large beards.
+</code></pre>
+<p><strong>에디터</strong>에서 위처럼 작성했지만, AI는 글 전체가 아니라 아래와 같은 글을 &quot;볼&quot; 것입니다.</p>
+<pre><code>Dwarves are very proud.
+They have large beards.
+</code></pre>
+<p><code>##</code>은 다른 사람을 위해 만든 <strong>시나리오</strong>에 코멘트를 작성하거나 이야기 중간에 메모를 남기는데 유용할 것입니다.</p>
+<p><em><strong>주석처리</strong>를 하기 위해서는 ##이 해당 줄의 처음에 위치해야 한다는 사실을 기억하십시오. 그러므로 여러 줄을 <strong>주석처리</strong>하기 위해서는 각 줄의 시작부분에 ##를 입력해야 합니다.</em>
+<em>원한다면 ## 뒤에 공백을 둘 수 있습디만 기능적으로는 차이가 없습니다.</em></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="guide_chat_format.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="advanced_cfg.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="guide_chat_format.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="advanced_cfg.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
