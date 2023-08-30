@@ -15,7 +15,7 @@
     - [Advanced: Debug Settings](./advanced_debug_settings.md)
 - [Module Training](./module_training.md)
 - [Guide: Chat Format](./guide_chat_format.md)
-- [Advanced: Special Symbols](./advanced_special_symbols.md)
+- [Advanced: Special Symbols [ATTG]](./advanced_special_symbols.md)
 - [Advanced: CFG](./advanced_cfg.md)
 - [Advanced: Phrase Repetition Penalty](./advanced_phrase_repetition_penalty.md)
 - [Advanced: Special Modules](./advanced_special_modules.md)
