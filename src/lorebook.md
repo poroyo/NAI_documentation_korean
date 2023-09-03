@@ -6,6 +6,8 @@
 
 좌측 상단의 버튼으로 로어북을 <img src="./import.svg" width="16"> **Import**하고 <img src="./export.svg" width="16"> **Export** 할 수 있습니다. <img src="./image_down.svg"> **Image embed** 버튼으로 `.png` 이미지 파일 내부의 로어북을 삽입*embed*할 수도 있습니다. 다른 사람과 로어북을 공유하기 매우 좋은 방법입니다!
 
+가져오기가 지원되는 파일의 형식은 다음과 같습니다.: `.json`, `.lorebook` 그리고 로어북이 삽입된 `.png`
+
 아래의 이미지는 삽입된*embedded* 로어북 항목의 예시입니다. 이 이미지를 다운로드해보고 이것이 어떻게 작동하는지 확인해보십시오!
 
 <img src="./sigurdcard.png" width="200">
@@ -21,13 +23,13 @@
 
 ## Entries
 
-**Entries**는 로어북의 메인입니다. 각 항목은 자신만의 고유한 활성화 키를 갖고 있고, 최근의 컨텍스트에서 해당 키가 발견되면, 해당 항목의 텍스트가 컨텍스트에 삽입되게 됩니다.
+**Entries**는 로어북의 메인 구성요소입니다. 각 항목은 자신만의 활성화 키를 갖고 있고, 최근의 컨텍스트에서 해당 키가 발견되면, 해당 항목의 텍스트가 컨텍스트에 삽입되게 됩니다.
 
 <p align="center"><img src="./lorebookentry.png"></p>
 
-![](./trash.svg) **Delete** 버튼은 선택된 엔트리를 삭제하고, <img src="./copy.svg" width="15"> **Duplicate** 버튼은 선택된 엔트리를 복사합니다.
+![](./trash.svg) **Delete** 버튼은 선택된 항목을 삭제하고, <img src="./copy.svg" width="15"> **Duplicate** 버튼은 선택된 항목을 복사합니다.
 
-**Entry title**은 정리 목적으로만 사용되며 AI에게는 보이지 않습니다. 그렇기 때문에 사용자는 항목 텍스트 내부 어딘가에 항목의 제목*entry title*을 넣어야 합니다. 그렇지 않으면 AI는 이 항목이 어떤 것에 관한 것인지 알지 못할 것입니다.
+**Entry title**은 관리 목적으로만 사용되며 AI에게는 보이지 않습니다. 그렇기 때문에 사용자는 항목 텍스트 내부 어딘가에 항목의 제목*entry title*을 넣어야 합니다. 그렇지 않으면 AI는 이 항목이 어떤 것에 관한 것인지 알지 못할 것입니다.
 
 항목 우측의 <img src="./checkwhite.svg" width="15"> **Enabled** 토글은 해당 항목이 활성화되어 있는지를 결정합니다. <img src="./cross.svg"> **Disabled** 항목은 키가 트리거되어도 컨텍스트에 삽입되지 않을 것입니다.
 
@@ -64,7 +66,7 @@
 
 **Input Text**는 제네레이터가 사용하는 프롬프트입니다. "Fogwood Keep" 같은 이름이나 "an enthusiastic merchant"과 같은 짧은 설명이 가장 잘 작동합니다. 항목을 더 자세히 설명하기 위해 소괄호로 태그를 추가할 수도 있습니다. 에시: "Black Skull Fleet (pirates, space)"
 
-**Add Context (advanced)**를 사용하여 메모리나 작가노트, 최근의 스토리(~2500자) 혹은 다른 로어북 항목을 컨텍스트에 포함시켜 항목을 생성할 때 해당 정보를 사용할 수 있도록 할 수 있습니다.
+**Add Context (advanced)** 를 사용하여 메모리나 작가노트, 최근의 스토리(~2500자) 혹은 다른 로어북 항목을 컨텍스트에 포함시켜 항목을 생성할 때 해당 정보를 사용할 수 있도록 할 수 있습니다.
 
 **Generation History**는 로어북 제네레이터의 최근 출력 50개를 보여줍니다. 페이지를 새로고침하면 삭제됩니다.
 
@@ -85,7 +87,7 @@
 음수 Insertion Position은 키 앞에 항목을 삽입합니다.<p>
 해당 설정이 켜진 항목은 일반적으로 스토리 컨텍스트(기본적으로 0)보다 낮은 Insertion Order를 갖고 충분한 양의 예약된 토큰을 가져야 합니다. 대량의 상대적으로 삽입된 로어북 항목은 컨텍스트 생성을 느리게 할 수도 있습니다.
 
-**Cascading activation**이 켜지면 해당 로어북 항목은 비(非)스토리 컨텍스트 항목에서 키를 검색할 것입니다. 비(非)스토리 컨텍스트 항목에서는 검색 범위가 고려되지 않으며, 활성화를 일으킨 항목의 텍스트가 컨텍스트 내에 있을 것이라는 것이 보장되지 않습니다.[^Cascading activation]
+**Cascading activation**이 켜지면 해당 로어북 항목은 비(非)스토리 컨텍스트 항목에서 키를 검색할 것입니다. 비(非)스토리 컨텍스트 항목에서는 검색 범위*Search Range*가 고려되지 않으며, 활성화를 일으킨 항목의 텍스트가 컨텍스트 내에 있을 것이라는 것이 보장되지 않습니다.[^Cascading activation]
 
 **Prefix**는 로어북의 내용이 트리밍된 후 컨텍스트에 삽입하기 전에 항목 앞에 추가되는 텍스트입니다.[^add]
 
@@ -97,9 +99,9 @@
 **Reserved Tokens**은 항목이 자체적으로 예약할 수 있는 컨텍스트 토큰의 양입니다. 모든 예약은 항목이 컨텍스트에 배치되기 전에 이루어집니다. 실제 해당 항목이 포함하는 토큰의 양보다 더 많은 토큰을 예약하지는 않습니다. 예를 들어, 예약된 토큰이 200으로 설정되고 로어북 항목이 100 토큰이라면, 100개의 토큰만 예약됩니다.<p>
 0과 1(1은 제외)사이의 십진수 소수점을 입력하면 최대 컨텍스트 사이즈(최대 토큰 - 출려 길이)의 백분율로 해석될 것입니다.
 
-로어북의 항목은 컨텍스트가 빌드되기 전에, 설정된 **Insertion Order**에 따라 처리됩니다. 높은 Insertion Order를 가진 항목은 토큰을 예약하고 컨텍스트에 먼저 처리, 삽입됩니다. 두 항목의 Insertion Order가 같다면, 먼저 삽입될 것이라는 보장은 없습니다.[^Insertion Order]
+로어북의 항목은 컨텍스트가 빌드되기 전에, 설정된 **Insertion Order**에 따라 처리됩니다. 높은 Insertion Order를 가진 항목은 토큰을 예약하고 컨텍스트에 먼저 처리, 삽입됩니다. 두 항목의 Insertion Order가 같다면, 어느 항목이 먼저 삽입될 것이라는 보장은 없습니다.[^Insertion Order]
 
-**Insertion Position**은 항목이 컨텍스트에 삽입될 위치입니다. 0은 컨텍스트의 최상단, 1은 한단계 아래, 2는 두단계 아래가 되는 식입니다. 음수는 컨텍스트 컨텍스트 최하단부터 계산합니다.. -1은 최하단, -2는 그보다 한단계 위, 그리고 -3은 두단계 위가 되는 식입니다.[^Insertion Position]
+**Insertion Position**은 항목이 컨텍스트에 삽입될 위치입니다. 0은 컨텍스트의 최상단, 1은 한단계 아래, 2는 두단계 아래가 되는 식입니다. 음수는 컨텍스트 컨텍스트 최하단부터 계산합니다. -1은 최하단, -2는 그보다 한단계 위, 그리고 -3은 두단계 위가 되는 식입니다.[^Insertion Position]
 
 **Trim Direction**는 전체 항목이 컨텍스트에 맞지 않을 경우*do not fit* 항목이 잘릴 위치를 설정합니다. 'Do not Trim'으로 설정하면 항목의 텍스트가 컨텍스트가 맞을 때만 항목이 포함됩니다.
 
@@ -121,15 +123,31 @@
 
 ## Phrase Bias
 
-**Phrase Bias**를 사용하면 항목이 활성화되어 있을 때, AI가 특정 단어나 구문을 생성할 확률을 높이거나 낮출 수 있습니다. 정확한 텍스트를 입력하기 위해서는 bias를 {중괄호}로 감싸고, 토큰 ID(토크나이저에 지정된)를 입력하기 위해서는 [대괄호]로 감싸십시오. bias는 대소문자를 구분합니다.
+**Phrase Bias**를 사용하면 항목이 활성화되어 있을 때, AI가 특정 단어나 구문을 생성할 확률을 높이거나 낮출 수 있습니다. 정확한 텍스트를 입력하기 위해서는 bias를 {중괄호}로 감싸고, 토큰 ID(토크나이저에 지정된)를 입력하기 위해서는 [대괄호]로 감싸십시오. bias는 **대소문자를 구분**합니다.
 
 <p align="center"><img src="./lorebookcategoryphrasebias.png"></p>
 
 **Import**와 **Export** 버튼을 클릭하여 phrase Bias를 `.bias` 파일로 가져오고 내보낼 수 있습니다.
 
-Bias는 **group**으로 구성되어 있고, 각 그룹은 **Bias** 값을 갖고 있습니다. 이 bias 값은 
+Bias는 **group**으로 구성되어 있고, 각 그룹은 **Bias** 값을 갖고 있습니다. 이 bias 값은 그룹 안에 있는 모든 토큰과 문구에 적용됩니다. 하나의 로어북 항목 안에 여러 phrase biases 그룹을 가질 수 있습니다.
 
+<img src = "./pluswhite.svg" width="13"> **Add** 버튼을 클릭하면 새로운 bias 그릅이 생성됩니다. 현재 선택된 그룹은 ![](./trash.svg) **Delete** 버튼을 누르면 삭제됩니다.
 
+**Bias 값**은 토큰의 그룹이 얼마나 편향적인지를 나타냅니다.
+
+**Bias 값**의 효과는 사용하고 있는 **AI 모델**에 따라 크게 달라집니다. 예를 들어, Krake는 다른 모델에 비해 훨씬 편향에 민감하므로 소수점 값을 사용하는 것이 좋습니다.
+
+**Enable**은 bias를 켤지 말지를 토글할 때 사용합니다.
+
+**When Entry Inactive** 그룹의 활성화 동작을 반전시킵니다. 이것을 켜면, 항목이 활성화 상태가 아니라 비활성화 상태일 때 해당 bias 그룹이 적용될 것입니다.
+
+**Ensure Completion After Start**가 활성화될 경우, 구*phrase*의 첫번째 토큰이 생성되면 후속 토큰이 항상 생성됩니다.[^Ensure Completion After Start]
+
+**Unbias When Generated**이 활성화되면, 구*phrase*가 생성된 후 나머지를 생성하는 과정에서 해당 bias가 제거됩니다. 이 옵션은 해당 구가 생성되는 것을 막지는 않고, 그곳에 놓인 bias만을 제거할 뿐입니다.[^Unbias When Generated]
+
+[^Ensure Completion After Start]: 역자주: 만약에 "apple like the galaxy"라고 긍정적인 bias를 넣고 값을 일정 수준으로 둘 경우를 가정해보자. 이 옵션을 끄면 "apple like the galaxy"가 완전하게 만들어지지 않는다. 예시: `apple, apple, apple. A few apple pies, apple sauce, apple turnovers, apple muffins, apple cider and apple juice. Apples. Apples. Apples.` 하지만 이 옵션을 켜게 되면 `apple, apple like the galaxy, apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like` 이렇게 `apple`이란 토큰이 생성되면 나머지 후속 토큰이 생성되게 된다.
+
+[^Unbias When Generated]: 역자주: 이 옵션을 켜면 생성 당 한번 bias가 적용되고 나머지 생성에서는 해당 bias가 비활성화된다. 즉, 위 예시의 bias의 값을 아주 세게 주어도 `apple`의 첫부분만 `apple like the galaxy`가 생성되고 그 이후의 나머지 생성에서는 해당 bias가 적용되지 않고 정상적으로 작동한다. 예시: `apple apple like the galaxy and the universe and all the universes that might ever exist and will ever exist in all of time and space "The way I see it, we've got four choices." "We?"`
 
 ## Categories
 
@@ -137,13 +155,13 @@ Bias는 **group**으로 구성되어 있고, 각 그룹은 **Bias** 값을 갖�
 
 **Default** 탭에서는 해당 카테고리 내에서 만든 새 항목의 기본 배치 설정을 바꾸거나 기존의 모든 항목을 업데이트할 수 있습니다.
 
-<p align="center"><img src="./lorebookgenerator.png"></p>
+<p align="center"><img src="./lorebookcategoriesdefault.png"></p>
 
 **Subcontext**탭에는 **Create Subcontext** 토글이 있습니다. 이 토글을 활성화하면 해당 카테고리 내의 로어북 항목들이 그룹화되고, 이 그룹화된 항목들은 선택된 설정을 이용하여 컨텍스트에 삽입됩니다.
 
 <p align="center"><img src="./lorebookcategorysubcontext.png"></p>
 
-**Phrase Bias** 탭은 개별 엔트리 항목의 phrase bias 탭과 동일한 기능이지만, 카테고리 레벨에서 설정된 bias는 해당 카테고리 내의 모든 항목이 활성화가 될 때 활성화된다는 점이 다릅니다.
+**Phrase Bias** 탭은 개별 엔트리 항목의 phrase bias 탭과 동일한 기능이지만, 카테고리 레벨에서 설정된 bias는 해당 카테고리 내의 항목이 활성화가 될 때 활성화된다는 점이 다릅니다.
 
 <p align="center"><img src="./lorebookcategoryphrasebias.png"></p>
 

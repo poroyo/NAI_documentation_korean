@@ -99,6 +99,7 @@
 
 
 ### Context Settings
+[^lorebook1]
 
 **Context Settings** 메뉴는 4개의 비슷한 섹션을 담고 있습니다: **Memory Context Settings**, **Author's note Context Settings**, **Default Lorebook Settings**와  **Story Context Settings**, 그리고 최상단의 **Reset to Defaults** 버튼. [Lorebook](./lorebook.md) 섹션에서 다루는 **Default Lorebook Settings** 섹션을 제외하면 각 세션은 모두 같은 구성을 하고 있습니다.
 
@@ -115,6 +116,7 @@
 - **Maximum Trim Type**은 항목을 트리밍*trimming*할 수 있는 범위입니다.
 - **Insertion Type**은 항목을 삽입할 때 컨텍스트를 구분하는데 사용될 단위를 결정합니다.
 
+[^lorebook1]: 역주: [lorebook/Placement](./lorebook.md#placement) 섹션을 참조하라.
 
 ### Ephemeral Context
 
@@ -150,6 +152,7 @@ Ephemeral Context 항목은 중괄호 {}로 감싸져야 합니다.
 
 
 ## Phrase Bias
+[^lorebook2]
 
 **Phrase Bias**를 사용하면 해당 항목이 활성화되었을 때, AI가 특정한 단어나 구를 생성할 확률을 높이거나 낮출 수 있습니다. 정확한 텍스트를 입력하려면 bias를 중괄호 {}로 둘러싸면 됩니다. 토큰 ID(토크나이저에 지정된)를 넣기 위해서는 대괄호 []로 bias를 둘러싸면 됩니다. 입력된 텍스트는 **대소문자를 구분**합니다.
 
@@ -173,9 +176,11 @@ Bias는 **그룹**으로 구성되는데 각 그룹에는 고유한 bias 값이 
 
 **When Entry Inactive** 그룹의 활성화 동작을 반전시킵니다. 이것을 켜면, 항목이 활성화 상태가 아니라 비활성화 상태일 때 해당 bias 그룹이 적용될 것입니다.
 
-**Ensure Completion After Start**가 활성화되면, 구*phrase*의 첫번째 토큰이 생성될 때 후속 토큰이 항상 생성됩니다.
+**Ensure Completion After Start**가 활성화될 경우, 구*phrase*의 첫번째 토큰이 생성되면 후속 토큰이 항상 생성됩니다.
 
 **Unbias When Generated**이 활성화되면, 구*phrase*가 생성된 후 나머지를 생성하는 과정에서 해당 bias가 제거됩니다. 이 옵션은 해당 구가 생성되는 것을 막지는 않고, 그곳에 놓인 bias만을 제거할 뿐입니다.
+
+[^lorebook2]: 역자주: [Lorebook/Phrase Bias](./lorebook.md#phrase-bias) 섹션을 참고하라.
 
 ## Banned Tokens
 

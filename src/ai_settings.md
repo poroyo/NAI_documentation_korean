@@ -28,6 +28,11 @@ AI response 섹션에서는 토큰 스트리밍과 문장 다듬기 옵션이 �
 
 <p align="center"><img src="./HypeBot2.png"></p>
 
+**HypeBot** NovelAI의 1주년 기념으로 만들어졌습니다. HypeBot은 커뮤니티 관리자 Aini와 뛰어난 작가들이 제공한 데이터가 포함된 고유한 모델을 사용합니다. HypeBot은 NovelAI의 모델 캐릭터와 마스코트인 Goose를 기반으로 선택가능한 7개의 아바타가 있습니다. Theme 탭의 **Custom CSS** 기능을 이용하여 고유한 아바타를 가져올 수도 있습니다!
+
+HypeBot은 스토리가 진행되는 동안 화면 하단에 나타나며, 재치있고 거침없는 격려를 제공합니다. 때로는 더 예상치 못한...
+
+<p align="center"><img src="./HypeShot.png"></p>
 
 ### Comment Output
 
@@ -39,6 +44,8 @@ AI response 섹션에서는 토큰 스트리밍과 문장 다듬기 옵션이 �
 드롭다운 메뉴에서 NovelAI의 여러 캐릭터들을 고를 수도 있고, Theme 탭의 고급 옵션에서 자신만의 아바타를 설정할 수도 있습니다.
 
 > ![](./goose.png) **Goose tip:**
+걱정하지 마세요, 선택된 아바타는 HypeBot의 결과에 아무런 영향을 미치지 않아요. 모든 아바타는 같은 AI 모델을 사용하니까요! 원하는 아바타를 선택하세요!
+
 
 <p align="center"><img src="./AvatarShot.gif"></p>
 
@@ -59,7 +66,7 @@ AI response 섹션에서는 토큰 스트리밍과 문장 다듬기 옵션이 �
 
 <p align="center"><img src="./Experimental.png"></p>
 
-**Experimental** 섹션에서는 **Token Probabilities**처럼 글 생성에 대한 깊은 고찰을 하게 해주는 설정 뿐만 아니라 AI 출력에 영향을 미치고 AI가 스토리를 생성하는 방향을 유도하는 설정이 있습니다. 이 섹션의 기능들은 완료된 것이 아니며 장래에 크게 변할 수도 있습니다만 그렇다고 해서 이 부분을 확인하는 것을 멈춰서는 안됩니다!
+**Experimental** 섹션에서는 **Token Probabilities**처럼 글 생성에 대한 깊은 고찰을 하게 해주는 설정 뿐만 아니라 AI 출력에 영향을 미치고 AI가 스토리를 생성하는 방향을 유도하는 설정이 있습니다. 이 섹션의 기능들은 완성된 것이 아니며 장래에 크게 변할 수도 있습니다만 그렇다고 해서 이 부분을 확인하는 것을 멈춰서는 안됩니다!
 
 <p align="center"><img src="./PreShot.png"></p>
 

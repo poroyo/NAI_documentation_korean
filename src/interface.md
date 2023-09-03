@@ -40,15 +40,15 @@
 </p>
 
 - **Paragraph Spacing**<p>
-**Paragraph Spacing** 슬라이더를 통해 **Editor**의 텍스트 문단 사이의 간격을 늘릴 수 있습니다. 이 슬라이더는 **Line Spacing**와 함꼐 작동하며 문단 사이에 추가적인 여백을 줍니다.
+**Paragraph Spacing** 슬라이더를 통해 **Editor**의 텍스트 문단 사이의 간격을 늘릴 수 있습니다. 이 슬라이더는 **Line Spacing**와 함꼐 작동하여 문단 사이에 추가적인 여백을 줍니다.
 </p>
 
 - **Button Scale**<p align="center"><img src="./InputBarShot.png"></p>
-**Button Scale** 슬라이더는 **Editor** 하단 **Input Bar**의 [Lorebook](./lorebook.md)![](./LoreBook.svg), **Undo** <img src="./undo.svg" height="9">, **Redo** <img src="./redo.svg" height="9">, **History**, **Retry** <img src="./retry.svg" height="12">와 **Send** 버튼의 크기를 조절합니다.
+**Button Scale** 슬라이더는 **Editor** 하단 **Input Bar**의 [Lorebook](./lorebook.md)![](./LoreBook.svg), **Undo** <img src="./undo.svg" height="9">, **Redo** <img src="./redo.svg" height="9">, **History**, **Retry** <img src="./retry.svg" height="14">와 **Send** 버튼의 크기를 조절합니다.
 </p>
 
 - **Max Line Width**<p>
-**Max Line Width** 슬라이더는 **Editor**의 텍스트가 가로 폭의 넓이를 변경합니다. 이 슬라이더의 값을 늘리면 텍스트는 화면의 가장자리 가까이에 닿게 되고, 슬라이더의 값을 낮추면 텍스트는 압축됩니다.
+**Max Line Width** 슬라이더는 **Editor** 텍스트의 가로 폭의 넓이를 변경합니다. 이 슬라이더의 값을 늘리면 텍스트는 화면의 가장자리 가까이에 닿게 되고, 슬라이더의 값을 낮추면 텍스트는 압축됩니다.
 </p>
 
 ## Interaction Setting
@@ -60,7 +60,7 @@
 </p>
 
 - **Swap Context Menu Controls**<p><img src="./RClickMenuShot.png"></p>
-**Swap Context Menu Controls** 토글은 NovelAI [Editor](./editor.md)의 마우스 오른쪽 버튼 메뉴의 기능을 전환할 수 있습니다. 기본적으로 **오른쪽 버튼 클릭**은 NovelAI의 특수한 **Context Menu**가 열리고, **Ctrl + 오른쪽 버튼**은 시스템 컨텍스트 메뉴가 열립니다. 해당 토글을 비활성화하면 설정이 뒤집혀 **Ctrl + 오른쪽 버튼**이 NovelAI의 컨텍스트 메뉴가 됩니다.
+**Swap Context Menu Controls** 토글은 NovelAI [Editor](./editor.md)의 마우스 오른쪽 버튼 메뉴의 기능을 전환할 수 있습니다. 기본적으로 **오른쪽 버튼 클릭**은 NovelAI의 특수한 **Context Menu**가 열리고, **Ctrl + 오른쪽 버튼**은 시스템 컨텍스트 메뉴가 열립니다. 해당 토글을 비활성화하면 설정이 뒤집혀 **Ctrl + 오른쪽 버튼**을 클릭히야 NovelAI의 컨텍스트 메뉴가 열립니다.
 
 
 ## Other Settings
@@ -72,7 +72,7 @@
 
 
 - **Editor Highlighting**<p><img src="./ThemeTextColors.png"></p>
-**Editor Highlighting** 토글은 원본과 Theme 탭에서 설정한 색에 따라 텍스트를 4가지의 다른 색으로 강조합니다.
+**Editor Highlighting** 토글은 텍스트를 출처과 Theme 탭에서 설정한 색에 따라 4가지의 다른 색으로 강조합니다.
 
 <p align="center"><img src="./EditorHighlightShot.png"></p>
 
@@ -82,18 +82,18 @@
 
 
 - **Context Viewer Colors**<p align="center"><img src="./ContextViewerOn.png"><img src="./ContextViewerOff.png"></p>
-**Context Viewer Colors** 토글은 텍스트의 출처에 따라 **Context Viewer**의 텍스트 색상을 바꿉니다. 예를 들어, 기본적으로 메모리와 작가노트 박스의 텍스트는 서로 다른 음영있는 노란색으로 나타납니다. 이 토글을 끄면 **Context Viewer**에서 모든 텍스트가 기본 색상으로 나타납니다.
+**Context Viewer Colors** 토글은 텍스트의 출처에 따라 **Context Viewer**의 텍스트 색상을 바꿉니다. 예를 들어, 기본적으로 메모리와 작가노트 박스의 텍스트는 서로 다른 음영있는 노란색으로 나타납니다. 이 토글을 끄면 **Context Viewer** 내의 모든 텍스트가 기본 색상으로 나타납니다.
 
 
 - **Editor Lorebook Keys**<p align="center"><img src="./LBKeyShot.png"></p>
-[Editor V1 전용] **Editor Lorebook Keys** 토글은 에디터에서 로어북 키가 나타나면 [Lorebook](./lorebook.md) 키를 강조표시한다. 키는 굵게 강조처리되고 키 위에 마우스 포인터를 가져다대면 트리거된 **Lorebook Entry**의 이름이 보여진다.
+[Editor V1 전용] **Editor Lorebook Keys** 토글은 에디터에서 [Lorebook](./lorebook.md) 키가 나타나면 해당 키를 강조표시힙니다. 키는 굵게 강조처리되고 키 위에 마우스 포인터를 가져다대면 트리거된 **Lorebook Entry**의 이름이 보여집니다.
 
 - **Show Story Title**<p align="center"><img src="./StoryTitleShot.png"></p>
-**Show Story Title** 토글을 사용하면 **Editor** 창 산단에 표시되는 스토리 제목을 활성화하거나 비활성화할 수 있다.
+**Show Story Title** 토글을 사용하면 **Editor** 창 산단에 표시되는 스토리 제목을 활성화하거나 비활성화할 수 있습니다.
 
 
 - **Show Tips**<p align="center"><img src="./TipsShot.png"></p>
-**Tips**는 **Editor** 하단, 입력 표시줄*input bar* 위에 나타난다. **Show Tips** 토글은 이것을 켜고 끌 수 있다.
+**Tips**는 **Editor** 하단, 입력 표시줄*input bar* 위에 나타납니다.. **Show Tips** 토글은 이것을 켜고 끌 수 있습니다.
 
 ## Experimental Settings
 
@@ -110,5 +110,5 @@
 
 - **Show Minibar (Desktop Only)**<p>
 <img src="./MiniBarShot.png"><p>
-Minibar는 **Desktop Only** 기능입니다. 미니바는 축약된 스토리 제목들과 마우스로 호버 가능한 스토리 설명이 있는 미니 사이드바를 화면 왼쪽 사이드에 추가합니다. 미니바를 사용하여 **Library Sidebar**보다 덜 귀찮은 방법으로 스토리 사이를 빠르게 전환하십시오!
+Minibar는 **Desktop Only** 기능입니다. 미니바를 활성화하면 미니 사이드바가 화면 왼쪽 사이드에 추가되는데, 여기에는 축약된 스토리 제목들과 마우스로 호버 가능한 스토리 설명이 있습니다. 미니바를 사용하여 **Library Sidebar**보다 덜 귀찮은 방법으로 스토리 사이를 빠르게 전환하십시오!
 </p></p>
