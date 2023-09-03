@@ -167,26 +167,27 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="advanced-debug-settings"><a class="header" href="#advanced-debug-settings">Advanced: Debug Settings</a></h1>
-<p>디버그 세팅은 사용자의 계정 문제들을 해결하는데 도움을 줄 수 있는 고급 도구들 입니다.  <strong>일부 번경 사항은 의도치않은 효과가 발생할 수 있으니 디버그 세팅에 접근할 때는 주의해야 합니다.</strong></p>
+<p>디버그 세팅은 사용자의 계정 문제들을 해결하는데 도움을 줄 수 있는 고급 도구입니다.  <strong>일부 번경 사항은 의도치않은 효과가 발생할 수 있으니 디버그 세팅에 접근할 때는 주의해야 합니다.</strong></p>
 <h2 id="enabling-debug-settings"><a class="header" href="#enabling-debug-settings">Enabling Debug Settings</a></h2>
-<p>디버그 세팅 메뉴를 활성화하기 위해서는 <strong>goose</strong> 메뉴 하단의 빌드 해시를 21번 클릭하십시오.</p>
+<p>디버그 세팅 메뉴를 활성화하기 위해서는 <strong>goose</strong> 메뉴 하단의 <em>빌드 해시</em>를 21번 클릭하십시오.</p>
 <img src="./naiversionhash.png">
 <p>그러고나서 User Settings를 열면 디버그 세팅에 접근할 수 있습니다.</p>
 <p align="center"><img src="./debugsettings.png"></p>
-<p>디버그 세팅 메뉴를 비활성화하고 싶다면 디버그 세팅 메뉴 내부의 <strong>Hide Debug Settings</strong> 버튼을 클릭하십시오. 그러고나면 다시 초기 <em>빌드 해시</em> 방법을 통해 잠금 해제 할 수 있습니다.</p>
+<p>디버그 세팅 메뉴를 비활성화하고 싶다면 디버그 세팅 메뉴 내부의 <strong>Hide Debug Settings</strong> 버튼을 클릭하십시오. 그러고나면 다시 처음의 <em>빌드 해시</em> 방법을 통해 잠금 해제 할 수 있습니다.</p>
 <blockquote>
 <p><img src="./goose.png" alt="" /> <strong>Goose tip:</strong>
 디버그 세팅은 세션당 한 번만 잠금해제 할 수 있습니다. 그러므로 <em>빌드 해시</em>를 21번 클릭해도 디버그 세팅 메뉴가 뜨지 않는다면, 페이지를 새로고침 해보세요!</p>
 </blockquote>
 <h2 id="debug-story-downloaddeletion"><a class="header" href="#debug-story-downloaddeletion">Debug Story Download/Deletion</a></h2>
 <p><strong>디버그 메뉴</strong>를 사용해서 다른 방법으로는 액세스할 수 없는 이야기를 <em>다운로드</em>하거나 <em>삭제</em>할 수 있습니다.</p>
-<p>브라우저 주소창에서 선택된 이야기의 ID를 찾으십시오. 주소의 <code>/stories?id=</code>의 우측 부분 전체입니다. 예를 들어, 선택한 이야기의 주소가 <code>https://novelai.net/stories?id=be6a65e2-d7c8-4218-bba3-1234a1234a3a</code>이라면 <strong>스토리 ID</strong>는 <code>be6a65e2-d7c8-4218-bba3-1234a1234a3a</code> 입니다. 원하는 필드에서 ID를 입력하고나서 <strong>Download</strong>나 <strong>Delete</strong>를 클릭하십시오. 다운로드를 클릭한다면 해당 이야기는 즉시 다운로드될 것이고, 삭제를 클릭한다면 확인을 묻는 팝업이 표시됩니다.</p>
+<p>브라우저 주소창에서 현재 선택된 이야기의 ID를 찾으십시오. 주소의 <code>/stories?id=</code>의 우측 부분 전체입니다. 예를 들어, 선택한 이야기의 주소가 <code>https://novelai.net/stories?id=be6a65e2-d7c8-4218-bba3-1234a1234a3a</code>이라면 <strong>스토리 ID</strong>는 <code>be6a65e2-d7c8-4218-bba3-1234a1234a3a</code> 입니다. 원하는 필드에서 ID를 입력하고나서 <strong>Download</strong>나 <strong>Delete</strong>를 클릭하십시오. 다운로드를 클릭한다면 해당 이야기는 즉시 다운로드될 것이고, 삭제를 클릭한다면 확인을 묻는 팝업이 표시됩니다.</p>
 <h2 id="logprobs-count"><a class="header" href="#logprobs-count">Logprobs Count</a></h2>
 <p>이 슬라이더를 사용하여 &quot;Token Probabilities&quot; 도구에서 얼마나 많은 대체 토큰을 표시할 지 설정할 수 있습니다. 최대 갯수는 30개입니다.</p>
 <p align="center"><img src="./logprobextend.png"></p>
 <p>해당 설정은 영구적이며 로그아웃하거나 디버그 세팅을 숨겨도 계속 적용될 것입니다. <strong>기본값은 10</strong>입니다.</p>
 <h2 id="apply--save"><a class="header" href="#apply--save">Apply &amp; Save</a></h2>
 <p>디버그 세팅 메뉴 최하단에는 몇 줄의 코드가 담긴 큰 텍스트 박스가 있습니다. 이것은 사용자의 NovelAI 설정으로서 필요한 경우 수동으로 값을 수정하거나 백업할 수 있습니다.</p>
+<p><strong>여기에 쓰여진 텍스트를 수정하는 것은 권장되지 않습니다.</strong></p>
 <blockquote>
 <p><img src="./goose.png" alt="" /> <strong>Goose tip:</strong>
 Apply &amp; Save 버튼은 아래 텍스트 박스에서 수동으로 설정이 변경된 경우에만 사용됩니다. 다른 디버그 세팅의 기능을 적용하기 위해서 해당 버튼을 누를 필요는 없습니다.</p>

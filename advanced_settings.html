@@ -243,6 +243,7 @@
 <p align="center"><img src="./ContextViewerPhraseBiases.png"></p>
 <p>마지막으로, <strong>Included Phrase Bias Groups</strong> 섹션은 </p>
 <h3 id="context-settings"><a class="header" href="#context-settings">Context Settings</a></h3>
+<p><sup class="footnote-reference"><a href="#lorebook1">2</a></sup></p>
 <p><strong>Context Settings</strong> 메뉴는 4개의 비슷한 섹션을 담고 있습니다: <strong>Memory Context Settings</strong>, <strong>Author's note Context Settings</strong>, <strong>Default Lorebook Settings</strong>와  <strong>Story Context Settings</strong>, 그리고 최상단의 <strong>Reset to Defaults</strong> 버튼. <a href="./lorebook.html">Lorebook</a> 섹션에서 다루는 <strong>Default Lorebook Settings</strong> 섹션을 제외하면 각 세션은 모두 같은 구성을 하고 있습니다.</p>
 <p align="center"><img src="./ContextSettingsMemory.png"></p>
 <ul>
@@ -257,6 +258,9 @@
 <li><strong>Maximum Trim Type</strong>은 항목을 트리밍<em>trimming</em>할 수 있는 범위입니다.</li>
 <li><strong>Insertion Type</strong>은 항목을 삽입할 때 컨텍스트를 구분하는데 사용될 단위를 결정합니다.</li>
 </ul>
+<div class="footnote-definition" id="lorebook1"><sup class="footnote-definition-label">2</sup>
+<p>역주: <a href="./lorebook.html#placement">lorebook/Placement</a> 섹션을 참조하라.</p>
+</div>
 <h3 id="ephemeral-context"><a class="header" href="#ephemeral-context">Ephemeral Context</a></h3>
 <p align="center"><img src="./EphemeralContextBlank.png"></p>
 <p>위 이미지에서 볼 수 있듯이, Ephemeral Context 항목은 현재 <strong>Story Step</strong>(<a href="./story_settings.html#story-options">Story Settings Tab</a>의 <strong>View Story Stats</strong>에서 볼 수 있음)을 기반으로 <strong>Context</strong>에 텍스트를 삽입할 수 있게 해줍니다. 상단 이미지와 아래의 박스에 나타난 <strong>Ephemeral Context</strong> 항목의 예제를 봅시다. 항목은 4개의 부분으로 나뉩니다: <strong>Delay</strong>, <strong>Duration</strong>, <strong>Insertion</strong> 그리고 엔트리의 <strong>Text</strong>.</p>
@@ -287,6 +291,7 @@
 캐릭터가 저주받은 물건을 집었나요? 적이 랜덤한 간격으로 되돌아와 주인공을 위험에 빠뜨리나요? Ephemeral context는 더 많은 곳에서 사용할 수 있어요!</p>
 </blockquote>
 <h2 id="phrase-bias"><a class="header" href="#phrase-bias">Phrase Bias</a></h2>
+<p><sup class="footnote-reference"><a href="#lorebook2">3</a></sup></p>
 <p><strong>Phrase Bias</strong>를 사용하면 해당 항목이 활성화되었을 때, AI가 특정한 단어나 구를 생성할 확률을 높이거나 낮출 수 있습니다. 정확한 텍스트를 입력하려면 bias를 중괄호 {}로 둘러싸면 됩니다. 토큰 ID(토크나이저에 지정된)를 넣기 위해서는 대괄호 []로 bias를 둘러싸면 됩니다. 입력된 텍스트는 <strong>대소문자를 구분</strong>합니다.</p>
 <p>Phrase Bias를 만들기 위해서는 텍스트 영역에 입력을 하고 저장하기 위해 엔터를 누르십시오.</p>
 <p align="center"><img src="./PhraseBiasFull.png"></p>
@@ -298,8 +303,11 @@
 <p align="center"><img src="./PhraseBiasBoxes.png"></p>
 <p><strong>Enable</strong>은 bias를 켤지 말지를 토글할 때 사용합니다.</p>
 <p><strong>When Entry Inactive</strong> 그룹의 활성화 동작을 반전시킵니다. 이것을 켜면, 항목이 활성화 상태가 아니라 비활성화 상태일 때 해당 bias 그룹이 적용될 것입니다.</p>
-<p><strong>Ensure Completion After Start</strong>가 활성화되면, 구<em>phrase</em>의 첫번째 토큰이 생성될 때 후속 토큰이 항상 생성됩니다.</p>
+<p><strong>Ensure Completion After Start</strong>가 활성화될 경우, 구<em>phrase</em>의 첫번째 토큰이 생성되면 후속 토큰이 항상 생성됩니다.</p>
 <p><strong>Unbias When Generated</strong>이 활성화되면, 구<em>phrase</em>가 생성된 후 나머지를 생성하는 과정에서 해당 bias가 제거됩니다. 이 옵션은 해당 구가 생성되는 것을 막지는 않고, 그곳에 놓인 bias만을 제거할 뿐입니다.</p>
+<div class="footnote-definition" id="lorebook2"><sup class="footnote-definition-label">3</sup>
+<p>역자주: <a href="./lorebook.html#phrase-bias">Lorebook/Phrase Bias</a> 섹션을 참고하라.</p>
+</div>
 <h2 id="banned-tokens"><a class="header" href="#banned-tokens">Banned Tokens</a></h2>
 <p align="center"><img src="./BannedTokensFull.png"></p>
 <p><strong>Banned Tokens</strong>에서는 AI가 생성하는 토큰이나 시퀀스를 완전히 금지시킬 수 있습니다. 정확한 텍스트를 입력하려면 bias를 중괄호 {}로 둘러싸면 됩니다. 토큰 ID(토크나이저에 지정된)를 넣기 위해서는 대괄호 []로 bias를 둘러싸면 됩니다. 입력된 텍스트는 <strong>대소문자를 구분</strong>합니다.</p>
