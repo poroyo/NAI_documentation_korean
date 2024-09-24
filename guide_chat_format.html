@@ -1,16 +1,16 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Guide: Chat Format - NovelAI Documentation</title>
+        <title>Advanced: Chat Format - NovelAI Documentation</title>
 
 
         <!-- Custom HTML head -->
         
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -31,7 +31,7 @@
         <!-- Custom theme stylesheets -->
 
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
@@ -61,31 +61,38 @@
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var html = document.querySelector('html');
+            var body = document.querySelector('body');
             var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Text Generation</a></li><li class="chapter-item expanded "><a href="glossary.html"><strong aria-hidden="true">1.</strong> Glossary</a></li><li class="chapter-item expanded "><a href="editor.html"><strong aria-hidden="true">2.</strong> Editor</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="story_settings.html"><strong aria-hidden="true">2.1.</strong> Story Settings</a></li><li class="chapter-item expanded "><a href="advanced_settings.html"><strong aria-hidden="true">2.2.</strong> Advanced Settings</a></li><li class="chapter-item expanded "><a href="slider_settings.html"><strong aria-hidden="true">2.3.</strong> Slider Settings</a></li></ol></li><li class="chapter-item expanded "><a href="lorebook.html"><strong aria-hidden="true">3.</strong> Lorebook</a></li><li class="chapter-item expanded "><a href="text_adventure.html"><strong aria-hidden="true">4.</strong> Text Adventure</a></li><li class="chapter-item expanded "><a href="user_settings.html"><strong aria-hidden="true">5.</strong> User Settings</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ai_settings.html"><strong aria-hidden="true">5.1.</strong> AI Settings</a></li><li class="chapter-item expanded "><a href="interface.html"><strong aria-hidden="true">5.2.</strong> Interface</a></li><li class="chapter-item expanded "><a href="text_to_speach.html"><strong aria-hidden="true">5.3.</strong> Text To Speech</a></li><li class="chapter-item expanded "><a href="advanced_debug_settings.html"><strong aria-hidden="true">5.4.</strong> Advanced: Debug Settings</a></li></ol></li><li class="chapter-item expanded "><a href="module_training.html"><strong aria-hidden="true">6.</strong> Module Training</a></li><li class="chapter-item expanded "><a href="guide_chat_format.html" class="active"><strong aria-hidden="true">7.</strong> Guide: Chat Format</a></li><li class="chapter-item expanded "><a href="advanced_special_symbols.html"><strong aria-hidden="true">8.</strong> Advanced: Special Symbols [ATTG]</a></li><li class="chapter-item expanded "><a href="advanced_cfg.html"><strong aria-hidden="true">9.</strong> Advanced: CFG</a></li><li class="chapter-item expanded "><a href="advanced_phrase_repetition_penalty.html"><strong aria-hidden="true">10.</strong> Advanced: Phrase Repetition Penalty</a></li><li class="chapter-item expanded "><a href="advanced_special_modules.html"><strong aria-hidden="true">11.</strong> Advanced: Special Modules</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Text Generation</a></li><li class="chapter-item expanded "><a href="models.html"><strong aria-hidden="true">1.</strong> Models</a></li><li class="chapter-item expanded "><a href="glossary.html"><strong aria-hidden="true">2.</strong> Glossary</a></li><li class="chapter-item expanded "><a href="editor.html"><strong aria-hidden="true">3.</strong> Editor</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="story_settings.html"><strong aria-hidden="true">3.1.</strong> Story Settings</a></li><li class="chapter-item expanded "><a href="advanced_settings.html"><strong aria-hidden="true">3.2.</strong> Advanced Settings</a></li><li class="chapter-item expanded "><a href="slider_settings.html"><strong aria-hidden="true">3.3.</strong> Slider Settings</a></li><li class="chapter-item expanded "><a href="sampling_guide.html"><strong aria-hidden="true">3.4.</strong> Sampling Guide</a></li></ol></li><li class="chapter-item expanded "><a href="lorebook.html"><strong aria-hidden="true">4.</strong> Lorebook</a></li><li class="chapter-item expanded "><a href="text_adventure.html"><strong aria-hidden="true">5.</strong> Text Adventure</a></li><li class="chapter-item expanded "><a href="user_settings.html"><strong aria-hidden="true">6.</strong> User Settings</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ai_settings.html"><strong aria-hidden="true">6.1.</strong> AI Settings</a></li><li class="chapter-item expanded "><a href="interface.html"><strong aria-hidden="true">6.2.</strong> Interface</a></li><li class="chapter-item expanded "><a href="theme.html"><strong aria-hidden="true">6.3.</strong> Theme</a></li><li class="chapter-item expanded "><a href="account.html"><strong aria-hidden="true">6.4.</strong> Account</a></li><li class="chapter-item expanded "><a href="text_to_speach.html"><strong aria-hidden="true">6.5.</strong> Text To Speech</a></li><li class="chapter-item expanded "><a href="default.html"><strong aria-hidden="true">6.6.</strong> Default</a></li><li class="chapter-item expanded "><a href="hotkeys.html"><strong aria-hidden="true">6.7.</strong> Hotkeys</a></li><li class="chapter-item expanded "><a href="advanced_debug_settings.html"><strong aria-hidden="true">6.8.</strong> Advanced: Debug Settings</a></li></ol></li><li class="chapter-item expanded "><a href="module_training.html"><strong aria-hidden="true">7.</strong> Module Training</a></li><li class="chapter-item expanded "><a href="guide_chat_format.html" class="active"><strong aria-hidden="true">8.</strong> Advanced: Chat Format</a></li><li class="chapter-item expanded "><a href="advanced_special_symbols.html"><strong aria-hidden="true">9.</strong> Advanced: Special Symbols [ATTG]</a></li><li class="chapter-item expanded "><a href="advanced_phrase_repetition_penalty.html"><strong aria-hidden="true">10.</strong> Advanced: Phrase Repetition Penalty</a></li><li class="chapter-item expanded "><a href="advanced_special_modules.html"><strong aria-hidden="true">11.</strong> Advanced: Special Modules</a></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
         </nav>
 
         <!-- Track and set sidebar scroll position -->
@@ -116,9 +123,9 @@
                                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
@@ -166,14 +173,16 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="guide-chat-format"><a class="header" href="#guide-chat-format">Guide: Chat Format</a></h1>
-<p>다음은 AI가 두 캐릭터 간의 &quot;채팅 스타일&quot;의 내러티브를 유지하면서, 동시에 사용자 컨트롤 하에 캐릭터 중 한 명의 역할을 엄격하게 유지시키는 방법에 대한 간단한 가이드입니다.</p>
+                        <h1 id="advanecd-chat-format"><a class="header" href="#advanecd-chat-format">Advanecd: Chat Format</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
+<p>다음은 AI가 두 캐릭터 간의 "채팅 스타일"의 내러티브를 유지하면서, 동시에 사용자 컨트롤 하에 캐릭터 중 한 명의 역할을 엄격하게 유지시키는 방법에 대한 간단한 가이드입니다.</p>
 <p>이 페이지의 예제에서 아래 용어들을 다음과 같이 변경하십시오.</p>
 <ul>
 <li><code>memory_information</code>: 여기에 캐릭터에 대한 정보나 일반적으로 <strong>Memory</strong>에 기억하고 싶은 다른 정보들을 기입하십시오. 이 부분에는 특정한 양식이 필요하지 않으며, <strong>보통의 산문</strong>도 좋습니다.</li>
 <li><code>your_name</code>: 이것을 사용자 페르소나의 이름으로 바꾸십시오.</li>
 <li><code>bot_name</code>: 이것은 AI 캐릭터의 이름으로 바꾸십시오.</li>
 </ul>
+<p><strong>Memory</strong>와 <strong>Phrase Bias</strong>에 수동으로 설정하십시오.</p>
 <h2 id="memory"><a class="header" href="#memory">Memory</a></h2>
 <p>첫번째, <strong>Memory</strong>의 시작부분에 다음의 텍스트를 입력해야 합니다.</p>
 <pre><code>memory_information
@@ -201,7 +210,7 @@ your_name: How are you doing?
 </code></pre>
 <p>예를 들어, AI가 <em>Euterpe</em>라는 캐릭터를 연기할 것이라면 <code>\nEuterpe:</code>라고 적으면 됩니다. <em>이 경우 {중괄호}를 닫기 전에 공백을 만들어선 안됩니다.</em></p>
 <ul>
-<li><strong>두번째</strong> <em>Bias 값</em>이 정확히 0인 <em>Bias 그룹</em>을 만들어야 합니다. Bias를 <em>활성화</em>하고 <em>Ensure Completion After Start</em> 설정을 켜고(다른 하나는 이것에 대해 차이가 없음) 다음과 같은 문구를 입력합니다:</li>
+<li><strong>두번째</strong> <em>Bias 값</em>이 정확히 0인 별개의 <em>Bias 그룹</em>을 만들어야 합니다. Bias를 <em>활성화</em>하고 <em>Ensure Completion After Start</em> 설정을 켜고(다른 하나는 이것에 대해 차이가 없음) 다음과 같은 문구를 입력합니다:</li>
 </ul>
 <pre><code>{\nyour_character: }
 </code></pre>
@@ -222,8 +231,8 @@ your_name: How are you doing?
 <h2 id="playing"><a class="header" href="#playing">Playing</a></h2>
 <p>이제는 <strong>Send</strong> 버튼을 누를 때마다, 항상 AI에게 지정된 캐릭터로부터 메세지를 받고, 사용자의 새로운 입력을 받기 위한 사용자 캐릭터의 이름이 뒤따릅니다.</p>
 <img src="./sigurdchat.gif">
-<p>출력되는 크기와 상관없이 AI의 &quot;게시글&quot; 끝에서 항상 출력을 종료하므로, AI가 사용자에게 더 긴 답변을 줄 때를 대비해서 <strong>Output Length</strong>를 최대 값으로 설정하는 것을 권장합니다.</p>
-<p>하지만, 어떻게든 AI가 단일 출력에서 하나의 &quot;게시글&quot;을 끝내지 않는 경우에는 다음 출력에 대해 <em>봇 캐릭터의 Phrase Bias를 일시적으로 비활성화</em>할 필요가 있을 수도 있습니다.</p>
+<p>출력되는 크기와 상관없이 AI의 "게시글" 끝에서 항상 출력을 종료하므로, AI가 사용자에게 더 긴 답변을 줄 때를 대비해서 <strong>Output Length</strong>를 최대 값으로 설정하는 것을 권장합니다.</p>
+<p>하지만, 어떻게든 AI가 단일 출력에서 하나의 "게시글"을 끝내지 않는 경우에는 다음 출력에 대해 <em>봇 캐릭터의 Phrase Bias를 일시적으로 비활성화</em>할 필요가 있을 수도 있습니다.</p>
 <blockquote>
 <p><img src="./goose.png" alt="" /> <strong>Goose tip:</strong>
 AI는 일반적으로 하나의 최대 크기 출력에 맞지 않을 정도로 킨 메시지 출력을 하지 말아야 합니다. 만약 이러한 문제를 겪고 있다면, <em>Repetition Penalties</em>를 낮춰보세요!</p>
@@ -241,7 +250,7 @@ AI는 일반적으로 하나의 최대 크기 출력에 맞지 않을 정도로 
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="advanced_special_symbols.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="advanced_special_symbols.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -255,7 +264,7 @@ AI는 일반적으로 하나의 최대 크기 출력에 맞지 않을 정도로 
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="advanced_special_symbols.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="advanced_special_symbols.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

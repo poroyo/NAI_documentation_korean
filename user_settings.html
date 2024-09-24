@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -10,7 +10,7 @@
         
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -31,7 +31,7 @@
         <!-- Custom theme stylesheets -->
 
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
@@ -61,31 +61,38 @@
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var html = document.querySelector('html');
+            var body = document.querySelector('body');
             var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Text Generation</a></li><li class="chapter-item expanded "><a href="glossary.html"><strong aria-hidden="true">1.</strong> Glossary</a></li><li class="chapter-item expanded "><a href="editor.html"><strong aria-hidden="true">2.</strong> Editor</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="story_settings.html"><strong aria-hidden="true">2.1.</strong> Story Settings</a></li><li class="chapter-item expanded "><a href="advanced_settings.html"><strong aria-hidden="true">2.2.</strong> Advanced Settings</a></li><li class="chapter-item expanded "><a href="slider_settings.html"><strong aria-hidden="true">2.3.</strong> Slider Settings</a></li></ol></li><li class="chapter-item expanded "><a href="lorebook.html"><strong aria-hidden="true">3.</strong> Lorebook</a></li><li class="chapter-item expanded "><a href="text_adventure.html"><strong aria-hidden="true">4.</strong> Text Adventure</a></li><li class="chapter-item expanded "><a href="user_settings.html" class="active"><strong aria-hidden="true">5.</strong> User Settings</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ai_settings.html"><strong aria-hidden="true">5.1.</strong> AI Settings</a></li><li class="chapter-item expanded "><a href="interface.html"><strong aria-hidden="true">5.2.</strong> Interface</a></li><li class="chapter-item expanded "><a href="text_to_speach.html"><strong aria-hidden="true">5.3.</strong> Text To Speech</a></li><li class="chapter-item expanded "><a href="advanced_debug_settings.html"><strong aria-hidden="true">5.4.</strong> Advanced: Debug Settings</a></li></ol></li><li class="chapter-item expanded "><a href="module_training.html"><strong aria-hidden="true">6.</strong> Module Training</a></li><li class="chapter-item expanded "><a href="guide_chat_format.html"><strong aria-hidden="true">7.</strong> Guide: Chat Format</a></li><li class="chapter-item expanded "><a href="advanced_special_symbols.html"><strong aria-hidden="true">8.</strong> Advanced: Special Symbols [ATTG]</a></li><li class="chapter-item expanded "><a href="advanced_cfg.html"><strong aria-hidden="true">9.</strong> Advanced: CFG</a></li><li class="chapter-item expanded "><a href="advanced_phrase_repetition_penalty.html"><strong aria-hidden="true">10.</strong> Advanced: Phrase Repetition Penalty</a></li><li class="chapter-item expanded "><a href="advanced_special_modules.html"><strong aria-hidden="true">11.</strong> Advanced: Special Modules</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Text Generation</a></li><li class="chapter-item expanded "><a href="models.html"><strong aria-hidden="true">1.</strong> Models</a></li><li class="chapter-item expanded "><a href="glossary.html"><strong aria-hidden="true">2.</strong> Glossary</a></li><li class="chapter-item expanded "><a href="editor.html"><strong aria-hidden="true">3.</strong> Editor</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="story_settings.html"><strong aria-hidden="true">3.1.</strong> Story Settings</a></li><li class="chapter-item expanded "><a href="advanced_settings.html"><strong aria-hidden="true">3.2.</strong> Advanced Settings</a></li><li class="chapter-item expanded "><a href="slider_settings.html"><strong aria-hidden="true">3.3.</strong> Slider Settings</a></li><li class="chapter-item expanded "><a href="sampling_guide.html"><strong aria-hidden="true">3.4.</strong> Sampling Guide</a></li></ol></li><li class="chapter-item expanded "><a href="lorebook.html"><strong aria-hidden="true">4.</strong> Lorebook</a></li><li class="chapter-item expanded "><a href="text_adventure.html"><strong aria-hidden="true">5.</strong> Text Adventure</a></li><li class="chapter-item expanded "><a href="user_settings.html" class="active"><strong aria-hidden="true">6.</strong> User Settings</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ai_settings.html"><strong aria-hidden="true">6.1.</strong> AI Settings</a></li><li class="chapter-item expanded "><a href="interface.html"><strong aria-hidden="true">6.2.</strong> Interface</a></li><li class="chapter-item expanded "><a href="theme.html"><strong aria-hidden="true">6.3.</strong> Theme</a></li><li class="chapter-item expanded "><a href="account.html"><strong aria-hidden="true">6.4.</strong> Account</a></li><li class="chapter-item expanded "><a href="text_to_speach.html"><strong aria-hidden="true">6.5.</strong> Text To Speech</a></li><li class="chapter-item expanded "><a href="default.html"><strong aria-hidden="true">6.6.</strong> Default</a></li><li class="chapter-item expanded "><a href="hotkeys.html"><strong aria-hidden="true">6.7.</strong> Hotkeys</a></li><li class="chapter-item expanded "><a href="advanced_debug_settings.html"><strong aria-hidden="true">6.8.</strong> Advanced: Debug Settings</a></li></ol></li><li class="chapter-item expanded "><a href="module_training.html"><strong aria-hidden="true">7.</strong> Module Training</a></li><li class="chapter-item expanded "><a href="guide_chat_format.html"><strong aria-hidden="true">8.</strong> Advanced: Chat Format</a></li><li class="chapter-item expanded "><a href="advanced_special_symbols.html"><strong aria-hidden="true">9.</strong> Advanced: Special Symbols [ATTG]</a></li><li class="chapter-item expanded "><a href="advanced_phrase_repetition_penalty.html"><strong aria-hidden="true">10.</strong> Advanced: Phrase Repetition Penalty</a></li><li class="chapter-item expanded "><a href="advanced_special_modules.html"><strong aria-hidden="true">11.</strong> Advanced: Special Modules</a></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
         </nav>
 
         <!-- Track and set sidebar scroll position -->
@@ -116,9 +123,9 @@
                                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
@@ -167,22 +174,43 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="user-settings"><a class="header" href="#user-settings">User Settings</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
 <p><strong>Library Sidebar</strong>의 상단 <img src="./setting.svg" alt="" /> 아이콘으로 표시되는 <strong>User Settings Menu</strong>는 NovelAI의 모든 개인화 및 접근성 옵션이 있습니다—<em>그리고 그 이상도요!</em></p>
 <p>User Settings Menu의 다양한 탭들을 사용하여 NovelAI의 외관을 물론, 어떻게 텍스트와 AI 결과물이 보여지는지에 관한 여러 측면을 조절하고 개인화할 수 있습니다. <strong>Text To Speech</strong> 기능도 기본 AI 모델 설정과 에디터 기능 및 바로가기를 위한 <strong>Hotkeys</strong>의 리스트와 함께 해당 란에 있습니다. 대부분의 옵션은 한눈에 알 수 있거나 그것에 대한 설명이 같이 있으므로 해당 페이지에서는 이 메뉴의 더 고급적이고 중요한 부분을 다룰 것입니다.</p>
 <ul>
-<li><a href="./ai_settings.html">AI Settings</a>
+<li><a href="./ai_settings.html">AI Settings</a></li>
+</ul>
+<p><strong>AI Settings</strong> 탭에서는 AI 출력 표시와 생성에 관한 설정을 찾을 수 있습니다. 예를 들어: 출력 스트리밍과 문장 다듬기, <strong>HypeBot</strong>, 토큰 제한과 기본 bias 설정과 출력에서 <strong>Token Probabilities</strong> 보는 옵션.</p>
+<p>이 탭에서는 <strong>Inline Generation</strong> 모델에 대한 체크박스도 포함되어 있어, 특수 양뱡향 모델과 선호하는 기본값 사이를 토글할 수 있습니다.</p>
 <ul>
-<li><strong>AI Settings</strong> 탭에서는 AI 출력 표시와 생성에 관한 설정을 찾을 수 있습니다. 예를 들어: 출력 스트리밍과 문장 다듬기, <strong>HypeBot</strong>, 토큰 제한과 기본 bias 설정과 출력에서 <strong>Token Probabilities</strong> 보는 옵션.<p>
-이 탭에서는 <strong>Inline Generation</strong> 모델에 대한 체크박스도 포함되어 있어, 특수 양뱡향 모델과 선호하는 기본값 사이를 토글할 수 있습니다.</li>
+<li><a href="./interface.html">Interface</a></li>
 </ul>
-</li>
-<li><a href="./interface.html">Interface</a>
+<p><strong>Interface</strong> 탭에서는 NovelAI의 많은 텍스트 서식과 UI 세팅이 포함되어 있습니다. 언어를 바꾸고, 버튼과 텍스트의 크기를 조절하고, 텍스트의 간격을 조절하고, UI 기능을 켜거나 끌 수 있으며 <strong>Editor V2</strong>의 실험적 기능을 켤 수 있습니다!</p>
+<p>터치스크린 기기에서의 사이드바 스와이프 활성화 설정, 오른쪽 버튼의 NovelAI의 컨텍스트 메뉴와 미니바 토글 설정도 여기에서 찾을 수 있습니다.</p>
 <ul>
-<li><strong>Interface</strong> 탭에서는 NovelAI의 많은 텍스트 서식과 UI 세팅이 포함되어 있습니다. 언어를 바꾸고, 버튼과 텍스트의 크기를 조절하고, 텍스트의 간격을 조절하고, UI 기능을 켜거나 끌 수 있으며 <strong>Editor V2</strong>의 실험적 기능을 켤 수 있습니다!<p>
-터치스크린 기기에서의 사이드바 스와이프 활성화 설정, 오른쪽 버튼의 NovelAI의 컨텍스트 메뉴와 미니바 토글 설정도 여기에서 찾을 수 있습니다.</li>
+<li><a href="./theme.html">Theme</a></li>
 </ul>
-</li>
+<p><strong>Theme</strong> 탭에서는 다양한 기본 테마들 중 하나로 전환하고 커스터마이징하고 가져오거나 내보낼 수 있습니다! 추가적인 개인화를 위한 고급 Custom CSS 기능 역시 여기에 있습니다.</p>
+<ul>
+<li><a href="./account.html">Account</a></li>
 </ul>
+<p><strong>Account</strong> 탭에는 구독 관리 및 사용자 정보 관련 기능이 포함되어 있습니다. 계정 이메일과 비밀번호 변경, <strong>Gift Keys</strong> 구매, 이야기의 <strong>Default Storage Location</strong> 관리, <strong>Remote Story Conflict</strong> 팝업 비활성화 등을 <strong>Account</strong> 탭에서 할 수 있습니다. 또한 여기에 있는 <strong>Download All Stories</strong> 버튼을 사용하여 모든 이야기를 다운로드할 수도 있습니다.</p>
+<ul>
+<li><a href="./text_to_speach.html">Text To Speech</a></li>
+</ul>
+<p>NovelAI의 Text to Speech는 매우 다양하게 커스터마이징이 가능합니다. <strong>Text to Speech</strong> 페이지에서 해당 기능에 대한 전체 설명을 확인하세요!</p>
+<ul>
+<li><a href="./default.html">Default</a></li>
+</ul>
+<p><strong>Defaults</strong> 탭에서 기본 모델과 프리셋 설정을 할 수 있습니다. 모델 업데이트가 있거나 좋아하는 프리셋을 확인하기 위해 자주 이 탭을 확인하세요!</p>
+<ul>
+<li><a href="./hotkeys.html">Hotkeys</a></li>
+</ul>
+<p><strong>Hotkeys</strong> 탭에서 NovelAI에서 지원하는 키보드 바로가기의 모든 리스트를 확인할 수 있습니다. <strong>Hotkeys</strong> 페이지는 나중을 위해 위 리스트의 복사본이 들어있습니다.</p>
+<ul>
+<li><a href="./advanced_debug_settings.html">Debug</a></li>
+</ul>
+<p>NovelAI의 <strong>Debug</strong> 메뉴는 고급 기능입니다. ID를 통해 이야기를 다운로드 받거나 삭제하고 계정의 메타데이터를 다운로드할 수 있습니다. 더 많은 정보를 위해 <strong>Debug</strong> 페이지를 확인하세요.</p>
 
                     </main>
 
@@ -192,7 +220,7 @@
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="ai_settings.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="ai_settings.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -206,7 +234,7 @@
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="ai_settings.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="ai_settings.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

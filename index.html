@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -10,7 +10,7 @@
         
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -31,7 +31,7 @@
         <!-- Custom theme stylesheets -->
 
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
@@ -61,31 +61,38 @@
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var html = document.querySelector('html');
+            var body = document.querySelector('body');
             var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html" class="active">Text Generation</a></li><li class="chapter-item expanded "><a href="glossary.html"><strong aria-hidden="true">1.</strong> Glossary</a></li><li class="chapter-item expanded "><a href="editor.html"><strong aria-hidden="true">2.</strong> Editor</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="story_settings.html"><strong aria-hidden="true">2.1.</strong> Story Settings</a></li><li class="chapter-item expanded "><a href="advanced_settings.html"><strong aria-hidden="true">2.2.</strong> Advanced Settings</a></li><li class="chapter-item expanded "><a href="slider_settings.html"><strong aria-hidden="true">2.3.</strong> Slider Settings</a></li></ol></li><li class="chapter-item expanded "><a href="lorebook.html"><strong aria-hidden="true">3.</strong> Lorebook</a></li><li class="chapter-item expanded "><a href="text_adventure.html"><strong aria-hidden="true">4.</strong> Text Adventure</a></li><li class="chapter-item expanded "><a href="user_settings.html"><strong aria-hidden="true">5.</strong> User Settings</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ai_settings.html"><strong aria-hidden="true">5.1.</strong> AI Settings</a></li><li class="chapter-item expanded "><a href="interface.html"><strong aria-hidden="true">5.2.</strong> Interface</a></li><li class="chapter-item expanded "><a href="text_to_speach.html"><strong aria-hidden="true">5.3.</strong> Text To Speech</a></li><li class="chapter-item expanded "><a href="advanced_debug_settings.html"><strong aria-hidden="true">5.4.</strong> Advanced: Debug Settings</a></li></ol></li><li class="chapter-item expanded "><a href="module_training.html"><strong aria-hidden="true">6.</strong> Module Training</a></li><li class="chapter-item expanded "><a href="guide_chat_format.html"><strong aria-hidden="true">7.</strong> Guide: Chat Format</a></li><li class="chapter-item expanded "><a href="advanced_special_symbols.html"><strong aria-hidden="true">8.</strong> Advanced: Special Symbols [ATTG]</a></li><li class="chapter-item expanded "><a href="advanced_cfg.html"><strong aria-hidden="true">9.</strong> Advanced: CFG</a></li><li class="chapter-item expanded "><a href="advanced_phrase_repetition_penalty.html"><strong aria-hidden="true">10.</strong> Advanced: Phrase Repetition Penalty</a></li><li class="chapter-item expanded "><a href="advanced_special_modules.html"><strong aria-hidden="true">11.</strong> Advanced: Special Modules</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html" class="active">Text Generation</a></li><li class="chapter-item expanded "><a href="models.html"><strong aria-hidden="true">1.</strong> Models</a></li><li class="chapter-item expanded "><a href="glossary.html"><strong aria-hidden="true">2.</strong> Glossary</a></li><li class="chapter-item expanded "><a href="editor.html"><strong aria-hidden="true">3.</strong> Editor</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="story_settings.html"><strong aria-hidden="true">3.1.</strong> Story Settings</a></li><li class="chapter-item expanded "><a href="advanced_settings.html"><strong aria-hidden="true">3.2.</strong> Advanced Settings</a></li><li class="chapter-item expanded "><a href="slider_settings.html"><strong aria-hidden="true">3.3.</strong> Slider Settings</a></li><li class="chapter-item expanded "><a href="sampling_guide.html"><strong aria-hidden="true">3.4.</strong> Sampling Guide</a></li></ol></li><li class="chapter-item expanded "><a href="lorebook.html"><strong aria-hidden="true">4.</strong> Lorebook</a></li><li class="chapter-item expanded "><a href="text_adventure.html"><strong aria-hidden="true">5.</strong> Text Adventure</a></li><li class="chapter-item expanded "><a href="user_settings.html"><strong aria-hidden="true">6.</strong> User Settings</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ai_settings.html"><strong aria-hidden="true">6.1.</strong> AI Settings</a></li><li class="chapter-item expanded "><a href="interface.html"><strong aria-hidden="true">6.2.</strong> Interface</a></li><li class="chapter-item expanded "><a href="theme.html"><strong aria-hidden="true">6.3.</strong> Theme</a></li><li class="chapter-item expanded "><a href="account.html"><strong aria-hidden="true">6.4.</strong> Account</a></li><li class="chapter-item expanded "><a href="text_to_speach.html"><strong aria-hidden="true">6.5.</strong> Text To Speech</a></li><li class="chapter-item expanded "><a href="default.html"><strong aria-hidden="true">6.6.</strong> Default</a></li><li class="chapter-item expanded "><a href="hotkeys.html"><strong aria-hidden="true">6.7.</strong> Hotkeys</a></li><li class="chapter-item expanded "><a href="advanced_debug_settings.html"><strong aria-hidden="true">6.8.</strong> Advanced: Debug Settings</a></li></ol></li><li class="chapter-item expanded "><a href="module_training.html"><strong aria-hidden="true">7.</strong> Module Training</a></li><li class="chapter-item expanded "><a href="guide_chat_format.html"><strong aria-hidden="true">8.</strong> Advanced: Chat Format</a></li><li class="chapter-item expanded "><a href="advanced_special_symbols.html"><strong aria-hidden="true">9.</strong> Advanced: Special Symbols [ATTG]</a></li><li class="chapter-item expanded "><a href="advanced_phrase_repetition_penalty.html"><strong aria-hidden="true">10.</strong> Advanced: Phrase Repetition Penalty</a></li><li class="chapter-item expanded "><a href="advanced_special_modules.html"><strong aria-hidden="true">11.</strong> Advanced: Special Modules</a></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
         </nav>
 
         <!-- Track and set sidebar scroll position -->
@@ -116,9 +123,9 @@
                                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
@@ -169,17 +176,20 @@
                         <h1 id="text-generation"><a class="header" href="#text-generation">Text Generation</a></h1>
 <p>NovelAI Text Generation 공식 문서 번역본입니다.
 오역, 의역, 오탈자가 있을 수 있습니다. 원문도 이따금씩 바뀌는데, 이것을 제가 실시간으로 다 파악할 수 없어요. 감안해서 읽어주세요!
-09/02/23 기준.</p>
+각 문서 상단에 업데이트된 날짜가 있습니다.</p>
 <hr />
 <p>NovelAI는 당신을 도울 여러 강력한 도구와 함께 탄탄한 <strong>Text Generation</strong> 서비스를 제공합니다.</p>
 <p>현재, NovelAI 공식문서의 <strong>Text Generation</strong> 섹션은 작성이 진행 중이지만,  Text Generation과 관련된 몇개의 페이지 정도는 찾아볼 수 있습니다.</p>
 <h2 id="topics-to-browse"><a class="header" href="#topics-to-browse">Topics to browse</a></h2>
 <ul>
+<li><a href="./models.html">Models</a></li>
+<li><a href="./glossary.html">Glossary</a></li>
 <li><a href="./editor.html">Editor</a>
 <ul>
 <li><a href="./story_settings.html">Story Settings</a></li>
 <li><a href="./advanced_settings.html">Advanced Settings</a></li>
 <li><a href="./slider_settings.html">Slider Settings</a></li>
+<li><a href="./sampling_guide.html">Sampling Guide</a></li>
 </ul>
 </li>
 <li><a href="./lorebook.html">Lorebook</a></li>
@@ -188,14 +198,17 @@
 <ul>
 <li><a href="./ai_settings.html">AI Settings</a></li>
 <li><a href="./interface.html">Interface</a></li>
+<li><a href="./theme.html">Theme</a></li>
+<li><a href="./account.html">Account</a></li>
 <li><a href="./text_to_speach.html">Text To Speech</a></li>
+<li><a href="./default.html">Default</a></li>
+<li><a href="./hotkeys.html">Hotkeys</a></li>
 <li><a href="./advanced_debug_settings.html">Advanced: Debug Settings</a></li>
 </ul>
 </li>
 <li><a href="./module_training.html">Module Training</a></li>
-<li><a href="./guide_chat_format.html">Guide: Chat Format</a></li>
+<li><a href="./guide_chat_format.html">Advanced: Chat Format</a></li>
 <li><a href="./advanced_special_symbols.html">Advanced: Special Symbols [ATTG]</a></li>
-<li><a href="./advanced_cfg.html">Advanced: CFG</a></li>
 <li><a href="./advanced_phrase_repetition_penalty.html">Advanced: Phrase Repetition Penalty</a></li>
 <li><a href="./advanced_special_modules.html">Advanced: Special Modules</a></li>
 </ul>
@@ -205,7 +218,7 @@
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
 
-                            <a rel="next" href="glossary.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="models.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -216,7 +229,7 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
 
-                    <a rel="next" href="glossary.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="models.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

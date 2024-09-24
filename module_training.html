@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -10,7 +10,7 @@
         
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -31,7 +31,7 @@
         <!-- Custom theme stylesheets -->
 
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
@@ -61,31 +61,38 @@
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var html = document.querySelector('html');
+            var body = document.querySelector('body');
             var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Text Generation</a></li><li class="chapter-item expanded "><a href="glossary.html"><strong aria-hidden="true">1.</strong> Glossary</a></li><li class="chapter-item expanded "><a href="editor.html"><strong aria-hidden="true">2.</strong> Editor</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="story_settings.html"><strong aria-hidden="true">2.1.</strong> Story Settings</a></li><li class="chapter-item expanded "><a href="advanced_settings.html"><strong aria-hidden="true">2.2.</strong> Advanced Settings</a></li><li class="chapter-item expanded "><a href="slider_settings.html"><strong aria-hidden="true">2.3.</strong> Slider Settings</a></li></ol></li><li class="chapter-item expanded "><a href="lorebook.html"><strong aria-hidden="true">3.</strong> Lorebook</a></li><li class="chapter-item expanded "><a href="text_adventure.html"><strong aria-hidden="true">4.</strong> Text Adventure</a></li><li class="chapter-item expanded "><a href="user_settings.html"><strong aria-hidden="true">5.</strong> User Settings</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ai_settings.html"><strong aria-hidden="true">5.1.</strong> AI Settings</a></li><li class="chapter-item expanded "><a href="interface.html"><strong aria-hidden="true">5.2.</strong> Interface</a></li><li class="chapter-item expanded "><a href="text_to_speach.html"><strong aria-hidden="true">5.3.</strong> Text To Speech</a></li><li class="chapter-item expanded "><a href="advanced_debug_settings.html"><strong aria-hidden="true">5.4.</strong> Advanced: Debug Settings</a></li></ol></li><li class="chapter-item expanded "><a href="module_training.html" class="active"><strong aria-hidden="true">6.</strong> Module Training</a></li><li class="chapter-item expanded "><a href="guide_chat_format.html"><strong aria-hidden="true">7.</strong> Guide: Chat Format</a></li><li class="chapter-item expanded "><a href="advanced_special_symbols.html"><strong aria-hidden="true">8.</strong> Advanced: Special Symbols [ATTG]</a></li><li class="chapter-item expanded "><a href="advanced_cfg.html"><strong aria-hidden="true">9.</strong> Advanced: CFG</a></li><li class="chapter-item expanded "><a href="advanced_phrase_repetition_penalty.html"><strong aria-hidden="true">10.</strong> Advanced: Phrase Repetition Penalty</a></li><li class="chapter-item expanded "><a href="advanced_special_modules.html"><strong aria-hidden="true">11.</strong> Advanced: Special Modules</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Text Generation</a></li><li class="chapter-item expanded "><a href="models.html"><strong aria-hidden="true">1.</strong> Models</a></li><li class="chapter-item expanded "><a href="glossary.html"><strong aria-hidden="true">2.</strong> Glossary</a></li><li class="chapter-item expanded "><a href="editor.html"><strong aria-hidden="true">3.</strong> Editor</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="story_settings.html"><strong aria-hidden="true">3.1.</strong> Story Settings</a></li><li class="chapter-item expanded "><a href="advanced_settings.html"><strong aria-hidden="true">3.2.</strong> Advanced Settings</a></li><li class="chapter-item expanded "><a href="slider_settings.html"><strong aria-hidden="true">3.3.</strong> Slider Settings</a></li><li class="chapter-item expanded "><a href="sampling_guide.html"><strong aria-hidden="true">3.4.</strong> Sampling Guide</a></li></ol></li><li class="chapter-item expanded "><a href="lorebook.html"><strong aria-hidden="true">4.</strong> Lorebook</a></li><li class="chapter-item expanded "><a href="text_adventure.html"><strong aria-hidden="true">5.</strong> Text Adventure</a></li><li class="chapter-item expanded "><a href="user_settings.html"><strong aria-hidden="true">6.</strong> User Settings</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ai_settings.html"><strong aria-hidden="true">6.1.</strong> AI Settings</a></li><li class="chapter-item expanded "><a href="interface.html"><strong aria-hidden="true">6.2.</strong> Interface</a></li><li class="chapter-item expanded "><a href="theme.html"><strong aria-hidden="true">6.3.</strong> Theme</a></li><li class="chapter-item expanded "><a href="account.html"><strong aria-hidden="true">6.4.</strong> Account</a></li><li class="chapter-item expanded "><a href="text_to_speach.html"><strong aria-hidden="true">6.5.</strong> Text To Speech</a></li><li class="chapter-item expanded "><a href="default.html"><strong aria-hidden="true">6.6.</strong> Default</a></li><li class="chapter-item expanded "><a href="hotkeys.html"><strong aria-hidden="true">6.7.</strong> Hotkeys</a></li><li class="chapter-item expanded "><a href="advanced_debug_settings.html"><strong aria-hidden="true">6.8.</strong> Advanced: Debug Settings</a></li></ol></li><li class="chapter-item expanded "><a href="module_training.html" class="active"><strong aria-hidden="true">7.</strong> Module Training</a></li><li class="chapter-item expanded "><a href="guide_chat_format.html"><strong aria-hidden="true">8.</strong> Advanced: Chat Format</a></li><li class="chapter-item expanded "><a href="advanced_special_symbols.html"><strong aria-hidden="true">9.</strong> Advanced: Special Symbols [ATTG]</a></li><li class="chapter-item expanded "><a href="advanced_phrase_repetition_penalty.html"><strong aria-hidden="true">10.</strong> Advanced: Phrase Repetition Penalty</a></li><li class="chapter-item expanded "><a href="advanced_special_modules.html"><strong aria-hidden="true">11.</strong> Advanced: Special Modules</a></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
         </nav>
 
         <!-- Track and set sidebar scroll position -->
@@ -116,9 +123,9 @@
                                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
@@ -167,8 +174,9 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="module-training"><a class="header" href="#module-training">Module Training</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
 <h2 id="modules-at-a-glance"><a class="header" href="#modules-at-a-glance">Modules At a Glance</a></h2>
-<p><strong>Tip</strong>에서 봤겠지만, 모듈은 &quot;AI를 스타일, 장르 혹은 설정에 집중시킬&quot; 수 있고, &quot;특정 주제를 다루거나 유명한 작가, 글쓰기 스타일을 흉내내거나, 참고 자료를 제공할 수 있습니다.&quot; 그런데 <strong>Module Trainer</strong>는 어떻게 사용하고, 어떻게 이것을 최대한 활용할 수 있을까요?</p>
+<p><strong>Tip</strong>에서 봤겠지만, 모듈은 "AI를 스타일, 장르 혹은 설정에 집중시킬" 수 있고, "특정 주제를 다루거나 유명한 작가, 글쓰기 스타일을 흉내내거나, 참고 자료를 제공할 수 있습니다." 그런데 <strong>Module Trainer</strong>는 어떻게 사용하고, 어떻게 이것을 최대한 활용할 수 있을까요?</p>
 <p><strong>Splash Screen</strong>에서 왼쪽의 <strong>Library Sidebar</strong>를 열고 Goose/Identicon을 클릭하여 <strong>User Menu</strong>를 여십시오. 그러면 <strong>Other</strong> 섹션에서 <strong>AI Module Training</strong>을 찾을 수 있을 겁니다. 이를 클릭하면 <strong>Module Trainer</strong>로 들어갈 수 있고 여기에서, 선택한 텍스트로 모듈을 학습할 수 있습니다. 학습이 끝난 모듈을 사용하면 AI의 출력물을 해당 텍스트와 비슷하게 만들 수 있습니다.</p>
 <h2 id="the-module-trainer"><a class="header" href="#the-module-trainer">The Module Trainer</a></h2>
 <p>자, <strong>Module Trainer</strong>를 열었을 때 약간 부담감이 생겼더라고 괜찮습니다. 모듈을 요리하는 데에는 여러 옵션과 방법이 있습니다! 하지만 가장 먼저 <strong>자료를 업로드<em>Upload Your Material</em></strong>해야 합니다.</p>
@@ -207,35 +215,38 @@
 <h3 id="the-provided-modules"><a class="header" href="#the-provided-modules">The Provided Modules</a></h3>
 <p><em>Specials</em> 섹션은 '추가 기능이 있는' 모듈을 위해 예약된 자리입니다. 여기에서 <a href="#text-adventure">Text Adventure Module</a>를 찾을 수 있습니다. <em>General</em> 섹션에서는 스토리에 <strong>No Module</strong> 옵션을 선택하거나, 다양한 스토리 주제에 적합한 <strong>Cross-Genre</strong> 장르 옵션을 선택할 수 있습니다. <em>Style</em> 섹션은 특정 유명 작가의 자료를 포함하는 모듈이 있습니다. <em>Theme</em> 섹션은 가장 크며, 특정 문학 장르의 다양한 자료를 묶은 모듈의 큰 선택지를 제공합니다. <em>Inspiration</em> 섹션은 Theme 섹션과 유사하지만, 그 대신 더 좁은 범위의 작품을 샘플링하여 보다 구체적이고 집중된 출력을 내는 모듈이 있습니다.</p>
 <h4 id="text-adventure"><a class="header" href="#text-adventure">Text Adventure</a></h4>
-<p>이 모듈은 <strong>Editor</strong>의 외형을 Text Adventure 인터페이스로 바꾸기 때문에 <em>Specials</em>로 분류되었습니다! 간단히 말해, 이 모듈의 훈련 데이터는 완전히 이인칭(모든 문장에서 &quot;You&quot;를 사용함)으로 작성되었으며, <code>&gt;</code> 문자로 표시된 고유한 '플레이어 액션'을 가지고 있습니다. 텍스트 어드벤쳐 모드의 더 자세한 내용은 [documentation article](Matty’s Page Here)를 확인하십시오.</p>
+<p>이 모듈은 <strong>Editor</strong>의 외형을 Text Adventure 인터페이스로 바꾸기 때문에 <em>Specials</em>로 분류되었습니다! 간단히 말해, 이 모듈의 훈련 데이터는 완전히 이인칭(모든 문장에서 "You"를 사용함)으로 작성되었으며, <code>&gt;</code> 문자로 표시된 고유한 '플레이어 액션'을 가지고 있습니다. 텍스트 어드벤쳐 모드의 더 자세한 내용은 [documentation article](Matty’s Page Here)<sup class="footnote-reference"><a href="#1">1</a></sup>를 확인하십시오.</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>역자가 마크다운을 잘못 사용한 것이 아니다. 원문에 이렇게 표기되어 있다.</p>
+</div>
 <h2 id="advanced-module-engineering"><a class="header" href="#advanced-module-engineering">Advanced: Module Engineering</a></h2>
 <p>주의: 이 섹션은 <em>훨씬</em> 더 기술적인 언어를 사용하고 모듈을 최대한 활용하려는 고급 NovelAI 사용자를 대상으로 하고 있습니다. 이 섹션 내용의 이해를 위해 일부 기술 전문 용어와 기본적인 머신러닝 개념에 익숙하다고 가정합니다.</p>
 <h3 id="secret-tweaks"><a class="header" href="#secret-tweaks">Secret Tweaks</a></h3>
 <h4 id="images-for-custom-modules"><a class="header" href="#images-for-custom-modules">Images for Custom Modules</a></h4>
 <p>AI Modules Gallery를 둘러보다 보면, 제공된 모듈들은 스타일리쉬한 썸네일 이미지를 갖고 있지만 사용자의 모듈은 모두 같은 보물 더미 이미지를 한 것을 확인할 수 있습니다. 다행히 이 이미지를 바꿀 방법이 있습니다! UI에서 공식적으로 지원되지는 않고, 텍스트 에디터의 사용이 필요합니다. 단순한 메모장도 좋지만 Notepad++이나 VSCode를 사용하면 더 빠르게 문자열을 찾고 읽을 수 있습니다. 다운로드된 .Module 파일을 텍스트 에디터로 열고 최하단으로 스크롤하세요. 그럼 다음처럼 보이는 몇 줄의 텍스트가 있을 겁니다:</p>
 <pre><code>],
-&quot;mode&quot;: 0
+"mode": 0
 }
 </code></pre>
 <p>'mode' 뒤에 한줄을 추가하면 다음처럼 됩니다:</p>
 <pre><code>],
-&quot;mode&quot;: 0,
-&quot;image&quot;: &quot;&lt;image&gt;&quot;
+"mode": 0,
+"image": "&lt;image&gt;"
 </code></pre>
 <p>그런 다음 원하는 모듈 썸네일 이미지를 원하는 호스팅 사이트(예를 들면, imgur)에 업로드하고 해당 이미지의 링크를 위 예시의 <code>&lt;image&gt;</code> 플레이스홀더에 붙여넣습니다. 그러면 다음처럼 보일 것입니다:</p>
 <pre><code>],
-&quot;mode&quot;: 0,
-&quot;image&quot;: &quot;https://i.imgur.com/yourmoduleimagehere.png&quot;
+"mode": 0,
+"image": "https://i.imgur.com/yourmoduleimagehere.png"
 </code></pre>
 <h4 id="text-adventure-mode-for-custom-modules"><a class="header" href="#text-adventure-mode-for-custom-modules">Text Adventure Mode for Custom Modules</a></h4>
-<p>AI 출력을 대화형 Text Adventure처럼 동작하도록 변경하는 커스텀 모듈을 만들었다면, 해당 모듈을 선택했을 때 모듈이 Editor UI를 Text Adventure UI로 변경하도록 만들 수도 있습니다! 방금 위에서 이야기한 &quot;mode&quot; 라인을 <code>0</code>에서 <code>1</code>로 변경하면 됩니다.</p>
+<p>AI 출력을 대화형 Text Adventure처럼 동작하도록 변경하는 커스텀 모듈을 만들었다면, 해당 모듈을 선택했을 때 모듈이 Editor UI를 Text Adventure UI로 변경하도록 만들 수도 있습니다! 방금 위에서 이야기한 "mode" 라인을 <code>0</code>에서 <code>1</code>로 변경하면 됩니다.</p>
 <p>수정을 한 후에 모듈 파일을 저장하고 NovelAI로 해당 모듈 파일을 다시 임포트하는 것을 잊지마세요!</p>
 <h3 id="training-data-in-depth"><a class="header" href="#training-data-in-depth">Training Data In Depth</a></h3>
 <p>처음 모듈을 만들 때, 여러 이야기나 좋아하는 작품의 텍스트들을 모으고 이를 모두 모듈에 넣는 것은 일반적으로 흔히 볼 수 있는 광경입니다. 그러나 모듈의 성능을 최대한 활용하기 위해서는 모듈의 훈련 데이터를 모을 때 고려해야 할 여러 사항이 있습니다.</p>
 <p>무엇보다도 중요한 것은 모듈에 넣는 모든 훈련 데이터는 중심적인 초점을 가져야 한다는 것입니다. 즉, 모듈이 무엇을 하게 <em>하고</em> 싶은지, 그리고 추가하는 훈련 데이터가 그것을 어떻게 도울 것인지를 알아야 합니다. 그 이후에는 모듈 데이터의 형식화와 정리에 대한 기술적인 세부사항으로 들어갑니다.</p>
 <p>모둘 훈련 절차는 사용자가 제출한 훈련 자료에 존재하는 다양한 에러들에 의해 손상될 수 있으므로, 가능한 가장 깨끗한 데이터를 제공하는 것이 중요합니다! 아래 나열된 데이터 손상 요인을 제거하는데 도움이 되는 많은 도구가 있지만, 이런 잠재적 문제를 어떻게 해결할지는 사용자에게 달려있습니다.</p>
 <p>제일 먼저, 과도하고 잘못 배치된 공백 문자가 있습니다. 문단 사이를 포함하여 어느 곳에서나 빈 줄은 좋지 못하고, 개행 앞/뒤에 오는 공백과 패딩 문자가 있는 것도 역시 좋지 못합니다. 둘째, 모든 형태의 헤더, 풋터, 챕터 지시자, 기타 다른 섹션 제목도 제거해야 합니다. module trainer에게 순수한 주제만 제공해야하며, 그렇지 않다면 결과물이 이런 종류의 시작과 끝 자료가 포함될 위험성이 있습니다. 셋째, 장면 간 전환은 별도의 줄에 dinkus (<code>***</code>)를 추가하여 명확하게 표시되야 하고, 챕터의 전환은 별도의 줄에 asterism (<code>⁂</code>)를 추가하여 표시해야 합니다. 이것은 훈련 데이터에 있어야 하는 유일한 '구분자'의 형태입니다.</p>
-<p>네번째, 텍스트에 일반적이지 않은 타이포그래피 문자가 있어서는 안됩니다. 이것의 가장 흔한 예는 '바보 따옴표' (<code>&quot;</code>와 <code>'</code>)<sup class="footnote-reference"><a href="#바보 따옴표">2</a></sup>와 '똑똑한 따옴표' (<code>“”</code>와 <code>‘’</code>)<sup class="footnote-reference"><a href="#똑똑한 따옴표">3</a></sup>를 같은 모듈에서 혼용하는 것이며, 이는 AI의 출력을 혼동스럽게 만드는 쉬운 방법입니다! 마지막으로 이름, 단어, 혹은 구절이 과도하게 사용되지 않는지 확인해야 합니다. 이것들은 모듈을 이상한 방식으로 작동하게 만들 수 있습니다. 예를 들어, 텍스트 데이터에 Mr. Brown 캐릭터가 서류가방을 가지고 있다고 항상 언급되고 이것이 텍스트에서 너무 자주 발생한다면, 모듈은 서류가방이 언급될 때마다 Mr. Brown을 나타나게 할 것입니다!</p>
+<p>네번째, 텍스트에 일반적이지 않은 타이포그래피 문자가 있어서는 안됩니다. 이것의 가장 흔한 예는 '바보 따옴표' (<code>"</code>와 <code>'</code>)<sup class="footnote-reference"><a href="#바보 따옴표">2</a></sup>와 '똑똑한 따옴표' (<code>“”</code>와 <code>‘’</code>)<sup class="footnote-reference"><a href="#똑똑한 따옴표">3</a></sup>를 같은 모듈에서 혼용하는 것이며, 이는 AI의 출력을 혼동스럽게 만드는 쉬운 방법입니다! 마지막으로 이름, 단어, 혹은 구절이 과도하게 사용되지 않는지 확인해야 합니다. 이것들은 모듈을 이상한 방식으로 작동하게 만들 수 있습니다. 예를 들어, 텍스트 데이터에 Mr. Brown 캐릭터가 서류가방을 가지고 있다고 항상 언급되고 이것이 텍스트에서 너무 자주 발생한다면, 모듈은 서류가방이 언급될 때마다 Mr. Brown을 나타나게 할 것입니다!</p>
 <div class="footnote-definition" id="바보 따옴표"><sup class="footnote-definition-label">2</sup>
 <p>역주: 키보드에서 입력할 수 있는 직선모양의 일반적인 따옴표를 말한다.</p>
 </div>
@@ -243,7 +254,7 @@
 <p>역주: 구부러진 모양의 따옴표이다.</p>
 </div>
 <h3 id="training-mechanics"><a class="header" href="#training-mechanics">Training Mechanics</a></h3>
-<p>더 기술적으로 접근하면, 모듈을 훈련시키는 것이 무엇을 의미하는지 더 잘 이해하기위해 Module Trainer가 어떻게 작동하는지 정확하게 살펴보는 것은 가치가 있습니다. 이전 섹션에서 설명한 것처럼, 모듈을 훈련시키기 위해 제공한 데이터에는 &quot;스텝 수&quot;가 지정되고, 모든 훈련 데이터를 커버하기 위해 필요한 스텝의 수를 '100% 스텝'이라고 합니다.</p>
+<p>더 기술적으로 접근하면, 모듈을 훈련시키는 것이 무엇을 의미하는지 더 잘 이해하기위해 Module Trainer가 어떻게 작동하는지 정확하게 살펴보는 것은 가치가 있습니다. 이전 섹션에서 설명한 것처럼, 모듈을 훈련시키기 위해 제공한 데이터에는 "스텝 수"가 지정되고, 모든 훈련 데이터를 커버하기 위해 필요한 스텝의 수를 '100% 스텝'이라고 합니다.</p>
 <p>실제로 '스텝'은 실제적인 구체적 단위로, 256 토큰으로 구성됩니다. 훈련 데이터가 Module Trainer에 제공될 때, 훈련 데이터는 각각 256 토큰의 '청크<em>chunk</em>'로 나뉘고, 마지막 청크는 대부분의 데이터가 완전히 균등하게 가득찬 256 토큰으로 나누어지지 않기 때문에 패딩됩니다. 그래서 모듈을 100%의 스텝으로 훈련하는 것은 단순히 Module Trainer가 훈련 데이터가 나누어진 모든 256 토큰의 청크를 통과하게 하는 것을 의미합니다. 다음으로 가장 중요한 것은 Module Trainer가 실제로 이런 데이터의 청크로 훈련을 할 때, 이 청크들은 랜덤하게 섞이며 섞이는 순서는 각각 훈련 실행마다 고유하다는 것입니다.</p>
 <p>만약 백 퍼센트의 단위(100%, 200%, ...)로 훈련을 할 경우에는 괜찮습니다. 이 경우에 Module Trainer는 모든 청크를 한번, 두번 그리고 그 이상씩을 볼 것이고 섞임이 효과적으로 상쇄되기 때문입니다. 하지만 예를 들어 100%를 넘겨 훈련을 하기로 결정한다면, Module Trainer가 어떤 청크를 두번 보게 될 것인지, 한번반 보게 될 것인지 보장할 수 없습니다(알릴 방법도 없어요!). 같은 논리로 100% 미만의 훈련도 같은 위험을 갖고 있습니다. Module Trainer가 일부 청크를 볼 수 없기 때문입니다.</p>
 
@@ -255,7 +266,7 @@
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="guide_chat_format.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="guide_chat_format.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -269,7 +280,7 @@
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="guide_chat_format.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="guide_chat_format.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

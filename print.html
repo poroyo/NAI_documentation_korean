@@ -1,17 +1,17 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>NovelAI Documentation</title>
-        <meta name="robots" content="noindex" />
+        <meta name="robots" content="noindex">
 
 
         <!-- Custom HTML head -->
         
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -32,7 +32,7 @@
         <!-- Custom theme stylesheets -->
 
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
@@ -62,31 +62,38 @@
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var html = document.querySelector('html');
+            var body = document.querySelector('body');
             var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Text Generation</a></li><li class="chapter-item expanded "><a href="glossary.html"><strong aria-hidden="true">1.</strong> Glossary</a></li><li class="chapter-item expanded "><a href="editor.html"><strong aria-hidden="true">2.</strong> Editor</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="story_settings.html"><strong aria-hidden="true">2.1.</strong> Story Settings</a></li><li class="chapter-item expanded "><a href="advanced_settings.html"><strong aria-hidden="true">2.2.</strong> Advanced Settings</a></li><li class="chapter-item expanded "><a href="slider_settings.html"><strong aria-hidden="true">2.3.</strong> Slider Settings</a></li></ol></li><li class="chapter-item expanded "><a href="lorebook.html"><strong aria-hidden="true">3.</strong> Lorebook</a></li><li class="chapter-item expanded "><a href="text_adventure.html"><strong aria-hidden="true">4.</strong> Text Adventure</a></li><li class="chapter-item expanded "><a href="user_settings.html"><strong aria-hidden="true">5.</strong> User Settings</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ai_settings.html"><strong aria-hidden="true">5.1.</strong> AI Settings</a></li><li class="chapter-item expanded "><a href="interface.html"><strong aria-hidden="true">5.2.</strong> Interface</a></li><li class="chapter-item expanded "><a href="text_to_speach.html"><strong aria-hidden="true">5.3.</strong> Text To Speech</a></li><li class="chapter-item expanded "><a href="advanced_debug_settings.html"><strong aria-hidden="true">5.4.</strong> Advanced: Debug Settings</a></li></ol></li><li class="chapter-item expanded "><a href="module_training.html"><strong aria-hidden="true">6.</strong> Module Training</a></li><li class="chapter-item expanded "><a href="guide_chat_format.html"><strong aria-hidden="true">7.</strong> Guide: Chat Format</a></li><li class="chapter-item expanded "><a href="advanced_special_symbols.html"><strong aria-hidden="true">8.</strong> Advanced: Special Symbols [ATTG]</a></li><li class="chapter-item expanded "><a href="advanced_cfg.html"><strong aria-hidden="true">9.</strong> Advanced: CFG</a></li><li class="chapter-item expanded "><a href="advanced_phrase_repetition_penalty.html"><strong aria-hidden="true">10.</strong> Advanced: Phrase Repetition Penalty</a></li><li class="chapter-item expanded "><a href="advanced_special_modules.html"><strong aria-hidden="true">11.</strong> Advanced: Special Modules</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Text Generation</a></li><li class="chapter-item expanded "><a href="models.html"><strong aria-hidden="true">1.</strong> Models</a></li><li class="chapter-item expanded "><a href="glossary.html"><strong aria-hidden="true">2.</strong> Glossary</a></li><li class="chapter-item expanded "><a href="editor.html"><strong aria-hidden="true">3.</strong> Editor</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="story_settings.html"><strong aria-hidden="true">3.1.</strong> Story Settings</a></li><li class="chapter-item expanded "><a href="advanced_settings.html"><strong aria-hidden="true">3.2.</strong> Advanced Settings</a></li><li class="chapter-item expanded "><a href="slider_settings.html"><strong aria-hidden="true">3.3.</strong> Slider Settings</a></li><li class="chapter-item expanded "><a href="sampling_guide.html"><strong aria-hidden="true">3.4.</strong> Sampling Guide</a></li></ol></li><li class="chapter-item expanded "><a href="lorebook.html"><strong aria-hidden="true">4.</strong> Lorebook</a></li><li class="chapter-item expanded "><a href="text_adventure.html"><strong aria-hidden="true">5.</strong> Text Adventure</a></li><li class="chapter-item expanded "><a href="user_settings.html"><strong aria-hidden="true">6.</strong> User Settings</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ai_settings.html"><strong aria-hidden="true">6.1.</strong> AI Settings</a></li><li class="chapter-item expanded "><a href="interface.html"><strong aria-hidden="true">6.2.</strong> Interface</a></li><li class="chapter-item expanded "><a href="theme.html"><strong aria-hidden="true">6.3.</strong> Theme</a></li><li class="chapter-item expanded "><a href="account.html"><strong aria-hidden="true">6.4.</strong> Account</a></li><li class="chapter-item expanded "><a href="text_to_speach.html"><strong aria-hidden="true">6.5.</strong> Text To Speech</a></li><li class="chapter-item expanded "><a href="default.html"><strong aria-hidden="true">6.6.</strong> Default</a></li><li class="chapter-item expanded "><a href="hotkeys.html"><strong aria-hidden="true">6.7.</strong> Hotkeys</a></li><li class="chapter-item expanded "><a href="advanced_debug_settings.html"><strong aria-hidden="true">6.8.</strong> Advanced: Debug Settings</a></li></ol></li><li class="chapter-item expanded "><a href="module_training.html"><strong aria-hidden="true">7.</strong> Module Training</a></li><li class="chapter-item expanded "><a href="guide_chat_format.html"><strong aria-hidden="true">8.</strong> Advanced: Chat Format</a></li><li class="chapter-item expanded "><a href="advanced_special_symbols.html"><strong aria-hidden="true">9.</strong> Advanced: Special Symbols [ATTG]</a></li><li class="chapter-item expanded "><a href="advanced_phrase_repetition_penalty.html"><strong aria-hidden="true">10.</strong> Advanced: Phrase Repetition Penalty</a></li><li class="chapter-item expanded "><a href="advanced_special_modules.html"><strong aria-hidden="true">11.</strong> Advanced: Special Modules</a></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
         </nav>
 
         <!-- Track and set sidebar scroll position -->
@@ -117,9 +124,9 @@
                                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
@@ -170,17 +177,20 @@
                         <h1 id="text-generation"><a class="header" href="#text-generation">Text Generation</a></h1>
 <p>NovelAI Text Generation 공식 문서 번역본입니다.
 오역, 의역, 오탈자가 있을 수 있습니다. 원문도 이따금씩 바뀌는데, 이것을 제가 실시간으로 다 파악할 수 없어요. 감안해서 읽어주세요!
-09/02/23 기준.</p>
+각 문서 상단에 업데이트된 날짜가 있습니다.</p>
 <hr />
 <p>NovelAI는 당신을 도울 여러 강력한 도구와 함께 탄탄한 <strong>Text Generation</strong> 서비스를 제공합니다.</p>
 <p>현재, NovelAI 공식문서의 <strong>Text Generation</strong> 섹션은 작성이 진행 중이지만,  Text Generation과 관련된 몇개의 페이지 정도는 찾아볼 수 있습니다.</p>
 <h2 id="topics-to-browse"><a class="header" href="#topics-to-browse">Topics to browse</a></h2>
 <ul>
+<li><a href="./models.html">Models</a></li>
+<li><a href="./glossary.html">Glossary</a></li>
 <li><a href="./editor.html">Editor</a>
 <ul>
 <li><a href="./story_settings.html">Story Settings</a></li>
 <li><a href="./advanced_settings.html">Advanced Settings</a></li>
 <li><a href="./slider_settings.html">Slider Settings</a></li>
+<li><a href="./sampling_guide.html">Sampling Guide</a></li>
 </ul>
 </li>
 <li><a href="./lorebook.html">Lorebook</a></li>
@@ -189,32 +199,102 @@
 <ul>
 <li><a href="./ai_settings.html">AI Settings</a></li>
 <li><a href="./interface.html">Interface</a></li>
+<li><a href="./theme.html">Theme</a></li>
+<li><a href="./account.html">Account</a></li>
 <li><a href="./text_to_speach.html">Text To Speech</a></li>
+<li><a href="./default.html">Default</a></li>
+<li><a href="./hotkeys.html">Hotkeys</a></li>
 <li><a href="./advanced_debug_settings.html">Advanced: Debug Settings</a></li>
 </ul>
 </li>
 <li><a href="./module_training.html">Module Training</a></li>
-<li><a href="./guide_chat_format.html">Guide: Chat Format</a></li>
+<li><a href="./guide_chat_format.html">Advanced: Chat Format</a></li>
 <li><a href="./advanced_special_symbols.html">Advanced: Special Symbols [ATTG]</a></li>
-<li><a href="./advanced_cfg.html">Advanced: CFG</a></li>
 <li><a href="./advanced_phrase_repetition_penalty.html">Advanced: Phrase Repetition Penalty</a></li>
 <li><a href="./advanced_special_modules.html">Advanced: Special Modules</a></li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="models"><a class="header" href="#models">Models</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
+<p align="center"><img width="80%" height="80%" src="./NAIModels.png"></p>
+<p>2021년 6월 NovelAI의 출시 이후, 우리는 다양한 획기적인 스토리텔링 AI들을 출시했습니다. 각 모델은 신화 속 이름과, 이에 맞는 수제 삽화를 갖고 있습니다. 이 페이지에서는 그들의 스토리를 소개합니다.</p>
+<h2 id="current"><a class="header" href="#current">Current</a></h2>
+<h3 id="erato"><a class="header" href="#erato">Erato</a></h3>
+<p align="center"><img width="60%" height="60%" src="./EratoPortrait.png"></p>
+<h4 id="ɛrˈato"><a class="header" href="#ɛrˈato">/ɛrˈato/</a></h4>
+<p>2024년 9월 23일 출시된 Erato는 Llama 3 70B Base model을 기초로, 수백억 개의 사전학습된 가장 고품질의, 그리고 업데이트된 자사의 Nerdstash 데이터셋으로 계속 학습을 거친 모델입니다. Kayra를 처음부터 사전학습하는데 들어간 것보다 더 많은 연산을 들어갔죠. 우리의 최신 스토리텔링 데이터셋으로 그녀를 파인튜닝했으며, 주어진 과제인 스토리텔링에 맞춰졌습니다. 초기에 우리는 자체적인 Nerdstash V2 토크나이저로 교체하는 실험을 했지만, 더 높은 압축비율을 제공하는 Llama 3 토크나이저를 결국 사용하기로 했습니다. 덕분에 더 많은 이야기를 컨텍스트에 넣을 수 있게 되었습니다.</p>
+<h3 id="kayra"><a class="header" href="#kayra">Kayra</a></h3>
+<p align="center"><img width="60%" height="60%" src="./KayraPortrait.png"></p>
+<h4 id="kaɪrə"><a class="header" href="#kaɪrə">/kaɪrə/</a></h4>
+<p>자사가 자체 개발한 최신 모델 Kayra는 NovelAI의 모든 기능적 요구를 충족시키는 해답입니다. <strong>130억 개</strong>의 패러미터와 약 1.6조 개의 토큰 데이터로 학습된 그는 다음의 모든 것을 할 수 있습니다: 고품질 storytelling, text adventure, instruct, prose augmentation, 그리고 아이템 목록이나 동영상 스크립트 같은 다양한 특수 케이스 처리 등. 또한, Kayra는 <strong>8192 토큰 컨텍스트 윈도우</strong>를 갖추고 있어 Clio를 연상시키는 기억 능력을 가지며, 이전 모델들보다 4배 높은 성능을 자랑합니다. Kayra는 2023년 7월 28일에 출시되었고, 2023년 8월 15일에 V1.1 업데이트가 이루어졌습니다. Kayra의 이름은 같은 이름을 한 튀르크 창조신에서 따왔으며, 그의 디자인 모티프에는 ‘Shoggy’라는 이름의 H100 GPU 클러스터를 기리기 위한 요소도 포함되어 있습니다.</p>
+<h3 id="clio"><a class="header" href="#clio">Clio</a></h3>
+<p align="center"><img width="80%" height="80%" src="./ClioPortrait.png"></p>
+<h4 id="ˈklaɪoʊ"><a class="header" href="#ˈklaɪoʊ">/ˈklaɪoʊ/</a></h4>
+<p>Shoggy GPU 클러스터에서 훈련된, 자사 최초로 '처음부터 제작된' 모델인 Clio는 상대적으로 작은 모델에 놀랍도록 응축된 엄청난 양의 지삭과 성능을 보여줍니다. 훈련에 <strong>30억개의 패러미터</strong>와 약 <strong>1.6조개의 토큰</strong>으로 Clio는 사이즈의 부족을 속도로 충당합니다. Kayra처럼 그녀는 <strong>8192 토큰 컨텍스트 윈도우</strong>를 가질 뿐만 아니라, Special Modules를 통해 text adventure, instruct, and prose augmentation 기능에 접근할 수 있습니다. Clio는 2023년 5월 23일 출시되었습니다. Clio는 그리스 신화에 나오는 역사의 뮤즈를 따서 명명되었으며, 그녀는 우리의 H100 클러스터에서 훈련을 받았으므로 Kayra와 함께 Shoggy에서 영감을 얻은 디자인 핵심을 공유합니다.</p>
+<h2 id="legacy"><a class="header" href="#legacy">Legacy</a></h2>
+<h3 id="krake"><a class="header" href="#krake">Krake</a></h3>
+<p align="center"><img width="80%" height="80%" src="./KrakePortrait.png"></p>
+<h4 id="kreɪk"><a class="header" href="#kreɪk">/kreɪk/</a></h4>
+<p>이전의 NovelAI 파인튜닝이 적용된 가장 큰 모델 중 하나였던 Krake는 EleutherAI의 <strong>Neo-X 20b</strong> 모델을 활용하여 독특한 감각으로 스토리텔링 경험을 만들어 냅니다. Krake는 다재다능한 모델이지만 느린 생성 속도, <strong>2048 토큰 컨텍스트 윈도우</strong>, 모듈 V2와 호환이 되지 않는다는 몇가지 한계가 있습니다. 개인적 선호가 아니라면 현재 Krake를 추천하지 않습니다. Krake는 2022년 3월 11일 출시되었으며, 2022년 4월 29일 V2로 업데이트되었습니다. Krake의 이름과 디자인은 스칸디나비아 신화의 바다 괴수인 Kraken에서 영감을 얻었습니다.</p>
+<h3 id="euterpe"><a class="header" href="#euterpe">Euterpe</a></h3>
+<p align="center"><img width="80%" height="80%" src="./EuterpePortrait.png"></p>
+<h4 id="juːˈtɜːrpiː"><a class="header" href="#juːˈtɜːrpiː">/juːˈtɜːrpiː/</a></h4>
+<p>Fairseq 제품군의 <strong>13b</strong> 트랜스포머 모델을 기반으로 하는 Euterpe는 NovelAI 역사의 큰 도약을 상징합니다. 비록 지금 시점에서는 구식이지만, 모듈 V2와 Euterpe의 호환성, 인상적인 생성 속도, <strong>2048 토큰 컨텍스트 윈도우</strong>, NovelAI 파인튜닝에 대한 강력한 고수<em>adherence</em>로 인해 그녀는 그 당시 주목을 받았습니다. 그녀는 그녀의 남매는 Sigurd와 함께 커스텀 모듈을 지원하는 두개의 모델 중 하나입니다. Euterpe는 2022년 1월 9일 실험적으로 출시되었으며, 11일에 V1이, 2월 6일에는 V2로 업데이트 되었습니다. Euterpe의 이름과 다지인은 그리스 신화에 나오는 음악의 뮤즈에서 유래했습니다.</p>
+<h3 id="sigurd"><a class="header" href="#sigurd">Sigurd</a></h3>
+<p align="center"><img width="80%" height="80%" src="./SigurdPortrait.png"></p>
+<h4 id="sigʊrd"><a class="header" href="#sigʊrd">/si:'gʊrd/</a></h4>
+<p><strong>EleutherAI's GPT-J model</strong>에 NAI 파인튜닝을 사용하여 탄생한 Sigurd는 NovelAI의 두번째 모델이었습니다. 그럼에도 불구하고 그는 <strong>60억 개의 파라미터</strong>, <strong>3억 개의 토큰</strong> 학습 시간, <strong>2048 토큰의 컨텍스트 윈도우</strong>를 자랑하며, Modules V2와 Custom Modules를 지원합니다. 그리고 더 작은 모델 크기로 인해 매우 빠른 생성 속도를 제공합니다. Sigurd는 2021년 6월 16일 실험적으로 처음 출시되었으며, 6월 17일에 업데이트된 버전이, 6월 28일에 V3가, 11월 11일에 V4가 출시되었습니다. Sigurd의 이름과 디자인은 용 Fáfnir를 죽인 것으로 유명한 게르만 전설의 영웅에서 영감을 받았습니다. Sigurd의 그림은 Klein이 그렸으며, 모델 출시 직후 개최된 디자인 대회에서 선정되었습니다.</p>
+<h3 id="genji"><a class="header" href="#genji">Genji</a></h3>
+<p align="center"><img width="80%" height="80%" src="./GenjiPortrait.png"></p>
+<h4 id="gəndʒiː"><a class="header" href="#gəndʒiː">/gən'dʒiː/</a></h4>
+<p>Euterpe의 파생 파인튜닝 버전인 Genji는 일본어 텍스트에 능숙한 NovelAI 모델을 만들기 위한 초창기의 시도로 출시된 실험적인 모델이었습니다. Clio와 Keyra는 이제 Genji의 능력을 뛰어넘었기 때문에 일본어 생성을 위해 Genji를 사용하는 것은 <strong>더 이상 권장되지 않습니다</strong>. Genji는 2022년 11월 10일 출시되었으며, 2월 6일에 V2 업데이트가 있었습니다. Genji의 이름과 디자인은 헤이안 시대의 일본 소설인 <em>겐지 이야기</em>에게 대략적인 영감을 얻었습니다.</p>
+<h3 id="snek"><a class="header" href="#snek">Snek</a></h3>
+<p align="center"><img width="60%" height="60%" src="./SnekPortrait.png"></p>
+<h4 id="snɛk"><a class="header" href="#snɛk">/snɛk/</a></h4>
+<p>Euterpe의 또 다른 파생 파인튜닝 버전인 Snek은 Python 코드 작성 전용 모델을 만들기 위한 일환으로 출시된 실험적인 모델이었습니다. 이 기능들은 현장에서 다른 모델들로 대체되었기 때문에 Python 코드를 생성하기 위해 Snek을 사용하는 것은 <strong>더 이상 권장되지 않습니다</strong>. Snek은 2022년 11월 10일 출시되었습니다. Snek의 이름과 디자인은 Python 프로그래밍 언어의 로고를 기반으로 만들어졌습니다.</p>
+<h2 id="retired"><a class="header" href="#retired">Retired</a></h2>
+<h3 id="calliope"><a class="header" href="#calliope">Calliope</a></h3>
+<p align="center"><img width="80%" height="80%" src="./CalliopePortrait.png"></p>
+<h4 id="kəˈlaɪəpi"><a class="header" href="#kəˈlaɪəpi">/kəˈlaɪ.əpi/</a></h4>
+<p>NovelAI의 첫번째 모델인 Calliope는 모든 것이 시작된 곳입니다. 재빠르고 민첩한 이 <strong>2.7억개의 매개변수</strong>를 가진 Calliope은 현재 우리가 즐기고 있는 많은 트윅과 추가 기능이 부족했고, 이후로 사용이 중지되었습니다. Calliope는 <strong>2021년 7월 16일</strong>, NovelAI와 함께 출시되었습니다. Calliope의 이름과 디자인은 그리스 신화에 나오는 웅변과 서사시의 뮤즈를 기반으로 합니다.</p>
+<p>모델 리스트에서 더이상 선택은 할 수 없지만 <a href="https://blog.novelai.net/goodbye-calliope-ec114ea6d025">여기</a>의 블로그에서 GPL-2.0 license 라이센스 하에 그녀의 가중치가 공개되어 있습니다.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="glossary"><a class="header" href="#glossary">Glossary</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
 <p>환영합니다! NovelAI의 새로운 사용자로서 익숙치않은 용어나 개념이 있을 수 있습니다. 이 용어 사전의 목료는 이 공식 문서에서 사용되는 용어를 간단히 설명하는 것입니다.</p>
 <h3 id="ai-model"><a class="header" href="#ai-model">AI Model</a></h3>
+<p>일명 대형 언어 모델 또는 LLM이라고도 합니다. 간단히 말해서, AI 모델은 깊은 학습 알고리즘을 사용하여 많은 데이터를 읽으며 학습합니다. 분석된 데이터의 엄청난 양은 AI가 언어를 이해하고 글쓰기를 계속하는 방법을 예측할 수 있게 합니다.</p>
+<p>이 초기 훈련 후, AI 모델은 세심하게 선별된 데이터셋을 사용하여 AI의 능력을 더욱 향상시키는 '파인 튜닝'이라는 과정을 거칩니다. NovelAI의 파인 튜닝은 AI가 스토리텔링을 더 잘하도록 만드는 데 중점을 둡니다.</p>
 <h3 id="ai-modules"><a class="header" href="#ai-modules">AI Modules</a></h3>
+<p>소프트 프롬프트로도 불립니다. 모듈은 특정 스타일이나 장르에 대해 AI의 행동과 생성물에 직접적으로 영향을 미칩니다. 우리가 제공하는 <strong>Default Modules</strong>을 사용하거나 제공하는 훈련 데이터에 자신만의 <a href="./module_training.html">커스텀 모듈</a>을 훈련시킬 수 있습니다.</p>
 <h3 id="anlas"><a class="header" href="#anlas">Anlas</a></h3>
+<p>NovelAI의 프리미엄 화폐입니다. NovelAI에 구독하면 <img src="./anla.svg" alt="" /> Anlas를 받게 됩니다. 받는 양은 구독 티어에 따라 다릅니다. 또한, <strong>갱신되는 구독</strong>이 있다면 <strong>유료 <img src="./anla.svg" alt="" />Anlas</strong>를 구매할 수 있습니다.</p>
+<p>현재 Anlas를 사용해야 하는 유일한 기능은 이미지 생성과 <a href="./module_training.html">커스텀 모듈 훈련</a>입니다.</p>
 <h3 id="banned-tokens"><a class="header" href="#banned-tokens">Banned Tokens</a></h3>
+<p>AI가 특정 토큰 시퀀스를 생성하지 못하게 하는 데 사용됩니다.</p>
+<p>사용자는 <a href="./slider_settings.html">고급 설정 사이드바</a>에서 금지된 토큰을 설정할 수 있습니다.</p>
 <h3 id="config-preset"><a class="header" href="#config-preset">Config Preset</a></h3>
+<p>AI의 동작 방식을 조정하기 위한 특정 생성 설정 집합입니다. 이 매개변수에는 randomness, repetition penalty, sampling 방법과 적용 순서와 같은 요소가 포함됩니다.</p>
+<p>각 AI 모델은 기본 구성 프리셋 세트를 갖추고 있습니다. 또한 자신의 요구에 따라 사용자 정의 프리셋을 만들 수도 있습니다.</p>
 <h3 id="context"><a class="header" href="#context">Context</a></h3>
+<p>AI가 출력을 생성하기 전에 볼 수 있는 토큰의 범위입니다. 컨텍스트는 이야기의 현재 지점에서 시작하여 최대 컨텍스트 크기에 도달할 때까지 거슬러 올라갑니다. AI에 관한 한 컨텍스트 외부의 모든 것은 사실상 발생하지 않은 것과 같습니다. 최대 컨텍스트 크기는 현재 구독 티어와 선택한 <strong>AI 모델</strong>에 따라 다릅니다.</p>
+<p>컨텍스트가 빌드될 때, <strong>Memory</strong>, <strong>Author's Note</strong>, <strong>Lorebook 항목</strong>은 <strong>삽입 설정</strong>에 따라 컨텍스트에 주입됩니다.</p>
 <h3 id="dinkus"><a class="header" href="#dinkus">Dinkus</a></h3>
+<p>세 개의 애스터리스크(***)로 구성된 특별한 토큰으로, 주로 <em>장면이나 챕터의 분</em>리를 나타내는 데 사용됩니다.</p>
 <h3 id="phrase-bias"><a class="header" href="#phrase-bias">Phrase Bias</a></h3>
+<p>AI가 특정 단어나 구절을 생성할 가능성을 높이거나 낮추는 도구입니다. 부정적인 구절 편향 값은 가능성을 줄이고, 긍정적인 값은 높입니다.</p>
+<p>Phrase Bias은 <a href="./slider_settings.html">고급 설정 사이드바</a>와 <a href="./lorebook.html">로어북</a>에서 설정할 수 있습니다.</p>
 <h3 id="prompt"><a class="header" href="#prompt">Prompt</a></h3>
+<p>이야기에서 AI 생성이 발생하기 전에 작성된 초기 텍스트입니다. 프롬프트는 AI가 생성할 내용의 기초를 제공합니다. 기본적으로, 프롬프트는 “NovelAI Dark” 테마에서 크림색으로 표시됩니다.</p>
 <h3 id="scenario"><a class="header" href="#scenario">Scenario</a></h3>
+<p><code>.scenario</code> 파일은 이야기를 시작하기 위한 초기 프롬프트와 <strong>Memory</strong>, <strong>Author's Note</strong>, <strong>Lorebook</strong> 안의 모든 정보를 포함합니다. 시나리오는 또한 작가가 선택한 AI 모델과 설정 프리셋을 포함합니다. 시나리오를 불러올 때, 작가가 남긴 자리 표시자를 채우도록 요청받을 수 있습니다.</p>
 <h3 id="token"><a class="header" href="#token">Token</a></h3>
+<p>AI가 언어를 처리하고 생성하는 데 사용하는 기본 단위의 텍스트입니다. AI 모델은 단어를 개별 글자로 보지 않습니다. 대신, 텍스트는 토큰으로 나뉘며, 이는 단어 또는 단어 조각일 수 있습니다.</p>
+<p>토큰이 배열되는 방식과 토큰 ID는 AI 모델이 사용하는 <a href="https://novelai.net/tokenizer">토크나이저</a>에 따라 달라집니다.</p>
+<p>예를 들어, "The quick brown fox jumps over the goblin." 이라는 문장은 GPT-NeoX 20B와 Krake가 사용하는 Pile 토크나이저로 "The| quick| brown| fox| jumps| over| the| go|bl|in."으로 토큰화되며, 각 |는 토큰 간의 경계를 나타냅니다.</p>
+<img src="./tokenizersmall.png">
 <h3 id="token-probabilities"><a class="header" href="#token-probabilities">Token Probabilities</a></h3>
+<p>Logits라고도 불립니다. AI가 출력을 생성할 때, AI는 토큰풀에서 선택을 합니다. Token Probabilities는 AI가 각 토큰을 사용할 확률을 가리킵니다. 토큰의 % 확률은 생성 설정, bias, ban, 모듈에 영향을 받습니다.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="editor"><a class="header" href="#editor">Editor</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
 <p><strong>Editor</strong>는 NovelAI에서 스토리를 작성할 때 상호작용하게 될 인터페이스의 주요 섹션입니다. 먼저 Editor에서 직접 글을 쓴 다음 <strong>Send &gt;</strong> 버튼이나 <strong>Ctrl + Enter (맥에서는 ⌘Command + Enter)</strong> 를 누르면 AI가 생성을 시작합니다.</p>
 <p>모든 AI 생성과 사용자 입력은 분기되는 타임라인처럼 <strong>Edit History</strong>에 저장됩니다. <img src="./undo.svg" height="6"> <strong>Undo</strong> 버튼을 누르면 타임라인에서 한 스텝 뒤로 가고, <img src="./redo.svg" height="6"> <strong>Redo</strong>는 한스텝 앞으로 갑니다.</p>
 <p><img src="./editor-editor1.gif" alt="" /></p>
@@ -228,10 +308,10 @@
 <li><span style="color:#F0B6FE"><strong>유저가 수정한 것</strong>은 분홍색으로 표시되며, AI가 생성한 글에서 유저가 수정한 내용을 나타냅니다.</span></li>
 <li><span style="color:#8DD3FF"><strong>유저 입력</strong>은 파란색으로 표시되며, Editor에서 당신이 직접 작성한 글을 나타냅니다.</span></li>
 </ul>
-<p>이 색상들은 기본 &quot;NovelAI Dark&quot; 테마에 해당하며 <img src="./setting.svg" alt="setting" /> <strong>User Settings</strong>의 테마탭에서 수정할 수 있습니다.</p>
+<p>이 색상들은 기본 "NovelAI Dark" 테마에 해당하며 <img src="./setting.svg" alt="setting" /> <strong>User Settings</strong>의 테마탭에서 수정할 수 있습니다.</p>
 <h2 id="title"><a class="header" href="#title">Title</a></h2>
-<p>Editor 최상단에는 현재 스토리의 제목이 있습니다. 이것은 단지 관리적인 목적일 뿐이며 AI에는 영향을 미치지 않습니다.
-<img src="./title_gen.svg" alt="" /> <strong>Title Generation</strong> 버튼은 스토리의 내용을 기반으로 창의적인 제목을 만들어냅니다 - AI가 어떤 제목을 만들지는 알 수 없습니다!</p>
+<p>Editor 최상단에는 현재 스토리의 제목이 있습니다. 이것은 단지 관리적인 목적일 뿐이며 AI에는 영향을 미치지 않습니다.</p>
+<p><img src="./title_gen.svg" alt="" /> <strong>Title Generation</strong> 버튼은 스토리의 내용을 기반으로 창의적인 제목을 만들어냅니다 - AI가 어떤 제목을 만들지는 알 수 없습니다!</p>
 <p>제목을 만든 후에는, <img src="./title-gen-his.svg" height="14"> <strong>Title Generation History</strong> 버튼을 눌러 뒤로 돌아가거나 AI가 만들어낸 제목의 마지막 50개 중에 선택할 수 있습니다. <em>Note: Title Generation History는 현재 세션에서만 적용이 되며 NovelAI가 닫히면 지워집니다.</em></p>
 <h2 id="hypebot"><a class="header" href="#hypebot">Hypebot</a></h2>
 <p><img src="./HypeShot.png" alt="" /></p>
@@ -242,7 +322,7 @@
 Hypebot의 위트있는 코멘트가 마음에 들지 않나요? <img src="./setting.svg" alt="" /> <strong>User Settings</strong>의 AI 설정 탭에서 Hypebot의 코멘트가 얼마나 자주 나올지 조절할 수 있어요. Hypebot의 얼굴을 클릭하여 요청할 때만 Hypebot이 코멘트를 달게 할 수도 있어요!</p>
 </blockquote>
 <h2 id="input-box"><a class="header" href="#input-box">Input Box</a></h2>
-<p><strong>Input Box</strong>는 Editor에 글을 작성하는 대신, 스토리에 글을 추가할 수 있는 대체 방법입니다. input box는 기본적으로는 꺼져 있지만 <img src="./setting.svg" alt="" /> <strong>User Settings</strong>의 인터페이스 탭에서 활성화할 수 있습니다.</p>
+<p><strong>Input Box</strong>는 Editor에 글을 작성하는 대신, 스토리에 글을 추가할 수 있는 또 다른 방법입니다. input box는 기본적으로는 꺼져 있지만 <img src="./setting.svg" alt="" /> <strong>User Settings</strong>의 인터페이스 탭에서 활성화할 수 있습니다.</p>
 <p><em>Note: Input box는 Editor V2에서는 사용할 수 없습니다.</em></p>
 <p><img src="./input%20box.png" alt="" /></p>
 <h2 id="inline-generation"><a class="header" href="#inline-generation">Inline Generation</a></h2>
@@ -253,8 +333,8 @@ Hypebot의 위트있는 코멘트가 마음에 들지 않나요? <img src="./set
 </blockquote>
 <h2 id="context-menu"><a class="header" href="#context-menu">Context Menu</a></h2>
 <p><img src="./context%20menu.png" alt="" /></p>
-<p>마우스 오른쪽 버튼을 클릭하면 선택한 글과 상호작용할 수 있는 바로바기로 채워진 특수한 컨텐스트 메뉴를 불러옵니다. 이 바로가기들은 선택한 텍스트를 로어북에 빠르게 추가하는 것부터, 더 많은 로어를 생성하기 위한 입력으로 사용하거나, 이야기의 스크린샷을 찍거나, TTS를 사용하여 글을 읽게 하는 것까지 다양합니다.</p>
-<p>엠-대시(—)나 애스터리즘(⁂) 등의 특수 문자를 추가하는 바로가기도 있습니다.</p>
+<p>마우스 오른쪽 버튼을 클릭하면 선택한 글과 상호작용할 수 있는 바로바기로 가득한 특수한 컨텐스트 메뉴를 불러옵니다. 이 바로가기들은 선택한 텍스트를 로어북에 빠르게 추가하는 것부터, 더 많은 로어를 생성하기 위한 입력으로 사용하거나, 이야기의 스크린샷을 찍거나, TTS를 사용하여 글을 읽게 하는 것까지 다양합니다.</p>
+<p>엠-대시(—)나 애스터리스즘(⁂) 등의 특수 문자를 추가하는 바로가기도 있습니다.</p>
 <blockquote>
 <p><img src="./goose.png" alt="" /> <strong>Goose tip:</strong>
 <strong>Ctrl + Right Click</strong>을 눌러 브라우저의 기본 컨텐스트 메뉴를 여는 것도 가능해요. <img src="./setting.svg" alt="" /> <strong>User Settings</strong>의 인터페이스 탭에서 <em>Swap Context Menu Controls</em>을 활성화해서 이 동작을 바꿀 수도 있답니다. 터치 스크린 장치에서는 이 설정과 상관없이 <strong>Ctrl + Right Click</strong>을 누르고 있을 때만 특수한 컨텍스트 메뉴가 보여져요.</p>
@@ -264,21 +344,21 @@ Hypebot의 위트있는 코멘트가 마음에 들지 않나요? <img src="./set
 <p><strong>Screenshot Designer</strong>를 통해 가장 기억에 남는 장면, 인상적인 대사나 주요 플롯을 쉽게 캡쳐할 수 있습니다.</p>
 <p><img src="./screenshot%20designer.png" alt="" /></p>
 <h2 id="token-probabilities-1"><a class="header" href="#token-probabilities-1">Token Probabilities</a></h2>
-<p>활성화되면, 모든 AI 생성은 응답에 대한 Token Probabilities를 반환하며, <img src="./Brainwhite.svg" height="13"> 버튼을 클릭하여 이를 확인할 수 있습니다.</p>
+<p>활성화되면, 모든 AI 생성은 응답에 대한 Token Probabilities를 반환하며, <img src="./Brainwhite.svg" height="13"> <strong>Token Probabilities</strong> 버튼을 클릭하여 이를 확인할 수 있습니다.</p>
 <p>토큰은 그 확률에 따라 색깔로 구분됩니다: <span style="color:#1BD9D6">Low</span>-Medium-<span style="color:#FB6065">High</span></p>
 <p><strong>Token Probabilities</strong>은 AI가 글을 생성하는 동안 토큰을 얼마나 '자신있게' 선택하는지와 AI 생성 설정이 결과물에 얼마나 영향을 미치는지에 대한 측정을 제공합니다. 확률이 높은 토큰은 더 예측 가능한 선택을 나타내고 확률이 낮은 토큰은 덜 관습적이거나 위험한 선택임을 드러내는 신호입니다.</p>
 <p><img src="./token%20probabilities.png" alt="" /></p>
 <p>Token Probabilities은 기본적으로 꺼져 있으며 Token Probabilities을 켜기 위해서는 <img src="./user_settings.html" alt="" /> <strong>User Settings</strong>의 AI 세팅 탭으로 가서 <em>Enable Token Probabilities</em>를 클릭하십시오.</p>
 <p><img src="./token%20probabilities%20enable1.png" alt="" /></p>
 <h3 id="editor-token-probabilities"><a class="header" href="#editor-token-probabilities">Editor Token Probabilities</a></h3>
-<p>이 고급 사용자용 기능을 사용하면, Editor 자체에서 최근 AI 생성에 대한 토큰 선택을 볼 수 있습니다.</p>
-<p><strong>Editor Token Probabilities</strong>을 통해, 당신은 직접 작성할 필요없이 즉석에서 쉽게 AI를 올바른 방향으로 조정할 수 있습니다.</p>
+<p>이 고급 사용자용 기능을 통해 Editor 자체에서 최근 AI 생성에 대한 토큰 선택을 볼 수 있습니다.</p>
+<p><strong>Editor Token Probabilities</strong>을 통해, 직접 작성할 필요없이 즉석에서 쉽게 AI를 올바른 방향으로 조정할 수 있습니다.</p>
 <p><img src="./tokenprobs.gif" alt="" /></p>
 <p>Editor Token Probabilities을 켜기 위해서는, <img src="./setting.svg" alt="" /> <strong>User Settings</strong>의 AI 세팅 탭으로 가서 <em>Enable Token Probabilities</em>와 <em>Editor Token Probabilities</em>를 활성화하십시오.</p>
 <p><img src="./token%20probabilities%20enable2.png" alt="" /></p>
 <p>Editor Token Probabilities는 <strong>Editor V2</strong>를 사용한 스토리에서만 가능합니다.</p>
 <h2 id="text-formatting"><a class="header" href="#text-formatting">Text Formatting</a></h2>
-<p>Editor V2에서 배타적으로 글꼴 서식을 지정할 수 있습니다: <em>기울임</em>, <strong>굵게</strong>, <u>밑줄</u> 그리고 <del>취소선</del>. 글자를 선택하고 서식 버튼을 누르거나 Ctrl+i (<em>기울임</em>), Ctrl+b (<strong>굵게</strong>), Ctrl+u (<u>밑줄</u>) 그리고 Ctrl+d (<del>취소선</del>)으로 같은 작업을 수행할 수 있습니다.</p>
+<p>Editor V2에서만 사용할 수 있는 기능으로, 글꼴 서식을 지정할 수 있습니다: <em>기울임</em>, <strong>굵게</strong>, <u>밑줄</u> 그리고 <del>취소선</del>. 글자를 선택하고 서식 버튼을 누르거나 Ctrl+i (<em>기울임</em>), Ctrl+b (<strong>굵게</strong>), Ctrl+u (<u>밑줄</u>) 그리고 Ctrl+d (<del>취소선</del>)으로 같은 작업을 수행할 수 있습니다.</p>
 <p><img src="./textformatting.png" alt="" /></p>
 <p>이것은 순수하게 시각적인 효과이며 AI는 서식이 지정된 글자와 보통 글자 사이의 다른 점을 보지 못한다는 사실을 염두에 두십시오.</p>
 <h2 id="highlight-speech"><a class="header" href="#highlight-speech">Highlight Speech</a></h2>
@@ -294,20 +374,20 @@ Hypebot의 위트있는 코멘트가 마음에 들지 않나요? <img src="./set
 </code></pre>
 </blockquote>
 <h2 id="editor-v2"><a class="header" href="#editor-v2">Editor V2</a></h2>
-<p><strong>Editor V2</strong>는 기존의 텍스트 에디터의 개선판으로, 모바일 기기에서의 향상된 성능과 접근성을 위해 처음부터 만들어졌습니다.</p>
+<p><strong>Editor V2</strong>는 기존의 텍스트 에디터의 개선판으로, 모바일 기기에서의 향상된 성능과 접근성을 위해 밑바닥에서부터 만들어졌습니다.</p>
 <p>Editor V2의 주요 특징은 다음과 같습니다:</p>
 <ul>
 <li>자동, 그리고 수정 텍스트 포매팅.</li>
 <li>긴 이야기에서 더 나은 성능을 위한 스토리 섹션의 다이내믹 로딩.</li>
 <li>텍스트 포매팅과 다른 옵션에 빠르게 접근할 수 있는 에디터 도구상자.</li>
-<li>텍스트 출처의 실시간 감지</li>
-<li>히스토리 트리의 실행 취소/다시 실행 통합</li>
-<li>Editor를 떠나지 않고 이야기 저장하는 기능</li>
-<li>모바일에서의 컨텍스트 메뉴</li>
-<li>Editor Token Probabilities 지원</li>
-<li>더 쉬워진 지시 입력</li>
+<li>텍스트 출처의 실시간 감지.</li>
+<li>히스토리 트리의 실행 취소/다시 실행 통합.</li>
+<li>Editor를 떠나지 않고 이야기 저장하는 기능.</li>
+<li>모바일에서의 컨텍스트 메뉴.</li>
+<li>Editor Token Probabilities 지원.</li>
+<li>더 쉬워진 지시 입력.</li>
 </ul>
-<p>기본적으로 <strong>Editor V2</strong>은 모든 사용자에 대해 켜져 있습니다. 여러 이유로 구버전 에디터로 돌아가고 싶다면, <img src="./setting.svg" alt="" /> <strong>User Settings</strong>의 인터페이스 탭에 가서 <em>Use Editor V2 for New Stories</em>를 끌 수 있습니다.</p>
+<p>기본적으로 <strong>Editor V2</strong>은 모든 사용자에 대해 켜져 있습니다. 특정 이유로 인해 구버전 에디터로 돌아가고 싶다면, <img src="./setting.svg" alt="" /> <strong>User Settings</strong>의 인터페이스 탭에 가서 <em>Use Editor V2 for New Stories</em>를 끌 수 있습니다.</p>
 <p>장래에 Editor V2가 구버전 에디터를 완전하게 대체할 거라는 것을 명심하십시오.</p>
 <p><img src="./editorv2enable.png" alt="" /></p>
 <p>Editor V1에서 만든 이야기를 V2로 변환하기 위해서는 라이브러리 사이드바의 <img src="./penwriting.svg" alt="" /> <strong>Story Settings</strong>을 열고 <strong>Download Backup and Convert</strong>을 클릭하십시오.</p>
@@ -315,10 +395,11 @@ Hypebot의 위트있는 코멘트가 마음에 들지 않나요? <img src="./set
 <p><strong>Editor V2</strong>를 사용하는 스토리는 라이브러리 사이드바의 클립 아이콘으로 확인할 수 있습니다.</p>
 <p><img src="./editorv2indicator.png" alt="" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="story-settings"><a class="header" href="#story-settings">Story Settings</a></h1>
-<p>옵션 사이드바의 첫번째 탭인 <strong>Story</strong> 탭은 NovelAI 모험을 시작하는 첫 번째 단계라고 할 수 있습니다. 이 곳에서, 사용하길 원하는 <strong>AI Model</strong>을 선택하고 <strong>Config Preset</strong>을 고르고, <strong>Memory</strong>와 <strong>Author's Note</strong> 정보를 채우는 등의 일을 할 수 있습니다! <a href="./editor.html">Editor</a> 오른쪽 사이드의 편리한 위치에 있는 이 곳에서 <strong>Lorebook Quick Access</strong> 바에서 로어북 엔트리들을 빠르게 검색하고, 스토리 통계를 보고, 스토리 파일을 추출하거나 지우는 이 모든 작업을 할 수 있습니다.</p>
+<p><em>Last contents updated 9/24/2024</em></p>
+<p>옵션 사이드바의 첫번째 탭인 <strong>Story</strong> 탭은 NovelAI 모험을 시작하는 첫 번째 단계라고 할 수 있습니다. 이 곳에서, 사용하길 원하는 <strong>AI Model</strong>을 선택하고 <strong>Config Preset</strong>을 고르고, <strong>Memory</strong>와 <strong>Author's Note</strong> 정보를 채우는 등의 일을 할 수 있습니다! <strong>Lorebook Quick Access</strong> 바에서 로어북 엔트리들을 빠르게 검색하고, 스토리 통계를 보고, 스토리 파일을 추출하거나 지우는 이 모든 작업을 <a href="./editor.html">Editor</a> 오른쪽 사이드의 편리한 위치에 있는 이 곳에서 할 수 있습니다.</p>
 <h2 id="ai-model-1"><a class="header" href="#ai-model-1">AI Model</a></h2>
 <p align="center"><img src="./AIModelDropdown.gif"></p>
-<p><strong>Story</strong> 탭 오른쪽 최상단의 AI Model 셀렉터에서, 파인튜닝되고 실험적인 모델을 선택할 수 있습니다!</p>
+<p><strong>Story</strong> 탭 오른쪽 최상단의 AI Model 셀렉터에서, 자사의 파인튜닝되고 실험적인 모델을 선택할 수 있습니다!</p>
 <p><strong>Change Default</strong> 버튼을 클릭하면 <a href="./ai_settings.html">AI Settings</a> 메뉴로 들어갈 수 있고, 그곳에서 기본 스토리 모델과 프리셋, 모듈을 포함하여 <strong>Lorebook</strong> 생성에 사용할 모델을 선택할 수 있습니다. <strong>AI Settings</strong> 메뉴에서 선택한 기본 세팅은 새 스토리를 만들 때 적용됩니다.</p>
 <blockquote>
 <p><img src="./goose.png" alt="" /> <strong>Goose tip:</strong>
@@ -326,8 +407,8 @@ Hypebot의 위트있는 코멘트가 마음에 들지 않나요? <img src="./set
 </blockquote>
 <h2 id="ai-module"><a class="header" href="#ai-module">AI Module</a></h2>
 <p align="center"><img src="./AIModuleDropdown.gif"></p>
-<p><strong>AI Modules</strong>은 AI를 원하는 장르, 설정, 혹은 월드에 집중시키게 하는 강력한 도구입니다. 영향력 있는 작가나 문체에 초점을 맞추거나 특정한 주제 혹은 텍스트 어드벤쳐 등이 될 수 있습니다. 60가지가 넘는 다양한 모듈을 선택 가능하기 때문에 그 가능성은 무궁무진합니다! <strong>All Modules</strong> 버튼을 클릭하면 사용자가 임포트한 사용자 모듈을 포함하여 설명과 함께 모든 모듈의 라이브러리를 확인할 수 있습니다! 또한 이 메뉴의 드롭다운 메뉴를 통해 모델을 삭제할 수도 있습니다.
-<a href="./advanced_special_modules.html">Special AI Modules</a> 섹션을 클릭하여 Clio나 Kayra 모듈에 관한 자세한 정보를 얻고, <a href="./module_training.html">Modules</a> 섹션에서 구모델들을 확인하세요.</p>
+<p><strong>AI Modules</strong>은 AI를 원하는 장르, 설정, 혹은 월드에 집중시키게 하는 강력한 도구입니다. 영향력 있는 작가나 문체에 초점을 맞추거나 특정한 주제 혹은 텍스트 어드벤쳐 등이 될 수 있습니다. 60가지가 넘는 다양한 모듈을 선택 가능하기 때문에 그 가능성은 무궁무진합니다! <strong>All Modules</strong> 버튼을 클릭하면 사용자가 임포트한 사용자 모듈을 포함하여 설명과 함께 모든 모듈의 라이브러리를 확인할 수 있습니다! 또한 이 메뉴의 드롭다운 메뉴를 통해 모델을 삭제할 수도 있습니다.</p>
+<p><a href="./advanced_special_modules.html">Special AI Modules</a> 섹션을 클릭하여 Clio나 Kayra 모듈에 관한 자세한 정보를 얻고, <a href="./module_training.html">Modules</a> 섹션에서 구모델들을 확인하세요.</p>
 <p align="center"><img src="./AllModules.png"></p>
 <h2 id="config-preset-1"><a class="header" href="#config-preset-1">Config Preset</a></h2>
 <p align="center"><img src="configdropdown.gif"></p>
@@ -346,7 +427,7 @@ Memory Box는 당신이 원하는 거의 모든 방식으로 사용할 수 있�
 </blockquote>
 <h2 id="authors-note"><a class="header" href="#authors-note">Author's Note</a></h2>
 <p align="center"><img src="./authorsnotebox.png"></p>
-<p><strong>Author's Note</strong> 박스에 입력되는 정보는 AI가 <a href="./advanced_settings.html#context">Story Context</a>에서 보는 것들 중에서 가장 최신의 텍스트 중 하나입니다. <strong>Author's Note</strong>는 기본적으로 <a href="story_settings.html#memory">Memory</a>보다 더 최근의 컨텍스트에 삽입되므로 메모리의 더 강력한 버전처럼 작동합니다! 약간의 짧은 문장을 넣어서 '일어났으면' 하고 바라는 이야기, AI가 더 집중해줬으면 하는 이야기의 디테일, 원하는 방향으로 AI가 출력물을 생성할 수 있게 은근슬쩍 쿡 찔러볼 수 있는 모든 것을 설명하고 사용할 수 있습니다. Author's Note 박스에 입력되는 모든 것은 AI에 강한 영향력을 미치므로 이 박스를 부지런히 업데이트하십시오.</p>
+<p><strong>Author's Note</strong> 박스에 입력되는 정보는 AI가 <a href="./advanced_settings.html#context">Story Context</a>에서 보는 것들 중에서 가장 최신의 텍스트 중 하나입니다. <strong>Author's Note</strong>는 기본적으로 <a href="story_settings.html#memory">Memory</a>보다 더 최근의 컨텍스트에 삽입되므로 메모리의 더 강력한 버전처럼 작동합니다! 짧은 문장을 넣어서 발생했으면 하는 이야기, AI가 더 집중해줬으면 하는 이야기의 디테일, 원하는 방향으로 AI가 출력물을 생성할 수 있게 은근슬쩍 쿡 찔러볼 수 있는 모든 것을 설명하고 사용할 수 있습니다. Author's Note 박스에 입력되는 모든 것은 AI에 강한 영향력을 미치므로 이 박스를 부지런히 업데이트하십시오.</p>
 <h2 id="lorebook-quick-access"><a class="header" href="#lorebook-quick-access">Lorebook Quick Access</a></h2>
 <p align="center"><img src="./lorebookquickaccess.png"></p>
 <p><strong>Lorebook Quick Access</strong> 검색바는 로어북을 열지 않고도 스토리 탭에서 바로 로어북 엔트리를 빠르게 검색하고, 보고, 수정할 수 있게 해줍니다. Lorebook Quick Access 검색바를 통해 <strong>Editor</strong> 화면을 가리지 않고 로어북 엔트리를 수정하거나 정보를 더블 체크할 수 있습니다.</p>
@@ -415,6 +496,7 @@ Memory Box는 당신이 원하는 거의 모든 방식으로 사용할 수 있�
 <p align="center"><img src="./deletestory.png"></p>
 <p><strong>Delete Story</strong> 버튼을 누르면 이야기가 삭제됩니다. 삭제된 이야기는 복구할 수 없으므로 팝업 창에서 삭제버튼을 누르기 전에 정말로 이야기를 삭제하고 싶은지 확인하세요!</p>
 <p align="center"><img src="./DeleteStoryPopup.png"></p><div style="break-before: page; page-break-before: always;"></div><h1 id="advanced-settings"><a class="header" href="#advanced-settings">Advanced Settings</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
 <img src="./AdvancedSettingsTab.gif" style="float: right; height: 800px; width: 40%; margin: 10px;">
 <p><strong>고급 세팅Advanced Settings</strong> 탭에서는 <strong>Story Context</strong> 등과 관련된 모든 옵션들이 있습니다! 처음에는 다소 압도감을 느낄 수도 있지만  <strong>Phrase Bias</strong>과 <strong>Banned Tokens</strong> 기능과 함께 <strong>Context</strong>를 이해하고 컨트롤하는 것은 모두 AI를 안내할 수 있는 강력한 방법입니다.</p>
 <ul>
@@ -474,7 +556,7 @@ Memory Box는 당신이 원하는 거의 모든 방식으로 사용할 수 있�
 <p align="center"><img src="./ContextViewerText.png"></p>
 <p>주 <strong>Context Viewer</strong> 창은 스크롤 가능한 박스 안에 전체 컨텍스트를 보여줍니다. <strong>Context Viewer Bar</strong>와 유사하게 각 출처<sup class="footnote-reference"><a href="#a">1</a></sup>에 따라 다른 색상으로 표시된다.</p>
 <p align="center"><img src="./ContextViewerShowNonActivated.png"></p>
-<p><strong>Show non-activated entries</strong> 토글을 켜면 하단의 <strong>Context Viewer Information</strong> 박스를 확장하여 켜져는 있지만 비활성화 상태의 모든 로어북 항목을 보여줍니다.</p>
+<p><strong>Show non-activated entries</strong> 토글을 켜면 하단의 <strong>Context Viewer Information</strong> 박스를 확장하여, 켜져는 있지만 비활성화 상태의 모든 로어북 항목을 보여줍니다.</p>
 <p align="center"><img src="./ContextViewerIdentifiers.png"></p>
 <p><strong>Context Viewer Information</strong> 박스는 <strong>Story Context</strong>에 대한 또 다른 상세한 통계입니다. 해당 섹션은 로어북 항목과 <strong>Story Settings</strong> 박스에 대한 깊이 있는 정보를 보여줍니다.</p>
 <ul>
@@ -489,7 +571,7 @@ Memory Box는 당신이 원하는 거의 모든 방식으로 사용할 수 있�
 <li><strong>Trim Type</strong>: <strong>Lorebook</strong>이나 <strong>Context Settings</strong>에서 정의된 설정에 따라, 다른 항목의 공간을 확보하기 위해 해당 항목이 잘리는 방법.</li>
 </ul>
 <p align="center"><img src="./ContextViewerPhraseBiases.png"></p>
-<p>마지막으로, <strong>Included Phrase Bias Groups</strong> 섹션은 </p>
+<p>마지막으로, <strong>Included Phrase Bias Groups</strong> 섹션에서는 활성화된 <code>Lorebook</code> 엔트리 내에서 활성화된 모든 <strong>Phrase Biases</strong>를 보여주며, 왼쪽에는 로어북 항목의 이름이, 오른쪽에는 phrase bias 그룹의 수를 표시합니다.</p>
 <h3 id="context-settings"><a class="header" href="#context-settings">Context Settings</a></h3>
 <p><sup class="footnote-reference"><a href="#lorebook1">2</a></sup></p>
 <p><strong>Context Settings</strong> 메뉴는 4개의 비슷한 섹션을 담고 있습니다: <strong>Memory Context Settings</strong>, <strong>Author's note Context Settings</strong>, <strong>Default Lorebook Settings</strong>와  <strong>Story Context Settings</strong>, 그리고 최상단의 <strong>Reset to Defaults</strong> 버튼. <a href="./lorebook.html">Lorebook</a> 섹션에서 다루는 <strong>Default Lorebook Settings</strong> 섹션을 제외하면 각 세션은 모두 같은 구성을 하고 있습니다.</p>
@@ -576,7 +658,8 @@ Memory Box는 당신이 원하는 거의 모든 방식으로 사용할 수 있�
 <p>역주. 해당 항목이 로어북인지, 메모리인지, 작가노트인지.</p>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="slider-settings"><a class="header" href="#slider-settings">Slider Settings</a></h1>
-<img src="./SlidersTab.gif" style="float: right; height: 800px; width: 40%; margin: 10px;">
+<p><em>Last contents updated 9/24/2024</em></p>
+<img src="./SlidersTab.gif" style="float: right; height: 80%; width: 40%; margin: 10px;">
 <ul>
 <li><a href="slider_settings.html#config-preset">Config Preset</a></li>
 <li><a href="slider_settings.html#generation-options">Generation Options</a>
@@ -588,15 +671,14 @@ Memory Box는 당신이 원하는 거의 모든 방식으로 사용할 수 있�
 </li>
 <li><a href="slider_settings.html#sampling">Sampling</a>
 <ul>
-<li><a href="slider_settings.html#cfg-scale">CFG Scale</a></li>
 <li><a href="slider_settings.html#mirostat">Mirostat</a></li>
 <li><a href="slider_settings.html#nucleus">Nucleus</a></li>
 <li><a href="slider_settings.html#tail-free">Tail Free</a></li>
 <li><a href="slider_settings.html#top-a">Top A</a></li>
 <li><a href="slider_settings.html#top-k">Top K</a></li>
-<li><a href="slider_settings.html#top-g">Top G</a></li>
 <li><a href="slider_settings.html#typical">Typical</a></li>
-<li><a href="slider_settings.html#change-settings-order">Sampling Order</a></li>
+<li><a href="slider_settings.html#unified">Unified</a></li>
+<li><a href="slider_settings.html#settings-order">Sampling Order</a></li>
 </ul>
 </li>
 <li><a href="slider_settings.html#repetition-penalty-1">Repetition Penalty</a></li>
@@ -607,20 +689,24 @@ Memory Box는 당신이 원하는 거의 모든 방식으로 사용할 수 있�
 <p>상단의 <strong>Config Preset</strong> 드롭다운 메뉴는 사용자가 저장하거나 임포트한 모든 프리셋들이 표시되며, 그 아래에 NovelAI의 기본 프리셋들이 나열됩니다. 각 모델은 모델들이 가진 다양한 기본 프리셋이 딸려있으며 이들은 주로 창의적인 글쓰기를, 일부는 특정 글쓰기나 생성 스타일을 위해서 튜닝되었습니다. 드롭다운 메뉴 옆의 펜 아이콘은 선택한 프리셋의 이름을 변경하기 위한 것입니다.</p>
 <p><strong>Import</strong> 및 <strong>Export</strong> 버튼은 여러분의 프리셋을 공유하거나 다른 사람이 공유한 프리셋을 가져올 때 사용될 수 있으며 아래 세팅 중에 하나를 수정할 때마다 <strong>Update active Preset</strong> 팝업이 드롭다운 아래에 나타납니다. <strong>Update active Preset</strong> 드롭다운에서 현재 프리셋을 저장하고, <strong>Reset Changes</strong>를 통해 프리셋을 원래 설정으로 되돌리거나 새 프리셋에 현재 변경점을 저장할 수 있습니다!</p>
 <h2 id="generation-options"><a class="header" href="#generation-options">Generation Options</a></h2>
-<p align="center"><img src="./GenerationOptions.png" width="350"></p>
-<p>이 페이지의 <strong>Generation Options</strong> 섹션은 세가지의 기본 생성 세팅을 포함하고 있습니다: <strong>Randomness</strong>, <strong>Output Length</strong> 그리고 <strong>Repetition Penalty</strong>. 이 세팅들은 대부분 아래의 <a href="slider_settings.html#sampling">Sampler</a>의 어느 것도 조절할 필요 없이 그때그때 봐가면서 조절하기 명확하고 쉬운 것들 입니다.</p>
-<h3 id="randomness"><a class="header" href="#randomness"><strong>Randomness</strong><p></a></h3>
-<p>가장 단순하게, <strong>Randomness</strong> 값은 생성되는 다른 토큰들의 확률이 얼마나 <em>균등</em>한지를 결정하며, 토큰 확률 간의 <em>차이</em>를 늘리거나 줄이지만 <em>결코</em> 토큰들의 초기 순서는 재배열하지 않습니다.</p><p>
-값이 1보다 <strong>크다면</strong>, 낮은 확률의 토큰은 <strong>더 높은 확률</strong>의 토큰에 가까워지도록 기회<em>chance</em>가 <strong>증가</strong>합니다. 값이 1보다 <strong>작다면</strong>, <strong>더 높은 확률</strong>의 토큰은 <strong>더 낮은 확률</strong>의 토큰에서 더 멀어지도록 기회<em>chance</em>가 증가합니다.</p><p align="center"><img src="./Samplersample1.png"></p>
-예를 들어, 만약 위 이미지를 프롬프트로 사용하고 생성될 토큰의 <a href="./editor.html#token-probabilities">확률</a>을 보면...</p>
+<p align="center"><img src="./GenerationOptions.png" width="350px"></p>
+<p>이 페이지의 <strong>Generation Options</strong> 섹션은 세가지의 기본 생성 세팅을 포함하고 있습니다: <strong>Randomness</strong>, <strong>Output Length</strong> 그리고 <strong>Repetition Penalty</strong>. 이 세팅들은 대부분 아래의 <a href="slider_settings.html#sampling">Samplers</a>의 어느 것도 조절할 필요 없이 그때그때 봐가면서 조절하기 명확하고 쉬운 것들 입니다.</p>
+<h3 id="randomness"><a class="header" href="#randomness"><strong>Randomness</strong></a></h3>
+<p>AI 모델은 토큰에 대한 확률을 제공하지만, 토큰을 직접적으로 선택하지는 않습니다. 텍스트를 생성할 때, 우리는 <strong>Probabilities</strong>를 사용하여 토큰을 선택합니다. <strong>Randomness</strong>는 토큰이 선택될 확률에 변화를 줍니다. 가능성이 높은 토큰은 보통 더 적절하거나 '옳다'고 여겨지겠지만, 가장 가능성 높은 토큰만 선택된다면 생성된 텍스트는 반복적이고 지루해질 겁니다. <strong>Randomness</strong>와 아래의 <a href="slider_settings.html#sampling">Samplers</a> 같은 설정은 사용하기에 따라 선택될 수 있는 적거나 많은 다양한 토큰 토큰풀을 형성하여 균형을 맞추는 것에 도움을 줍니다.</p>
+<p><strong>Randomness</strong> = 1 은 토큰 확률이 텍스트의 일반적인 분포를 따른다는 것을 의미합니다. 이것이 기본 설정이며 <strong>Randomness</strong> 사용에 익숙하지 않다면 권장되는 선택이기도 합니다.</p>
+<p><strong>Randomness</strong> &lt; 1 은 <strong>가능성 높은 토큰의 가능성은 더 높아</strong>지고, <strong>가능성이 낮은 토큰은 더 낮아</strong>지는 것을 의미합니다. 낮은 <strong>Randomness</strong>은 논리적인 토큰의 일관성을 높이지만, 반복성이 높아지고 창의력이 낮아진다는 단점이 있습니다. <strong>Randomness</strong>가 너무 낮으면, 생성된 텍스트는 반복에 빠지며 이것은 바람직하지 않습니다. 이것은 머신 러닝에서 자주 논의되는 주제입니다—각 토큰에 대해 확률이 높은 선택만 한다면 장기적으로 나쁜 결과물을 생성한다는 것입니다.</p>
+<p><strong>Randomness</strong> &gt; 1 은 모든 토큰의 생성확률을 더 <strong>같게</strong> 만든다는 의미입니다. 높은 <strong>Randomness</strong>은 더 창의력을 주지만, 결과물에 논리적 오류나 오타 같은 실수를 증가시키는 단점을 낳습니다.</p>
+<p><strong>Randomness</strong>를 1과 가깝게 유지하는 것이 권장됩니다. 만약 <strong>Randomness</strong>가 1보다 높으면 <a href="slider_settings.html#sampling">Samplers</a>를 사용하여 낮은 확률의 토큰을 삭제하는데 도움을 얻을 수 있습니다.</p>
+<p align="center"><img src="./Samplersample1.png"></p>
+<p>예를 들어, 만약 위 이미지를 프롬프트로 사용하고 생성될 토큰의 <a href="./editor.html#token-probabilities">확률</a>을 보면...</p>
 <p align="center">
 <table style="border: 1px solid">
 <tr>
 <td>
-<img src="./randomness1.png" width="300">
+<img src="./randomness1.png" width="300px">
 </td>
 <td>
-<img src="./randomness125.png" width="300">
+<img src="./randomness125.png" width="300px">
 </td>
 </tr>
 <tr>
@@ -634,43 +720,41 @@ Randomness 1.25
 </table>
 </p>
 </p>
-<p><strong>상위</strong> 토큰의 <strong>after</strong> 확률이 상당히 <strong>낮아</strong>진 것을 볼 수 있는 반면, 그 다음에 이어지는 토큰들은 그렇게 심하게 떨어지지 않을 것을 볼 수 있습니다. 해당 수치를 높임으로써 상위 토큰들이 전보다 낮은 확률을 갖게 됨에도 불구하고, 낮은 확률의 토큰에게 더 커진 생성 기회를 주게 됩니다.</p>
-<h3 id="output-length"><a class="header" href="#output-length"><strong>Output Length</strong><p></a></h3>
-<p><strong>Output Length</strong>는 AI가 출력당 생성할 수 있는 텍스트 문자의 최대량을 조절합니다. 최소 4자에서 최대 600자까지입니다. AI 생성의 특성 때문에 긴 출력길이는 품질이 달라질 수 있으니 주의해야 하며, 짧은 출력 길이가 주제를 더 잘 유지하는 경향이 있습니다.</p>
-</p>
-<h3 id="repetition-penalty"><a class="header" href="#repetition-penalty"><strong>Repetition Penalty</strong><p></a></h3>
+<p>이 페이지는 가장 높은 토큰을 보여줍니다. 오른쪽의 <strong>Randomness</strong> 1.25는 <strong>after</strong> 토큰 확률이, 특히 제일 높은 토큰의 확률이 더욱 낮아진 것을 볼 수 있습니다. 높은 <strong>Randomness</strong>는 텍스트가 생성될 때 모든 토큰에게 더 동등한 기회를 주기 때문이며, 위의 페이지에는 확률이 높은 토큰만 나타나기 때문에 거의 모든 <strong>after</strong> 토큰의 확률이 낮아진 것처럼 보이기 때문입니다. 위 페이지에는 나타나지 않은 낮은 확률의 토큰의 <strong>after</strong> 확률은 올라갑니다. 높은 <strong>Randomness</strong>는 토큰들의 확률을 더욱 같게 만들지만 토큰들의 순서는 바꾸지 않습니다.</p>
+<h3 id="output-length"><a class="header" href="#output-length"><strong>Output Length</strong></a></h3>
+<p><strong>Output Length</strong>는 AI가 출력당 생성할 수 있는 텍스트 문자의 최대량을 조절합니다. 구독 티어에 따라 최소 4자에서 최대 600자까지입니다. AI 생성의 특성 때문에 긴 출력길이는 품질이 달라질 수 있으니 주의해야 하며, 짧은 출력 길이가 주제를 더 잘 유지하는 경향이 있습니다.</p>
+<h3 id="repetition-penalty"><a class="header" href="#repetition-penalty"><strong>Repetition Penalty</strong></a></h3>
 <p><strong>Repetition Penalty</strong> 슬라이더는 <strong>context</strong>에서 토큰이 나타날 <strong>확률</strong>에 패널티를 적용하며, 여러번 나타나는 것에는 더 심한 패널티를 부과합니다. 해당 값이 높다면 더욱 심한 패널티를 적용하므로 이 슬라이더를 너무 높이면 출력이 저하되거나 다른 의도치않은 동작을 발생할 수 있습니다. 반면에 너무 낮은 세팅 값에서는 AI가 계속 같은 단어나 구두점을 반복할 수 있습니다. 해당 세팅을 살짝 조절하여 스토리의 페이스나 포커스에 대해 안내하는데 도움이 될 수도 있습니다. 예를 들어, 만약 AI가 특정 캐릭터의 이름이나 세부 사항을 더욱 자주 언급하게 하고 싶다면 해당 슬라이더를 낮추고, 더 다양한 단어 선택을 사용하게 하고 싶다면 이 슬라이더를 높이십시오.</p>
-</p>
 <h2 id="sampling"><a class="header" href="#sampling">Sampling</a></h2>
-<p align="center"><img src="./Sampling.png" width="350"></p>
-<p>아래의 샘플링 옵션은 생성될 때 토큰이 어떻게 재분배되는지, 어떻게 트리밍<em>trimming</em>되는지를 변경합니다.</p>
-<h3 id="cfg-scale"><a class="header" href="#cfg-scale">CFG Scale</a></h3>
-<p><a href="./advanced_cfg.html">Advanced: CFG Scale</a>를 참조하십시오.</p>
+<p align="center"><img src="./Sampling.png" width="350px"></p>
+<p>샘플러의 목표는 토큰의 다양성을 유지하면서 가장 낮은 확률의 토큰을 제거하는 것입니다. <strong>Randomness</strong> 혼자만으로는 달성할 수 없죠. 낮은 <strong>Randomness</strong> 값은 가장 낮은 확률의 토큰을 제거하지만, 가장 높은 확률의 토큰만을 선택할 것이기 때문입니다. 샘플러는 이 간격을 제거하는데 사용됩니다. <strong>Unified</strong>, <strong>Min P</strong>, <strong>Nucleus</strong>을 사용해보는 것을 추천합니다. <a href="./sampling_guide.html">여기</a>에 더 자세한 가이드가 있습니다.</p>
+<h3 id="min-p"><a class="header" href="#min-p">Min P</a></h3>
+<p><strong>Min P</strong>는 가장 가능성이 높은 토큰의 확률에 이 슬라이더의 값을 곱하고, 이 임계값 이하의 토큰은 삭제합니다. 예를 들어, 가장 높은 확률이 0.6이고 Min P 값을 0.1로 설정하면, 확률이 0.06 이하인 토큰은 0으로 설정됩니다.</p>
 <h3 id="mirostat"><a class="header" href="#mirostat">Mirostat</a></h3>
-<p><strong>Mirostat</strong>에는 <strong>Tau</strong>와 <strong>Learning Rate</strong>라는 두개의 슬라이더가 있습니다. 이 샘플러는 Tau 값으로 지정된 주어진 복잡도로 텍스트를 유지하려고 시도하며, 세팅이 높을수록 더욱 복잡한 텍스트를 제공하려고 시도합니다. Learning Rate 슬라이더는 샘플러가 컨텍스트에 얼마나 빠르게 적응할지를 지정합니다. 1로 설정하면 즉각적이고, 낮은 세팅일수록 완화됩니다. 이 샘플러와 <a href="slider_settings.html#change-settings-order">Settings Order</a>의 다른 샘플러와 함께 사용하는 것은 권장되지 않습니다.</p>
+<p><strong>Mirostat</strong>에는 <strong>Tau</strong>와 <strong>Learning Rate</strong>라는 두개의 슬라이더가 있습니다. 이 샘플러는 <strong>Tau</strong> 값으로 지정된 주어진 복잡도로 텍스트를 유지하려고 시도하며, 세팅이 높을수록 더욱 복잡한 텍스트를 제공하려고 시도합니다. <strong>Learning Rate</strong> 슬라이더는 샘플러가 <strong>컨텍스트</strong>에 얼마나 빠르게 적응할지를 지정합니다. 1로 설정하면 즉각적이고, 낮은 세팅일수록 완화됩니다. 이 샘플러를 다른 샘플러와 함께 사용하는 것은 권장되지 않습니다.</p>
 <h3 id="nucleus"><a class="header" href="#nucleus">Nucleus</a></h3>
-<p><strong>Nucleus</strong> 샘플링은 <strong>Top-P</strong>라고도 하며, <strong>가장 높은</strong> 확률의 토큰을 선택하고 각각의 후속 토큰들의 확률의 합이 설정한 <strong>Nucleus</strong> 값에 도달할 때까지 후속 토큰들의 확률을 더합니다. 나머지 토큰들은 모두 <strong>잘려서</strong> 출력의 일관성은 높아지지만, 이 과정에서 많은 <strong>낮은</strong> 확률의 토큰들이 <strong>사라지게</strong>되어 창의성이 희생됩니다. 해당 슬라이더를 <strong>낮게</strong> 설정할 경우 더 많은 토큰이 사라지므로, 해당 값을 실험할 때는 조금만 조정하는 것을 추천합니다.</p>
+<p><strong>Nucleus</strong> 샘플링은 <strong>Top-P</strong>라고도 하며, 토큰을 가장 높은 확률에서 낮은 순서로 정렬하고 낮은 확률의 토큰을 제거합니다. 삭제 기준은 <strong>남은 토큰들의 확률 총합이 슬라이더에서 설정한 값과 같아</strong>질 때까지 입니다. <strong>Nucleus</strong> 샘플링은 출력물의 일관성을 높이지만, <strong>낮은</strong> 확률의 토큰은 이 과정에서 손실되어 창의력이 희생됩니다. 해당 슬라이더를 <strong>낮게</strong> 설정할 경우 더 많은 토큰이 사라지므로, 해당 값을 실험할 때는 조금만 조정하는 것을 추천합니다.</p>
 <h3 id="tail-free"><a class="header" href="#tail-free">Tail Free</a></h3>
 <p><strong>Top K</strong>와 <strong>Nucleus</strong> 샘플링을 대체하기 위해 고안된 <strong>Tail Free</strong>은 출력의 확률의 '꼬리'를 계산하기 위해 수학 공식을 사용합니다. 꼬리, 그리고 <strong>Tail Free</strong> 샘플러에 대한 자세한 설명은 <a href="https://www.trentonbricken.com/Tail-Free-Sampling/">이</a> 블로그 게시글에서 자세히 설명되어 있습니다. 이 샘플러는 가장 낮은 확률의 임계점을 출력 확률 분포의 '<strong>꼬리</strong>'로 결정한 다음 이를 제거합니다. 이렇게 제거된 후에 살아남은 토큰들은 보상을 위해 확률을 재조정합니다.</p>
 <p>간단하게 말해, 이 세팅은 출력의 <a href="./editor.html#token-probabilities">Logical Probabilities</a> 하단에서 수식<em>formula</em>이 최악의 가능성의 토큰으로 간주한 것의 일부를 잘라내는데 도움을 줍니다. 이 슬라이더를 조절할 때는 조금만 조정하는 것을 추천합니다. <strong>Tail-Free</strong>를 0에 가깝게 설정할수록 <strong>최악</strong>의 토큰으로 간주되는 임계점이 더 커지고 강해지기 때문입니다.</p>
 <h3 id="top-a"><a class="header" href="#top-a">Top A</a></h3>
-<p><strong>Top-A</strong> 샘플링에서 설정한 값은, 허용되는 <strong>가장 낮은</strong> 토큰 확률을 자르는 기준점을 정의합니다. Top A 값이 <strong>높을수록</strong> 더 엄격해져 더 많은 토큰을 잘라내는 반면, Top A를 <strong>낮게</strong> 설정하면 더 적은 토큰을 잘라냅니다. 이 제한은 <strong>가장 높은</strong> 확률 토큰을 기준으로 조정됩니다. 예를 들어 한 토큰의 집합에서 상위 토큰이 낮은 확률을 갖는다면, <strong>Top-A</strong> 값이 같을지라도 상위 토큰이 <strong>더 높은</strong> 확률을 가진 집합의 경우보다 잘라내는 토큰의 제한은 <strong>더 낮게</strong> 조정됩니다.</p>
+<p><strong>Top-A</strong>은 <code>(maximum token probability)^2 * A</code> 보다 낮은 확률을 갖는 모든 토큰을 제거합니다. 기본적으로 토큰의 확률이 최상위 토큰의 확률보다 훨씬 작으면 삭제됩니다. Top-A 값이 <strong>높을</strong> 수록 엄격해지며 많은 토큰이 잘립니다.</p>
 <h3 id="top-k"><a class="header" href="#top-k">Top K</a></h3>
-<p><strong>Top K</strong>는 사용과 조정이 가장 간단한 샘플러입니다. <strong>Top K</strong>가 적용되면, 생성되는 토큰의 풀이 슬라이더 설정에 맞게 제한됩니다. 예를 들어, <strong>Top K</strong>가 10으로 설정되어 있다면, 이 샘플러는 최상위 10개의 토큰을 제외한 모든 토큰을 제거합니다. 이 샘플러의 단점은 풀에 있는 토큰의 수가 처음에 설정한 <strong>Top K</strong> 세팅보다 적으면 이 샘플러는 아무런 효과가 없다는 것입니다.</p>
+<p><strong>Top-K</strong>를 사용하면 유지할 토큰의 갯수를 선택하고 나머지는 삭제됩니다. 예를 들어, <strong>Top K</strong>가 10으로 설정되어 있다면, 이 샘플러는 최상위 10개의 토큰을 제외한 모든 토큰을 제거합니다.</p>
 <blockquote>
 <p><img src="./goose.png" alt="" /> <strong>Goose tip:</strong>
-<strong>Top K</strong>을 1로 설정하면 생성을 다시 시도할 때마다 <strong>같은</strong> 토큰을 얻게 되요!</p>
+<strong>Top K</strong>을 1로 설정하면 생성을 다시 시도할 때마다 <strong>같은</strong> 토큰을 얻게 되요! 텍스트 품질을 높이지는 않지만 테스트할 때는 유용할 수 있죠.</p>
 </blockquote>
-<h3 id="top-g"><a class="header" href="#top-g">Top G</a></h3>
-<p><strong>Top G</strong>는 <strong>Top K</strong>와 비슷하게 기능하지만, 가능한 토큰의 최대 수를 제한하는 대신 토큰 <strong>그룹</strong>의 최대 수를 제한하는 설정을 합니다. 여기서 그룹이란 <strong>같은</strong> 확률 값을 공유하는 토큰의 집합을 말합니다. 이 기능은 Kayra 모델에서만 지원합니다.</p>
 <h3 id="typical"><a class="header" href="#typical">Typical</a></h3>
-<p><strong>Typical</strong> 샘플링은 약간 더 복잡한 옵션 중에 하나입니다. 각각 생성된 출력 토큰에 대해 <strong>conditional entropy</strong>라는 것을 계산하는데, 이는 예상되는 <strong>다음</strong> 토큰의 <strong>information content</strong>의 척도입니다. 계산된 값이 <strong>Typical</strong> 세팅과 같거나 <strong>더 높을</strong> 경우, 혹은 <strong>Typical</strong> 세팅의 <strong>음수</strong> 값보다 <strong>낮으면</strong> 토큰이 잘립니다.</p>
-<h3 id="change-settings-order"><a class="header" href="#change-settings-order">Change Settings Order</a></h3>
+<p><strong>Typical</strong> 샘플링은 약간 더 복잡한 옵션 중에 하나입니다. 생성된 각 출력 토큰에 대해, 엔트로피 계산을 통해 "예상되는 토큰의 확률"을 추정합니다. 예상된 확률보다 토큰의 확률이 너무 크거나 낮으면 해당 토큰은 삭제됩니다. <strong>Typical</strong> 설정은 유지할 토큰의 비율을 결정합니다. 1은 모든 토큰을 유지하고, 0은 모든 토큰을 삭제합니다. 해당 샘플러는 비정상적으로 높은 확률의 토큰을 삭제한다는 것을 명심하세요. 다양하고 다채로운 생성을 하겠지만, 출력물의 품질이 낮을 수도 있습니다.</p>
+<h3 id="unified"><a class="header" href="#unified">Unified</a></h3>
+<p><strong>Unified</strong> 샘플링은 세가지의 패러미터를 갖는다: <strong>Linear</strong>, <strong>Quad</strong>, <strong>Conf</strong>. <strong>Linear</strong>는 <a href="slider_settings.html#randomness">1/Randomness</a>와 같고 값이 높을수록 높은 확률을 증시키고, 낮은 확률을 낮춥니다. <strong>Quad</strong> 낮은 확률을 더 작게 만듭니다: 확률이 낮을수록, 그것의 확률을 더 낮출 것입니다. <strong>Conf</strong> 상위 확률들이 모두 작다면 <strong>Linear</strong>를 늘리지만, 확률이 하나 혹은 두개의 토큰에 집중되어 있다면 효과가 없습니다. 공식은 <code>output log-probability = (input log-probability) * (Linear + Entropy * Conf) - (input log-probability)^2 * Quad</code> 입니다.</p>
+<h3 id="settings-order"><a class="header" href="#settings-order">Settings Order</a></h3>
 <p align="center"><img src="./OrderSettings.png"></p>
 <p><strong>Order Settings</strong> 창을 통해 <strong>샘플러</strong>의 순서를 바꿀 수 있습니다. 샘플러는 위에서부터 아래로 적용됩니다. 화살표 버튼을 사용하거나 개별 박스를 드래그하여 샘플러 순서를 바꾸고 오른쪽의 버튼을 눌러 토글하십시오. Temperature(Randomness)는 비활성화<strong>할 수 없습니다.</strong></p>
 <p>샘플러는 적용하는 순서는 예상할 수 없는 효과를 일으킬 수 있으므로 기본 구성 프리셋으로 시작하여 실험을 해보십시오.</p>
 <h2 id="repetition-penalty-1"><a class="header" href="#repetition-penalty-1">Repetition Penalty</a></h2>
-<p align="center"><img src="./RepetitionPenalty.png" width="300"></p>
+<p align="center"><img src="./RepetitionPenalty.png" width="300px"></p>
 <p><strong>Repetition</strong> 섹션과 아래의 <a href="slider_settings.html#alternative-repetition-penalty">Alternative Repetition Penalty</a> 옵션들은 모두 글 생성을 덜 반복적으로 만들기 위한 것입니다.</p>
 <ul>
 <li><strong>Phrase Repetition Penalty</strong><p>
@@ -691,7 +775,7 @@ Randomness 1.25
 <li><strong>Slope</strong><p>
 <strong>Slope</strong> 슬라이더는 컨텍스트의 가장 최근 토큰과의 거리에 따라, 설정한 <strong>Repetition Penalties</strong>(<strong>Phrase Repetition Penalty</strong>는 <strong>제외</strong>)의 몇퍼센트를 컨텍스트의 토큰에 적용할 지를 지정합니다. 비활성화되면 기울기가 적용되지 않으며 모든 패널티가 평범하게 적용됩니다.<p>
 <strong>Slope</strong>가 1과 <strong>같거나</strong> 1보다 <strong>작은</strong> 값으로 설정된다면, <strong>마지막</strong> 토큰만 100%의 패널티 값을 받고, 이전 토큰들은 <strong>줄어든</strong> 패널티 퍼센트를 겪게 됩니다. 이 감소는 <strong>Slope</strong>를 0에 가깝게 설정할 수록 완만하고 점진적이 됩니다. 값을 정확하게 1로 설정하면, 각 토큰에 대한 퍼센트 감소는 <strong>동일</strong>한 양이 되고 기울기가 곧은 상향선이 됩니다.<p>
-만약 값이 1보다 <strong>크다면</strong>, <strong>Slope</strong>는 직선에서 계단 모양으로 바뀌고, <strong>Slope</strong> 값이 최대값인 10에 가까워질수록 <em>더</em> 강렬<em>intense</em>해집니다. 이 범위에서, 가장 최근의 여러 토큰이 100%의 패널티 값을 받을 수 있지만, 이전 토큰은 갑자기 패널티 비율이 크게 감소하는 &quot;절벽&quot;이 형성됩니다. <strong>Slope</strong>가 10이면, 컨텍스트의 절반은 100%의 패널티 값을 받는 반면, 나머지 절반은 패널티를 전혀 받지 않습니다.</li>
+만약 값이 1보다 <strong>크다면</strong>, <strong>Slope</strong>는 직선에서 계단 모양으로 바뀌고, <strong>Slope</strong> 값이 최대값인 10에 가까워질수록 <em>더</em> 강렬<em>intense</em>해집니다. 이 범위에서, 가장 최근의 여러 토큰이 100%의 패널티 값을 받을 수 있지만, 이전 토큰은 갑자기 패널티 비율이 크게 감소하는 "절벽"이 형성됩니다. <strong>Slope</strong>가 10이면, 컨텍스트의 절반은 100%의 패널티 값을 받는 반면, 나머지 절반은 패널티를 전혀 받지 않습니다.</li>
 </ul>
 </p></p></p>
 <ul>
@@ -705,14 +789,97 @@ Randomness 1.25
 <ul>
 <li>
 <p><strong>Presence</strong><p>
-<strong>Presence</strong> 패널티는 기본 <strong>Repetition Penalty</strong>와 비슷하게 동작하지만, 토큰이 얼마나 자주 나타나는지 조정하는 대신 토큰이 나타날 때마다 일정한<em>flat</em> 패널티를 적용합니다. <strong>Presence</strong> 패널티를 실험할 때는 매우 작은 조정만을 하는 걸 추천하는데, 이 값을 너무 높게 설정할 경우 구두점 토큰이 빠르게 패널티를 받아 생성되지 않을 수 있습니다.</p></p>
+<strong>Presence</strong> 패널티는 기본 <strong>Repetition Penalty</strong>와 비슷하게 동작하지만, 토큰이 얼마나 자주 나타나는지 조정하는 것보다는 토큰이 나타날 때마다 일정한<em>flat</em> 패널티를 적용합니다. <strong>Presence</strong> 패널티를 실험할 때는 매우 작은 조정만을 하는 걸 추천하는데, 이 값을 너무 높게 설정할 경우 구두점 토큰이 빠르게 패널티를 받아 생성되지 않을 수 있습니다.</p></p>
 </li>
 <li>
 <p><strong>Frequency</strong><p>
 <strong>Frequency</strong> 패널티는 얼마나 자주 토큰이 나타나는지에 따라 적용되며, 더 일반적인 토큰에는 패널티를 부과하고 덜 일반적인 토큰에는 덜 부과합니다. 만약 이 값이 너무 높다면, <strong>Frequency</strong>는 빠르게 출력의 품질을 저하시킬 수 있으므로, 이것을 실험할 때는 매우 작은 조정만을 해야 합니다. </p></p>
 </li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sampling-guide"><a class="header" href="#sampling-guide">Sampling Guide</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
+<h2 id="kevins-sampling-laboratory"><a class="header" href="#kevins-sampling-laboratory">Kevin's Sampling Laboratory</a></h2>
+<p>다른 샘플러를 활성화하지 않았다면 <strong>Randomness</strong> 1은 중립적인 샘플러입니다. 이는 모델의 출력을 변경하지 않습니다. 다른 샘플러는 이에 비교되어야 합니다. 중립에서 더 멀어질수록 더 이국적(exotic)이라고 할 수 있습니다. 그러나 이러한 이국적 샘플러는 적절하지 않으면 문제를 일으킬 가능성이 더 큽니다.</p>
+<p>하지만 텍스트 품질 벤치마크에서는 <strong>Randomness</strong>만을 사용하는 것보다 <strong>Top K</strong>가, 그리고 <strong>Top K</strong>보다는 Top P(<strong>Nucleus</strong>)가 더 나은 성능을 발휘하는 것으로 알려져 있습니다. 따라서 중립 샘플러에서 벗어나는 것이 좋은데, 이는 확률이 가장 낮은 토큰들이 낮은 품질을 가진 경우가 많지만, 모델은 이를 알지 못하기 때문입니다. 따라서 이러한 토큰들을 가장 적절한 방식으로 제거하는 샘플러를 사용해야 합니다.</p>
+<p>샘플러는 높고 낮은 확률의 균형이 무너지면 성능이 떨어집니다.</p>
+<ol>
+<li>높은 확률의 토큰을 너무 강조하면 출력이 반복되거나 너무 단조로워 집니다.</li>
+<li>낮은 확률의 토큰이 충분히 압축되지 않으면 출력에 이상한 텍스트나 문법적, 논리적 실수가 포함될 수 있습니다.</li>
+</ol>
+<p>AI의 생성텍스트를 추가하기 전에 정확성과 품질을 위해 AI의 생성물을 편집하는 것은 도움이 됩니다. 모델은 기존 이야기와 유사한 텍스트를 생성하려고 하기 때문인데, 그 과정에서 문법 오류나 반복도 포함됩니다: 모델이 오류를 인식하면 동일한 유형의 오류를 더 많이 생성하게 됩니다. 오류가 컨텍스트 내에서 충분히 누적되면 출력물이 일관성을 잃게 됩니다. 이러한 문제는 오류가 발생할 때마다 제거하여 방지할 수 있습니다. 철자 오류는 발생하지 않으니 걱정할 필요는 없습니다.</p>
+<p>샘플러는 오른쪽 상단 아이콘을 클릭하여 열 수 있는 Slider 섹션에서 제어됩니다. <a href="./slider_settings.html">각 샘플러에 대한 간략한 설명이 담긴 문서</a>도 있습니다.</p>
+<p><strong>Change Samplers</strong>를 클릭하면 샘플러 목록이 나타나며, 여기서 샘플러를 활성화, 비활성화하거나 순서를 변경할 수 있습니다. <strong>Send</strong>를 클릭하여 텍스트를 생성하면 모델은 단어 내 각 토큰에 확률을 할당합니다. 목록에서 첫 번째 샘플러가 이 확률에 적용되며, 그런 다음 두 번째 샘플러가 변경된 확률에 적용된다. 이처럼 샘플러는 위에서 아래로 하나씩 순차적으로 적용됩니다. 따라서 샘플러의 정체성, 순서, 그리고 값이 모두 중요한데, 이는 이해하기 어려운 선택의 마비를 초래할 수 있습니다.</p>
+<p>하지만 잘못된 옵션을 제거하고 나면 남은 선택은 사실 간단합니다.</p>
+<h3 id="rule-1-dont-build-a-large-chain-of-samplers"><a class="header" href="#rule-1-dont-build-a-large-chain-of-samplers">Rule 1: Don't build a large chain of samplers.</a></h3>
+<p><strong>규칙 1: 샘플러를 긴 체인으로 구성하지 마세요.</strong></p>
+<p>복잡한 샘플러들(<strong>Tail Free Sampling</strong>, <strong>Typical P</strong>, <strong>Mirostat</strong>)은 체인으로 연결될 때 제대로 작동하지 않습니다. 이들은 변경된 입력을 받을 경우 이 샘플러의 이론적 근거가 유효하지 않게되며, 의미를 알 수 없는 동작을 수행하게 됩니다.</p>
+<p>다른 샘플러들은 체인에서 깨지지는 않지만, 샘플러의 혼합이 서로의 장점과 약점을 보완하는 경우는 드뭅니다. 대부분의 경우, 하나의 샘플러가 올바르게 작동하면 다른 하나는 그렇지 않습니다. 예외적으로 <strong>Top K</strong>는 일부 체인의 마지막에 사용할 수 있으며, <strong>Unified</strong> 샘플러 이후에는 아주 약한 임계값 샘플러가 유용할 수 있습니다.</p>
+<p>1개의 샘플러를 사용하거나, 수학에 대해 충분히 이해한다면 최대 2개까지만 사용하세요. 특히 샘플러를 하나씩 추가하며 조정하는 방식으로 체인을 구성하지 마세요.</p>
+<p>실제로, 더 많은 샘플러를 포함한 프리셋은 대개 더 나쁜 결과를 가져옵니다. 이는 샘플러가 제대로 조정되지 않았기 때문이며, 경험이 많은 프리셋 디자이너도 마찬가지입니다.</p>
+<h3 id="rule-2-if-you-dont-understand-the-math-use-a-closer-to-neutral-sampler"><a class="header" href="#rule-2-if-you-dont-understand-the-math-use-a-closer-to-neutral-sampler">Rule 2: If you don't understand the math, use a closer-to-neutral sampler.</a></h3>
+<p><strong>규칙 2: 수학적 개념을 이해하지 못한다면 중립에 가까운 샘플러를 사용하세요.</strong></p>
+<p><a href="./slider_settings.html">공식문서 페이지</a>에서는 샘플러를 쉽게 이해할 수 있도록 간단한 영어로 요약하고 있습니다. 하지만 이러한 요약은 각 샘플러의 장단점을 깊이 이해하기에는 충분하지 않습니다. 이 설명들은 또한 지나치게 낙관적인 경향이 있어 샘플러의 한계보다는 기대와 이상을 설명합니다. 이러한 정보만으로는 결정을 내리기가 어렵습니다.</p>
+<p>특히 샘플러를 여러 개 쌓아 사용할 경우, 각 샘플러를 완전히 이해하는 것이 매우 중요합니다.</p>
+<p>샘플러를 조정하려는 경우, 해당 샘플러의 알고리즘을 읽고 이해한 후, <strong>Token Probabilities</strong> 뷰어(왼쪽 하단의 두뇌 아이콘)를 사용하여 그 효과를 확인해야 합니다. 샘플러가 <strong>Before</strong>와 <strong>After</strong> 확률을 어떻게 변형하는지 비교하고, 그것이 아래에 설명된 샘플러가 가져야 할 특성에 맞는지 확인하십시오.</p>
+<h3 id="goals-of-a-sampler"><a class="header" href="#goals-of-a-sampler">Goals of a sampler</a></h3>
+<ol>
+<li>
+<p>샘플러는 가장 낮은 확률의 토큰을 걸러내야 합니다. 확률이 매우 낮은 <strong>Before</strong> 토큰들은 LLM의 내재적인 문제로 인해 자주 낮은 품질의 결과를 초래합니다. 이러한 토큰을 제거함으로써 출력 품질이 개선됩니다. 하지만 <strong>Token Probabilities</strong> 뷰어에서는 최대 10개의 토큰만 보여주므로, 어떤 토큰에서부터 말이 안되는 토큰이 시작하는지를 판단하기가 어렵습니다. 게다가 이 임계점은 모델이 얼마나 분포에 맞는지에 따라 달라지므로, 단어와 이야기마다 다를 수 있습니다. 적절한 제거 기준을 설정하는 것은 어렵지만 시도해볼 수 있습니다. 참고로 <a href="./advanced_debug_settings.html#logprobs-count">NovelAI의 숨겨진 옵션을 사용하면 최대 30개의 토큰을 볼 수 있습니다</a>.</p>
+</li>
+<li>
+<p>몇몇 사용자들은 높은 확률의 토큰들을 평탄화하는 것을 원할 수 있습니다. 즉, 20% 이상의 입력 다른 확률을 가진 토큰들이 비슷한 출력 확률을 가지도록 압축하는 것입니다. 이는 더 독특한 토큰을 이끌어냅니다. AI가 탐험적인 결과를 내기를 원하는 사용자에게 적합하지만, 부적절한 결과가 나올 가능성도 높아져 재시도를 자주 해야 할 수 있습니다.</p>
+</li>
+<li>
+<p>샘플러는 갑작스러운 확률 변화가 없어야 합니다. 예를 들어, 0.05 이하의 확률을 가진 <strong>Before</strong> 토큰들이 0으로 설정되면, 0.06의 확률을 가진 <strong>Before</strong> 토큰의 <strong>After</strong> 확률도 0에 근접해야 합니다. 큰 변화 없이 부드럽게 확률이 0으로 수렴해야 합니다.</p>
+</li>
+<li>
+<p>샘플러는 토큰의 순서를 바꾸면 안됩니다. <strong>Token Probabilities</strong> 뷰어의 <strong>Before</strong> 섹션에서 A &gt; B라면, <strong>After</strong> 섹션에서도 A &gt; B를 유지해야 합니다. (이 규칙은 <strong>샘플러 리스트</strong>에 있는 샘플러들에만 적용됩니다. <strong>Phrase Repetition Penalty</strong>, <strong>Repetition Penalty</strong>, <strong>Phrase Bias</strong>와 같은 다른 변환들은 다른 속성을 갖기 때문에 토큰 순서를 변경해도 됩니다.)</p>
+</li>
+</ol>
+<h3 id="numbers-to-consider"><a class="header" href="#numbers-to-consider">Numbers to consider</a></h3>
+<p><strong>Token Probabilities</strong> 뷰어를 보고, <strong>Before</strong>와 <strong>After</strong> 확률을 비교해보세요. 앞서 언급한 것 외에도 다음과 같은 속성을 관찰해야 합니다:</p>
+<ul>
+<li>큰 확률: <strong>Before</strong> 열에서 확률이 25%를 초과하는 두 확률이 있을 경우, <strong>After</strong> 열에서 그 두 확률의 비율은 <strong>Before</strong> 열에서의 비율과 같거나 1에 더 가까워야 합니다. <strong>After</strong> 확률이 <strong>Before</strong> 확률보다 크거나 작아질 수 있으며, 둘 다 허용됩니다.</li>
+</ul>
+<p>-중간 확률(5% ~ 30% 사이): <strong>After</strong> 확률은 <strong>Before</strong> 확률과 같거나 더 커야 합니다.</p>
+<ul>
+<li>작은 확률: 일정한 낮은 확률 이하에서는 <strong>After</strong> 확률이 <strong>Before</strong> 확률보다 작아야 합니다. 많은 샘플러들은 <strong>After</strong> 확률을 0으로 설정하는 임계값을 사용합니다. 이는 토큰의 품질이 저하되기 시작하는 시점에서 확률을 줄이는 것이 목표입니다.</li>
+</ul>
+<h3 id="advice-for-specific-samplers"><a class="header" href="#advice-for-specific-samplers">Advice for specific samplers</a></h3>
+<p>이 문서의 나머지 내용은 다소 불공평할 수 있습니다. <strong>Unified</strong>를 만들 때 사용된 연구가 다른 샘플러들을 평가하는 데 사용되기 때문에 <strong>Unified</strong>에 유리한 편향이 있을 것입니다.</p>
+<p><strong>Unified</strong>: <strong>Randomness</strong>는 <strong>Linear</strong>와 중복되므로 비활성화하세요. <strong>Linear</strong>는 원하는 토큰의 독특함 정도에 따라 0에서 1 사이로 설정하세요. 0은 최대한의 탐험적 출력을, 1은 일반적인 출력을 의미합니다. 더 낮은 값은 더 독특하고 창의적인 출력을 생성하지만, 더 자주 다시 생성하거나 편집해야 할 것입니다. <code>Quad = 0.25 - Linear / 5</code>로 설정하세요. <strong>Conf</strong>는 변경하지 마세요.</p>
+<p>많은 노력을 들여 세부 조정을 하고자 하는 사람들을 위해: <strong>Unified</strong>의 공식은 다음과 같습니다.</p>
+<p><code>output logit = (input log-probability) * (Linear + entropy * Conf) - (input log-probability)^2 * Quad</code></p>
+<p>출력 확률은 출력 logits을 지수화하고, 그 합을 1로 정규화하여 계산됩니다(이를 "softmax"라고 부릅니다). <strong>Linear</strong>가 음수일 경우 최적은 아니지만 유효합니다. 음수 <strong>Linear</strong>는 최적은 아니지만 가능은 합니다. 그 결과 음의 확률 기울기가 생깁니다: 입력 확률이 증가하면 해당 토큰의 출력 확률은 감소합니다. <strong>Linear</strong> 또는 <strong>Conf</strong>가 음수일 경우, <strong>Quad</strong>는 양수여야 하며 그렇지 않으면 출력이 엉망이 되어 엉뚱한 결과를 낼 수 있습니다.</p>
+<p><strong>Quad</strong>는 logits을 0으로 만들 수는 없지만, 중요하지 않을 정도로 낮게 만들 수 있습니다. 진정한 컷오프를 원한다면 <strong>Unified</strong> 이후에 매우 높은 Top P (<strong>Nucleus</strong> 0.999)나 매우 낮은 <strong>Min P</strong> (0.0001)을 선택하십시오.</p>
+<p><strong>Conf</strong>는 현재 토큰의 불확실성(엔트로피로 측정됨)에 따라 <strong>Randomness</strong>를 변화시킵니다. 이론적으로는 <strong>Conf</strong>가 0.01처럼 아주 작은 양수일 때 도움이 될 수 있다고 예측되지만, 실제로는 문법 오류가 많은 이야기에서 한 번만 관찰되었습니다.</p>
+<p><strong>Unified</strong>의 목표는 간단하면서도 완전한 프리셋을 능가하는 성능을 발휘하는 것입니다. 복잡한 샘플러 체인을 <strong>Unified</strong> 하나로 대체하는 것이 목표이며, 슬라이더와 문제점이 적어 사용자가 합리적인 옵션을 선택할 수 있도록 설계되었습니다. 그 수학적 기반은 실험보다는 이론에서 나왔습니다.</p>
+<p><strong>Conf</strong>가 테스트에서 거의 이점을 보여주지 않았기 때문에, 이를 제거하여 <strong>Unified</strong>를 더 간소화하는 것이 논리적인 선택일 수 있습니다. 하지만 프리셋을 대체하려면 <strong>Unified</strong>는 프리셋이 가진 모든 좋은 특성을 재현할 수 있어야 합니다. 다른 샘플러들은 이론에 의해 명확히 지지되거나 금지된 행동을 하지 않으며, <strong>Conf</strong>는 이러한 특이한 행동을 재현합니다. 예를 들어, <code>Conf = -1.5 * Quad</code>는 부드러운 <strong>Min P</strong>를, 높은 <strong>Conf</strong>는 부드러운 <strong>Top K</strong>를 나타냅니다. 따라서 <strong>Conf</strong>의 목적은 기존 프리셋의 동작을 포괄하는 것입니다.</p>
+<ul>
+<li>
+<p><strong>Mirostat</strong>의 알고리즘은 특이합니다. 다이내믹 샘플링은 깔끔하며 반복을 줄이는데 도움이 될 겁니다. 그러나 <strong>Mirostat</strong>의 혼잡도 제어 목표는 의문스러우며, Top K와 Zipf을 조합한 방법도 매우 미흡합니다. 반복 방지 효과는 기껏해도 적을 것입니다. 다이내믹 샘플링이 필요하다면, 양수 <strong>Conf</strong> 값과 낮은 <strong>Linear</strong> 값을 대신 사용할 수 있습니다. 비록 이는 과거 기록을 인식하지는 못하겠지만요.</p>
+</li>
+<li>
+<p><strong>Top A</strong>를 사용하지 마세요. 성능이 나쁩니다. Top A를 <strong>Min P</strong>로 교체하고 슬라이더 값에 1/2 또는 1/3를 곱하세요; 명확한 개선이 있을 것입니다.</p>
+</li>
+<li>
+<p><strong>Tail-Free Sampling</strong> (TFS)는 확률의 꼬리를 계산하지만, 이는 부정확한 수학적 이론에 기반하고 있습니다. 또한 TFS는 logit 양자화에 민감하게 반응하는데, 이는 낮은 확률에서의 미세한 변화가 이차 도함수에 큰 영향을 미치는 경우를 의미합니다. 만약 TFS가 유용한 무언가를 수행한다면, <strong>Top P</strong>가 일부 숫자 X &gt; 1에 대해 <strong>Linear X -&gt; Top P -&gt; Randomness X</strong>와 같은 방식으로 더 잘 수행할 수 있습니다.</p>
+</li>
+<li>
+<p><strong>Typical</strong>은 높은 확률과 낮은 확률의 토큰을 모두 삭제합니다. 이것은 토큰 순서를 변경하며 이는 위에 언급된 Goal 4를 위반합니다. <strong>Typical</strong>은 높은 확률의 말이 되는 토큰을 삭제할 충분한 정보를 제공받지 못합니다. 높은 *ogit을 억제하고 싶다면, 음수 <strong>Linear</strong>가 더 나은 해결책입니다.</p>
+</li>
+<li>
+<p><strong>Top K</strong>는 가장 오래된 샘플러입니다. 사람들이 LLM을 다룬 경험이 없을 때 만들어졌습니다. 디버깅에 사용할 수 있는<strong>Top K</strong> 1을 제외하면 일반적으로 사용되지 않ㅅ브니다.</p>
+</li>
+<li>
+<p>Top P (**Nucleus)**는 <strong>Top K</strong>보다 발전된 샘플러입니다. 이는 분포의 다양성을 유지하는데, 이는 중요한 두 가지 요소 중 하나입니다(다른 하나는 품질입니다). <strong>Top P</strong>의 뛰어난 성능은 널리 벤치마킹되었으며, 모든 샘플러들이 비교되는 기준이 됩니다. 1에 가까운 값이 적절합니다(<strong>0.9</strong>처럼).</p>
+</li>
+<li>
+<p><strong>Min P</strong>는 최근에 등장한 샘플러입니다. 이 샘플러는 <strong>Top P</strong> 같은 특별한 논리 없이도 최소 하나의 토큰이 존재할 수 있도록 보장하는 임계값을 사용합니다. 가장 확률이 높은 토큰의 확률이 토큰의 확실성을 나타내는 완벽한 지표는 아니지만, <strong>Min P</strong>는 문제없이 작동하며 이해하기 쉽습니다. 0에 가까운 값이 적절합니다(<strong>0.04</strong>처럼).</p>
+</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="lorebook"><a class="header" href="#lorebook">Lorebook</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
 <p><img src="./LoreBook.svg" alt="" /> <strong>Lorebook</strong>은 스토리의 인물, 장소, 사물, 세력 및 기타 다른 내러티브적 요소에 살을 붙일 수 있는 완벽한 장소입니다. 스토리에 각 항목들이 나타날 때마다 AI의 컨텍스트에 추가되는 보충 정보를 위한 저장소라고 생각해도 됩니다. 내부에는 새로운 로어<em>lore</em> 항목을 생성할 수 있는 툴도 있습니다.</p>
 <p align="center"><img src="./lorebookintro.png"></p>
 <p>좌측 상단의 버튼으로 로어북을 <img src="./import.svg" width="16"> <strong>Import</strong>하고 <img src="./export.svg" width="16"> <strong>Export</strong> 할 수 있습니다. <img src="./image_down.svg"> <strong>Image embed</strong> 버튼으로 <code>.png</code> 이미지 파일 내부의 로어북을 삽입<em>embed</em>할 수도 있습니다. 다른 사람과 로어북을 공유하기 매우 좋은 방법입니다!</p>
@@ -749,7 +916,7 @@ Randomness 1.25
 <p><strong>Lore Generator</strong>는 사용자가 생각할 수 있는 모든 캐릭터, 사물, 장소나 개념에 대한 로어북을 만들수 있게 해주는 강력한 도구입니다. 일단 리스트에서 항목의 타입을 선택하고 생성하고 싶은 내용을 입력한 후에 생성<em>generator</em>을 누르십시오. 에디터에서와 마찬가지로 이미 작성된 로어북 항목에, AI에게 텍스트를 추가로 입력하라고 시킬 수도 있습니다.</p>
 <p align="center"><img src="./lorebookgenerator.png"></p>
 <p><strong>Generation Type</strong>은 제네레이터가 특정한 항목의 타입을 생성하는데 영향을 줍니다. 클릭하여 드롭다운을 열고 타이핑을 하고, 엔터를 침으로써 사용자 정의 타입을 설정할 수 있습니다.</p>
-<p><strong>Input Text</strong>는 제네레이터가 사용하는 프롬프트입니다. &quot;Fogwood Keep&quot; 같은 이름이나 &quot;an enthusiastic merchant&quot;과 같은 짧은 설명이 가장 잘 작동합니다. 항목을 더 자세히 설명하기 위해 소괄호로 태그를 추가할 수도 있습니다. 에시: &quot;Black Skull Fleet (pirates, space)&quot;</p>
+<p><strong>Input Text</strong>는 제네레이터가 사용하는 프롬프트입니다. "Fogwood Keep" 같은 이름이나 "an enthusiastic merchant"과 같은 짧은 설명이 가장 잘 작동합니다. 항목을 더 자세히 설명하기 위해 소괄호로 태그를 추가할 수도 있습니다. 에시: "Black Skull Fleet (pirates, space)"</p>
 <p><strong>Add Context (advanced)</strong> 를 사용하여 메모리나 작가노트, 최근의 스토리(~2500자) 혹은 다른 로어북 항목을 컨텍스트에 포함시켜 항목을 생성할 때 해당 정보를 사용할 수 있도록 할 수 있습니다.</p>
 <p><strong>Generation History</strong>는 로어북 제네레이터의 최근 출력 50개를 보여줍니다. 페이지를 새로고침하면 삭제됩니다.</p>
 <p><img src="./link.svg" alt="" /> <strong>Change settings</strong>를 클릭하여 로어북 제네레이터에 사용된 모델과 세팅 프리셋을 바꿀 수 있습니다.</p>
@@ -766,9 +933,9 @@ Randomness 1.25
 <p><strong>Prefix</strong>는 로어북의 내용이 트리밍된 후 컨텍스트에 삽입하기 전에 항목 앞에 추가되는 텍스트입니다.<sup class="footnote-reference"><a href="#add">3</a></sup></p>
 <p><strong>Suffix</strong>는 로어북의 내용이 트리밍 후 컨텐스트에 삽입하기 전에 항목 끝에 추가되는 텍스트입니다.<sup class="footnote-reference"><a href="#add">3</a></sup></p>
 <p><strong>Token Budget</strong>은 로어북 항목이 사용할 수 있는 컨텍스트의 최대토큰의 양입니다.<p>
-0과 1(1은 제외)사이의 십진수 소수점을 입력하면 최대 컨텍스트 사이즈(최대 토큰 - 출려 길이)의 백분율로 해석될 것입니다.</p>
+0과 1(1은 제외)사이의 십진수 소수점을 입력하면 최대 컨텍스트 사이즈(최대 토큰 - 출력 길이)의 백분율로 해석될 것입니다.</p>
 <p><strong>Reserved Tokens</strong>은 항목이 자체적으로 예약할 수 있는 컨텍스트 토큰의 양입니다. 모든 예약은 항목이 컨텍스트에 배치되기 전에 이루어집니다. 실제 해당 항목이 포함하는 토큰의 양보다 더 많은 토큰을 예약하지는 않습니다. 예를 들어, 예약된 토큰이 200으로 설정되고 로어북 항목이 100 토큰이라면, 100개의 토큰만 예약됩니다.<p>
-0과 1(1은 제외)사이의 십진수 소수점을 입력하면 최대 컨텍스트 사이즈(최대 토큰 - 출려 길이)의 백분율로 해석될 것입니다.</p>
+0과 1(1은 제외)사이의 십진수 소수점을 입력하면 최대 컨텍스트 사이즈(최대 토큰 - 출력 길이)의 백분율로 해석될 것입니다.</p>
 <p>로어북의 항목은 컨텍스트가 빌드되기 전에, 설정된 <strong>Insertion Order</strong>에 따라 처리됩니다. 높은 Insertion Order를 가진 항목은 토큰을 예약하고 컨텍스트에 먼저 처리, 삽입됩니다. 두 항목의 Insertion Order가 같다면, 어느 항목이 먼저 삽입될 것이라는 보장은 없습니다.<sup class="footnote-reference"><a href="#Insertion Order">4</a></sup></p>
 <p><strong>Insertion Position</strong>은 항목이 컨텍스트에 삽입될 위치입니다. 0은 컨텍스트의 최상단, 1은 한단계 아래, 2는 두단계 아래가 되는 식입니다. 음수는 컨텍스트 컨텍스트 최하단부터 계산합니다. -1은 최하단, -2는 그보다 한단계 위, 그리고 -3은 두단계 위가 되는 식입니다.<sup class="footnote-reference"><a href="#Insertion Position">5</a></sup></p>
 <p><strong>Trim Direction</strong>는 전체 항목이 컨텍스트에 맞지 않을 경우<em>do not fit</em> 항목이 잘릴 위치를 설정합니다. 'Do not Trim'으로 설정하면 항목의 텍스트가 컨텍스트가 맞을 때만 항목이 포함됩니다.</p>
@@ -792,6 +959,7 @@ Randomness 1.25
 </div>
 <h2 id="phrase-bias-2"><a class="header" href="#phrase-bias-2">Phrase Bias</a></h2>
 <p><strong>Phrase Bias</strong>를 사용하면 항목이 활성화되어 있을 때, AI가 특정 단어나 구문을 생성할 확률을 높이거나 낮출 수 있습니다. 정확한 텍스트를 입력하기 위해서는 bias를 {중괄호}로 감싸고, 토큰 ID(토크나이저에 지정된)를 입력하기 위해서는 [대괄호]로 감싸십시오. bias는 <strong>대소문자를 구분</strong>합니다.</p>
+<p>phrase bias를 만들기 위해서 텍스트 영역에 입력을 하고 엔터를 눌러 저장하십시오.</p>
 <p align="center"><img src="./lorebookcategoryphrasebias.png"></p>
 <p><strong>Import</strong>와 <strong>Export</strong> 버튼을 클릭하여 phrase Bias를 <code>.bias</code> 파일로 가져오고 내보낼 수 있습니다.</p>
 <p>Bias는 <strong>group</strong>으로 구성되어 있고, 각 그룹은 <strong>Bias</strong> 값을 갖고 있습니다. 이 bias 값은 그룹 안에 있는 모든 토큰과 문구에 적용됩니다. 하나의 로어북 항목 안에 여러 phrase biases 그룹을 가질 수 있습니다.</p>
@@ -803,10 +971,10 @@ Randomness 1.25
 <p><strong>Ensure Completion After Start</strong>가 활성화될 경우, 구<em>phrase</em>의 첫번째 토큰이 생성되면 후속 토큰이 항상 생성됩니다.<sup class="footnote-reference"><a href="#Ensure Completion After Start">6</a></sup></p>
 <p><strong>Unbias When Generated</strong>이 활성화되면, 구<em>phrase</em>가 생성된 후 나머지를 생성하는 과정에서 해당 bias가 제거됩니다. 이 옵션은 해당 구가 생성되는 것을 막지는 않고, 그곳에 놓인 bias만을 제거할 뿐입니다.<sup class="footnote-reference"><a href="#Unbias When Generated">7</a></sup></p>
 <div class="footnote-definition" id="Ensure Completion After Start"><sup class="footnote-definition-label">6</sup>
-<p>역자주: 만약에 &quot;apple like the galaxy&quot;라고 긍정적인 bias를 넣고 값을 일정 수준으로 둘 경우를 가정해보자. 이 옵션을 끄면 &quot;apple like the galaxy&quot;가 완전하게 만들어지지 않는다. 예시: <code>apple, apple, apple. A few apple pies, apple sauce, apple turnovers, apple muffins, apple cider and apple juice. Apples. Apples. Apples.</code> 하지만 이 옵션을 켜게 되면 <code>apple, apple like the galaxy, apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like</code> 이렇게 <code>apple</code>이란 토큰이 생성되면 나머지 후속 토큰이 생성되게 된다.</p>
+<p>역자주: 만약에 "apple like the galaxy"라고 긍정적인 bias를 넣고 값을 일정 수준으로 둘 경우를 가정해보자. 이 옵션을 끄면 "apple like the galaxy"가 완전하게 만들어지지 않는다. 예시: <code>apple, apple, apple. A few apple pies, apple sauce, apple turnovers, apple muffins, apple cider and apple juice. Apples. Apples. Apples.</code> 하지만 이 옵션을 켜게 되면 <code>apple, apple like the galaxy, apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like the galaxy apple like</code> 이렇게 <code>apple</code>이란 토큰이 생성되면 나머지 후속 토큰이 생성되게 된다.</p>
 </div>
 <div class="footnote-definition" id="Unbias When Generated"><sup class="footnote-definition-label">7</sup>
-<p>역자주: 이 옵션을 켜면 생성 당 한번 bias가 적용되고 나머지 생성에서는 해당 bias가 비활성화된다. 즉, 위 예시의 bias의 값을 아주 세게 주어도 <code>apple</code>의 첫부분만 <code>apple like the galaxy</code>가 생성되고 그 이후의 나머지 생성에서는 해당 bias가 적용되지 않고 정상적으로 작동한다. 예시: <code>apple apple like the galaxy and the universe and all the universes that might ever exist and will ever exist in all of time and space &quot;The way I see it, we've got four choices.&quot; &quot;We?&quot;</code></p>
+<p>역자주: 이 옵션을 켜면 생성 당 한번 bias가 적용되고 나머지 생성에서는 해당 bias가 비활성화된다. 즉, 위 예시의 bias의 값을 아주 세게 주어도 <code>apple</code>의 첫부분만 <code>apple like the galaxy</code>가 생성되고 그 이후의 나머지 생성에서는 해당 bias가 적용되지 않고 정상적으로 작동한다. 예시: <code>apple apple like the galaxy and the universe and all the universes that might ever exist and will ever exist in all of time and space "The way I see it, we've got four choices." "We?"</code></p>
 </div>
 <h2 id="categories"><a class="header" href="#categories">Categories</a></h2>
 <p><strong>Categories</strong>는 로어북 항목을 그룹으로 정리하는데 사용됩니다.</p>
@@ -817,6 +985,7 @@ Randomness 1.25
 <p><strong>Phrase Bias</strong> 탭은 개별 엔트리 항목의 phrase bias 탭과 동일한 기능이지만, 카테고리 레벨에서 설정된 bias는 해당 카테고리 내의 항목이 활성화가 될 때 활성화된다는 점이 다릅니다.</p>
 <p align="center"><img src="./lorebookcategoryphrasebias.png"></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="text-adventure"><a class="header" href="#text-adventure">Text Adventure</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
 <p>Text Adventure 모드의 컨셉은 명확합니다. <code>&gt;</code> (caret) 기호를 사용하여 캐릭터가 수행할 동작을 가리킬 수 있습니다. 그 후 AI는 그 행동을 분석하고 알맞는 내러티브를 응답으로 만들어냅니다. 이 <code>&gt;</code> 행동은 그것 자체만으로는 이야기의 일부를 형성하지는 않지만 AI에게 내러티브의 방향을 안내하는 단서와 같은 역할을 합니다.</p>
 <p>스토리 패널에서는 <code>&gt;</code> 기호가 숨겨져 있다는 사실을 기억하세요. <em>Context</em>를 확인할 때만 보입니다.</p>
 <p align="center"><img src="./textadventureexample.png"></p>
@@ -894,7 +1063,7 @@ Randomness 1.25
 <h3 id="shortcuts"><a class="header" href="#shortcuts">Shortcuts</a></h3>
 <p>바로가기는 현재 선택된 <a href="text_adventure.html#the-two-input-modes">Input Mode</a>에서 일반적으로 할 수 없는 것을 쉽게 할 수 있게 해줍니다.</p>
 <ul>
-<li><code>&quot;</code>로 시작하면 여러분은 뭔가를 <code>말하게</code> 됩니다. 심지어 <strong>do</strong> 모드에서도 말입니다.</li>
+<li><code>"</code>로 시작하면 여러분은 뭔가를 <code>말하게</code> 됩니다. 심지어 <strong>do</strong> 모드에서도 말입니다.</li>
 <li><code>&gt;</code>로 시작하면 여러분은 뭔가를 <code>하게</code> 됩니다. 심지어 <strong>say</strong> 모드에서도 말입니다.</li>
 <li><code>!</code>로 시작하는 것은 약간 더 <strong>특별</strong>합니다. 이것은 <strong>input mode</strong>에서 적용받는 어떠한 수정 없이, 여러분이 입력한 대로 그대로 정확하게 전달이 됩니다. 입력 시작 부분에 숨겨진 <code>&gt;</code>를 제외하고는 말입니다. 그 결과, 주인공이 지시받지 않은 행동이나 명령이 발생합니다. <em>구버전의 NovelAI에서는 <strong>story mode</strong> 입력으로서 구분되었습니다.</em></li>
 </ul>
@@ -911,23 +1080,45 @@ Randomness 1.25
 만일 AI가 <code>&gt;</code> 동작을 더 정확하게 따르게 하고 싶다면 더 자세하게 적어보세요. AI에게 해석의 여지를 더 주고 싶다면 세부적인 사항을 적지마세요.</p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="user-settings"><a class="header" href="#user-settings">User Settings</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
 <p><strong>Library Sidebar</strong>의 상단 <img src="./setting.svg" alt="" /> 아이콘으로 표시되는 <strong>User Settings Menu</strong>는 NovelAI의 모든 개인화 및 접근성 옵션이 있습니다—<em>그리고 그 이상도요!</em></p>
 <p>User Settings Menu의 다양한 탭들을 사용하여 NovelAI의 외관을 물론, 어떻게 텍스트와 AI 결과물이 보여지는지에 관한 여러 측면을 조절하고 개인화할 수 있습니다. <strong>Text To Speech</strong> 기능도 기본 AI 모델 설정과 에디터 기능 및 바로가기를 위한 <strong>Hotkeys</strong>의 리스트와 함께 해당 란에 있습니다. 대부분의 옵션은 한눈에 알 수 있거나 그것에 대한 설명이 같이 있으므로 해당 페이지에서는 이 메뉴의 더 고급적이고 중요한 부분을 다룰 것입니다.</p>
 <ul>
-<li><a href="./ai_settings.html">AI Settings</a>
+<li><a href="./ai_settings.html">AI Settings</a></li>
+</ul>
+<p><strong>AI Settings</strong> 탭에서는 AI 출력 표시와 생성에 관한 설정을 찾을 수 있습니다. 예를 들어: 출력 스트리밍과 문장 다듬기, <strong>HypeBot</strong>, 토큰 제한과 기본 bias 설정과 출력에서 <strong>Token Probabilities</strong> 보는 옵션.</p>
+<p>이 탭에서는 <strong>Inline Generation</strong> 모델에 대한 체크박스도 포함되어 있어, 특수 양뱡향 모델과 선호하는 기본값 사이를 토글할 수 있습니다.</p>
 <ul>
-<li><strong>AI Settings</strong> 탭에서는 AI 출력 표시와 생성에 관한 설정을 찾을 수 있습니다. 예를 들어: 출력 스트리밍과 문장 다듬기, <strong>HypeBot</strong>, 토큰 제한과 기본 bias 설정과 출력에서 <strong>Token Probabilities</strong> 보는 옵션.<p>
-이 탭에서는 <strong>Inline Generation</strong> 모델에 대한 체크박스도 포함되어 있어, 특수 양뱡향 모델과 선호하는 기본값 사이를 토글할 수 있습니다.</li>
+<li><a href="./interface.html">Interface</a></li>
 </ul>
-</li>
-<li><a href="./interface.html">Interface</a>
+<p><strong>Interface</strong> 탭에서는 NovelAI의 많은 텍스트 서식과 UI 세팅이 포함되어 있습니다. 언어를 바꾸고, 버튼과 텍스트의 크기를 조절하고, 텍스트의 간격을 조절하고, UI 기능을 켜거나 끌 수 있으며 <strong>Editor V2</strong>의 실험적 기능을 켤 수 있습니다!</p>
+<p>터치스크린 기기에서의 사이드바 스와이프 활성화 설정, 오른쪽 버튼의 NovelAI의 컨텍스트 메뉴와 미니바 토글 설정도 여기에서 찾을 수 있습니다.</p>
 <ul>
-<li><strong>Interface</strong> 탭에서는 NovelAI의 많은 텍스트 서식과 UI 세팅이 포함되어 있습니다. 언어를 바꾸고, 버튼과 텍스트의 크기를 조절하고, 텍스트의 간격을 조절하고, UI 기능을 켜거나 끌 수 있으며 <strong>Editor V2</strong>의 실험적 기능을 켤 수 있습니다!<p>
-터치스크린 기기에서의 사이드바 스와이프 활성화 설정, 오른쪽 버튼의 NovelAI의 컨텍스트 메뉴와 미니바 토글 설정도 여기에서 찾을 수 있습니다.</li>
+<li><a href="./theme.html">Theme</a></li>
 </ul>
-</li>
+<p><strong>Theme</strong> 탭에서는 다양한 기본 테마들 중 하나로 전환하고 커스터마이징하고 가져오거나 내보낼 수 있습니다! 추가적인 개인화를 위한 고급 Custom CSS 기능 역시 여기에 있습니다.</p>
+<ul>
+<li><a href="./account.html">Account</a></li>
 </ul>
+<p><strong>Account</strong> 탭에는 구독 관리 및 사용자 정보 관련 기능이 포함되어 있습니다. 계정 이메일과 비밀번호 변경, <strong>Gift Keys</strong> 구매, 이야기의 <strong>Default Storage Location</strong> 관리, <strong>Remote Story Conflict</strong> 팝업 비활성화 등을 <strong>Account</strong> 탭에서 할 수 있습니다. 또한 여기에 있는 <strong>Download All Stories</strong> 버튼을 사용하여 모든 이야기를 다운로드할 수도 있습니다.</p>
+<ul>
+<li><a href="./text_to_speach.html">Text To Speech</a></li>
+</ul>
+<p>NovelAI의 Text to Speech는 매우 다양하게 커스터마이징이 가능합니다. <strong>Text to Speech</strong> 페이지에서 해당 기능에 대한 전체 설명을 확인하세요!</p>
+<ul>
+<li><a href="./default.html">Default</a></li>
+</ul>
+<p><strong>Defaults</strong> 탭에서 기본 모델과 프리셋 설정을 할 수 있습니다. 모델 업데이트가 있거나 좋아하는 프리셋을 확인하기 위해 자주 이 탭을 확인하세요!</p>
+<ul>
+<li><a href="./hotkeys.html">Hotkeys</a></li>
+</ul>
+<p><strong>Hotkeys</strong> 탭에서 NovelAI에서 지원하는 키보드 바로가기의 모든 리스트를 확인할 수 있습니다. <strong>Hotkeys</strong> 페이지는 나중을 위해 위 리스트의 복사본이 들어있습니다.</p>
+<ul>
+<li><a href="./advanced_debug_settings.html">Debug</a></li>
+</ul>
+<p>NovelAI의 <strong>Debug</strong> 메뉴는 고급 기능입니다. ID를 통해 이야기를 다운로드 받거나 삭제하고 계정의 메타데이터를 다운로드할 수 있습니다. 더 많은 정보를 위해 <strong>Debug</strong> 페이지를 확인하세요.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ai-settings"><a class="header" href="#ai-settings">AI Settings</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
 <p><strong>AI Settings</strong> 탭에는 여러 가지의 중요한 옵션과 외관을 담당하는 옵션이 있습니다: 텍스트 스트리밍, 문장 다듬기, 이야기에 재미있는 의견을 하게 설계된 해설 동반자인 <a href="ai_settings.html#hypebot">HypeBot</a>! 토큰 확률 표시와 강조, 문맥 길이 등의 실험적인 기능은 <a href="ai_settings.html#experimental">Experimental</a> 섹션에서 사용할 수 있습니다.</p>
 <p align="center"><img src="./AISettingsOverview.png"></p>
 <h2 id="ai-responses"><a class="header" href="#ai-responses">AI Responses</a></h2>
@@ -971,40 +1162,29 @@ AI에게 채팅이나 리스트, 통계 분석 등 스토리 형식이 아닌 �
 </blockquote>
 <p align="center"><img src="./TrimShot.png"></p>
 <p><strong>Trim Excess Whitespace</strong> 토글은 컨텍스트의 후행 공백과 반복되는 줄 바꿈을 제거합니다. 이것들은 AI의 생성에 문제를 일으킬 수 있기 때문입니다.</p>
-<p align="center"><img src="./1024Shot.png"></p>
-<p>사용자의 구독 등급에 따라(Tablet에선 1024, Scroll과 Opus에선 2048) <strong>Force 1024 token limit</strong> 토글을 통해 컨텍스트 사이즈를 1024 토큰과 2048 토큰 간 전환할 수 있습니다. AI가 최근의 문맥과 행동에 더욱 집중하게 만들고 싶거나 낮은 구독 티어에 대한 이야기나 프롬프트를 작성하고 있다면 작은 컨텍스트 사이즈가 이득이 될 수도 있습니다.</p>
 <p align="center"><img src="./DefBiShot.png"></p>
 <p><strong>Default Bias</strong> 토글을 켜면, dinkus (***)와 asterism (⁂) 문자가 나타날 가능성을 줄이기 위해 <code>-0.12</code>의 바이어스가 적용됩니다. 결과적으로 스토리 중단이 줄어들고 스토리의 흐름이 길어집니다.</p>
 <blockquote>
 <p><img src="./goose.png" alt="" /> <strong>Goose tip:</strong>
 Asterism (⁂)은 일반적으로 이야기의 시작이나 제목에 쓰이고, dinkus (***)는 챕터의 구분이나 시간이 지났음을 나타내요!</p>
 </blockquote>
+<p align="center"><img src="./BidirInline.png"></p>
+<p>컨텍스트 메뉴에서 <strong>Generate Inline</strong>을 사용하거나 인라인 생성 단축키 <strong>(Shift + Ctrl + Enter/Shift + Command + Enter)</strong> 를 사용할 때, Bidirectional Inline Generation 토글은 양쪽 컨텍스트를 고려하여 생성하는 특수 모델을 사용하는 것과 <a href="./default.html">Defaults</a> 탭에서 선택한 모델을 사용하는 것 사이를 전환합니다.</p>
 <p align="center"><img src="./LogShot.png"></p>
-<p><strong>Enable Token Probabilities</strong> 토글을 체크하면 출력을 생성한 후, <a href="./editor.html">Editor</a> 화면 하단의 <strong>Retry</strong> 버튼 근처에 <img src="./Brain.svg" height="13"> 아이콘이 나타납니다. (Editor V2를 사용하고 있다면 <img src="./LoreBook.svg" alt="" /> <a href="./lorebook.html">Lorebook</a> 아이콘)</p>
-<p>해당 아이콘을 클릭하면 <strong>Token Probabilities</strong> 창이 열립니다. 해당 창에서는 최근 생성에 대한 분석을 볼 수 있습니다. 토큰 또는 토큰 ID를 선택하면 각 토큰이 선택될 확률을 볼 수 있습니다.</p>
-<p align="center">
-<table style="border: 1px solid">
-<tr>
-<td width="150px">
-<img src="./BrainShot.png">
-</td>
-<td width="150px">
+<p><strong>Enable Token Probabilities</strong> 토글을 체크하면 출력을 생성한 후, <a href="./editor.html">Editor</a> 화면 하단의 <img src="./LoreBook.svg" alt="" /> <a href="./lorebook.html">Lorebook</a> 아이콘 옆에 <img src="./Brain.svg" height="13"> 아이콘이 나타납니다.</p>
 <img src="./BrainShot2.png">
-</td>
-</tr>
-</table>
-</p>
+<p>해당 아이콘을 클릭하면 <strong>Token Probabilities</strong> 창이 열립니다. 해당 창에서는 최근 생성에 대한 분석을 볼 수 있습니다. 토큰 또는 토큰 ID를 선택하면 각 토큰이 선택될 확률을 볼 수 있습니다.</p>
 <p align="center"><img src="./TokenProbWindowShot.png"></p>
 <blockquote>
 <p><img src="./goose.png" alt="" /> <strong>Goose tip:</strong>
 Theme 탭에서 <em>Low</em>, <em>Medium</em>, <em>High</em> 확률에 사용되는 색을 볼 수 있고 커스텀할 수 있어요!</p>
 </blockquote>
-<p align="center"><img src="./BiShot.png"></p>
-<p><strong>Editor V2</strong>나 inline generation hotkeys <strong>(Shift + Ctrl + Enter/ Shift + Command + Enter)</strong> 를 사용할 때, <strong>Bidirectional Inline Generation</strong> 토글은 Default 탭에서 사용자가 선택한 기본 모델을 사용할 지, 양방향을 모두 고려하여 글을 생성하는 특수한 모델을 사용할 지를 전환합니다.</p>
 <p align="center"><img src="./V2ProbShot.png"></p>
-<p><strong>Editor V2</strong>가 활성화되었다면, 해당 체크박스는 <strong>Editor</strong> 윈도우에서 가장 최근의 출력 token probabilities을 강조합니다. 사용된 색상은 <a href="./editor.html">Context Viewer</a>나 <a href="./editor.html">Logical Probability Viewer</a>와 같으며 Theme 탭에서 설정한 색을 사용하여 토큰 확률에 따라 색으로 구분됩니다.</p>
-<p align="center"><img src="./EditorProbShot.png"></p>
+<p>해당 체크박스는 <strong>Editor</strong> 윈도우에서 가장 최근의 출력 token probabilities을 강조합니다. 사용된 색상은 <a href="./editor.html">Context Viewer</a>나 <a href="./editor.html">Logical Probability Viewer</a>와 같으며 <a href="./theme.html">Theme</a> 탭에서 설정한 색을 사용하여 토큰 확률에 따라 색으로 구분됩니다. <strong>Editor V2</strong>는 기본적으로 활성화되어 있습니다.</p>
+<p align="center"><img src="./MaxContextShot.png"></p>
+<p><strong>Max Context Size</strong> 슬라이더는 컨텍스트의 최대 크기를 제한할 수 있게 해줍니다. 더 작은 컨텍스트 크기는 생성기 프롬프트나 다른 독특한 스타일을 사용할 때 도움이 될 수 있습니다.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="interface"><a class="header" href="#interface">Interface</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
 <p><strong>Interface</strong> 탭에는 텍스트 가독성과 버튼 사이즈 등을 조절하는데 필요한 모든 것들이 있습니다! 아래에서 각 기능에 대한 상세한 안내와 설명을 찾을 수 있습니다.</p>
 <p align="center"><img src="./InterfaceOverview.png"></p>
 <p>폰트 사이즈와 간격 외에도 해당 텝에서 철자교정과 입력 박스 같은 <a href="./editor.html">Editor</a> 창의 특정 부분을 숨겨 더 부드러운 글쓰기 경험을 할 수 있을 뿐아니라, <strong>Editor V2</strong>와 <strong>Minibar</strong> 같은 실험적인 기능들도 활성화할 수 있습니다!</p>
@@ -1075,7 +1255,7 @@ Theme 탭에서 <em>Low</em>, <em>Medium</em>, <em>High</em> 확률에 사용되
 </li>
 <li>
 <p><strong>Editor Highlighting</strong><p><img src="./ThemeTextColors.png"></p>
-<strong>Editor Highlighting</strong> 토글은 텍스트를 출처과 Theme 탭에서 설정한 색에 따라 4가지의 다른 색으로 강조합니다.</p>
+<strong>Editor Highlighting</strong> 토글은 텍스트를 출처과 <a href="./theme.html">Theme</a> 탭에서 설정한 색에 따라 4가지의 다른 색으로 강조합니다.</p>
 </li>
 </ul>
 <p align="center"><img src="./EditorHighlightShot.png"></p>
@@ -1100,18 +1280,38 @@ Theme 탭에서 <em>Low</em>, <em>Medium</em>, <em>High</em> 확률에 사용되
 <p><strong>Show Tips</strong><p align="center"><img src="./TipsShot.png"></p>
 <strong>Tips</strong>는 <strong>Editor</strong> 하단, 입력 표시줄<em>input bar</em> 위에 나타납니다.. <strong>Show Tips</strong> 토글은 이것을 켜고 끌 수 있습니다.</p>
 </li>
+<li>
+<p><strong>Show Editor toolbox</strong></p>
+<img src="./EditorTBShot.png">
+<p><strong>Editor Toolbox</strong>는 에디터에서 텍스트를 강조할 때마다 팝업되며, 텍스트 서식 지정, <strong>Inline Generation</strong>, <strong>Text To Speech</strong>으로 줄 읽기, <strong>Context Menu</strong> 열기 등을 할 수 있게 해줍니다.</p>
+</li>
+<li>
+<p><strong>Use Editor V2 for New Stories</strong>
+<strong>Editor V2</strong>는 이 문서의 <a href="./editor.html">Editor</a> 섹션에서 다루는 NovelAI Editor의 풀 리디자인된 에디터입니다. <strong>Use Editor V2 for New Stories</strong> 토글은 새 이야기를 작성할 때 적용됩니다. 해당 토글이 활성화되면 <strong>Library Sidebar</strong>를 통해 이전 이야기를 백업하고 <strong>Editor V2</strong>로 변환할 수도 있습니다!</p>
+</li>
+<li>
+<p><strong>Paragraph Visibility Range</strong></p>
+<img src="./ParagraphRange.png">
+<p><strong>Paragraph Visibility Range</strong> 슬라이더는 화면 밖에 설정된 문자 수에 도달하면 텍스트를 언로드하여, 큰 스토리에서 성능을 향상시키는 데 도움을 줍니다. 단, 텍스트를 복사할 때는 모든 내용을 복사하려면 스크롤을 올려서 확인하거나, <a href="./story_settings.html#export-story">Story Settings</a>에서 내보내기 옵션 중 하나를 사용해야 한다는 점에 유의하세요.</p>
+</li>
 </ul>
 <h2 id="experimental-settings"><a class="header" href="#experimental-settings">Experimental Settings</a></h2>
 <p align="center"><img src="./ExperimentalInterfaceShot.png"></p>
 <ul>
-<li><strong>Use Editor V2 for New Stories</strong><p>
-<strong>Editor V2</strong>는 이 문서의 <a href="./editor.html">Editor</a> 섹션에서 다루는 NovelAI Editor의 풀 리디자인된 에디터입니다. <strong>Use Editor V2 for New Stories</strong> 토글은 새 이야기를 작성할 때 적용됩니다. 해당 토글이 활성화되면 <strong>Library Sidebar</strong>를 통해 이전 이야기를 백업하고 <strong>Editor V2</strong>로 변환할 수도 있습니다!</li>
-</ul>
-</p>
-<ul>
-<li><strong>Show Identicon</strong><p>
+<li>
+<p><strong>Highlight Speech</strong></p>
+<img src="./HighlightSpeechShot.png">
+<p><strong>Highlight Speech</strong> 설정은 설정에 따라 <strong>Editor</strong> 따옴표로 묶인 텍스트와 그렇지 않은 텍스트가 표시되는 방식을 변경합니다. <strong>Highlight</strong> 설정은 따옴표 안의 텍스트를 기울임체로 표시합니다.</p>
+<img src="./HighlightSpeechExample1.png">
+<p><strong>Inverted</strong> 설정은 따옴표 안에 있지 않은 모든 텍스트를 기울임체로 표시합니다.</p>
+<img src="./HighlightSpeechExample2.png">
+<p>이 설정은 또한 텍스트의 색상을 부드럽게 변경하여 더 쉽게 구별할 수 있게 해줍니다!</p>
+</li>
+<li>
+<p><strong>Show Identicon</strong><p>
 <img src="./IdenticonShot.png"><p>
-<strong>Show Identicon</strong> 토글은 <strong>Library Sidebar</strong> 상단에 NovelAI 거위 마스코트의 테마별 아바타를 활성화합니다. 이 거위 identicon은 Theme 탭에서 사양자가 선택한 NovelAI의 테마에 따라 색상이 바뀝니다.</li>
+<strong>Show Identicon</strong> 토글은 <strong>Library Sidebar</strong> 상단에 NovelAI 거위 마스코트의 테마별 아바타를 활성화합니다. 이 거위 identicon은 <a href="./theme.html">Theme</a> 탭에서 사양자가 선택한 NovelAI의 테마에 따라 색상이 바뀝니다.</p>
+</li>
 </ul>
 </p></p>
 <ul>
@@ -1120,7 +1320,166 @@ Theme 탭에서 <em>Low</em>, <em>Medium</em>, <em>High</em> 확률에 사용되
 Minibar는 <strong>Desktop Only</strong> 기능입니다. 미니바를 활성화하면 미니 사이드바가 화면 왼쪽 사이드에 추가되는데, 여기에는 축약된 스토리 제목들과 마우스로 호버 가능한 스토리 설명이 있습니다. 미니바를 사용하여 <strong>Library Sidebar</strong>보다 덜 귀찮은 방법으로 스토리 사이를 빠르게 전환하십시오!</li>
 </ul>
 </p></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="theme"><a class="header" href="#theme">Theme</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
+<img src="./ThemeScroll1.gif">
+<p>NovelAI에는 19가지의 기본 테마 옵션과 원하는 대로 사이트를 커스터마이징할 수 있는 직관적인 인터페이스가 포함되어 있습니다! <strong>Theme Editor</strong>를 사용하여 배경과 텍스트 색상, 제목이나 문단에 사용되는 글자의 폰트를 바꿔보세요.</p>
+<img src="./ThemeEditor.png">
+<p>색상을 변경하면 <strong>Theme Editor</strong>에서 배경색이 변경되어 변경점을 미리 볼 수 있습니다. 각 요소 옆의 <strong>Color Picker</strong>를 사용하여 원하는 모든 색상을 자세하게 조장할 수 있습니다.</p>
+<img src="./ThemeButtons.png">
+<p>테마를 변경한 후에는 반드시 적용하고 저장하세요. 테마는 다른 장치나 계정에 쉽게 공유하고 가져올 수 있도록 <code>.naitheme</code> 파일로 내보내집니다. Anlatan Discord의 <strong>novelai-content-sharing</strong> 채널에는 수십 개의 사용자 테마가 포함된 테마 섹션이 있습니다.</p>
+<img src="./ThemeCustomCSS.png">
+<p><strong>Custom CSS</strong> 드롭다운을 사용하여 NovelAI 테마를 추가적으로 커스터마이징할 수 있습니다. 이것은 고급기능이며 향후 업데이트로 인해 코드가 정상 작동하지 않을 수 있거나 UI가 깨질 수 있다는 점을 유의하세요. 고지한 것처럼 이런 상황이 일어난다면 <code>Alt+Shift+P</code> 단축키를 눌러 기본 테마로 리셋할 수 있습니다.</p>
+<h2 id="custom-hypebot"><a class="header" href="#custom-hypebot">Custom Hypebot</a></h2>
+<pre><code>.comment-avatar-box {
+    background-image: url(https://i.imgur.com/fPwZIbN.jpg);
+}
+.comment-avatar {
+    background-image: url(https://i.imgur.com/hvb1a4i.png) !important;
+    background-color: transparent !important;
+}
+.comment-arrow {
+    opacity: 0.0 !important;
+}
+</code></pre>
+<p><code>.comment-avatar-box</code> 클래스는 HypeBot 배경 이미지를 변경하고, <code>.comment-avatar</code> 클래스는 아이들 상태일 때 표시되는 기본 HypeBot 아바타를 변경합니다. 움직이는 <code>.gif</code>는 모든 HypeBot 이미지 링크에서 지원됩니다. 배경 이미지가 작동하기 위해서는 투명도에 대한 코드가 필요합니다. <strong>urls</strong>을 사용하고자하는 이미지로 바꾸세요.</p>
+<p><code>.comment-arrow</code> 클래스는 말풍선 화살표를 표시하는 방법을 결정합니다. 위 코드를 복사하면 말풍선 화살표가 제거될 겁니다.</p>
+<pre><code>.comment-avatar-speaking-active {
+    background-image: url(https://i.imgur.com/FqSGMHE.gif) !important;
+}
+</code></pre>
+<p><code>.comment-avatar-speaking-active</code> 클래스는 response 텍스트가 스트리밍되는 동안 표시되는 HypeBot 이미지를 변경합니다. 이를 사용하여 커스텀 아바타에 대한 움직이는 프레임이나 애니메이션을 만드세요!</p>
+<pre><code>.comment-avatar-thinking {
+    background-image: url(https://i.imgur.com/CrCTvlu.png) !important;
+}
+</code></pre>
+<p><code>.comment-avatar-thinking</code> 클래스는 텍스트 스트리밍이 시작되기 전의 짧은 순간 혹은 재생성하기 위해 아바타를 클릭할 때 '생각'하는 동안 표시되는 HypeBot의 이미지를 변경합니다.</p>
+<pre><code>.comment-avatar-idle {
+    background-image: url(https://i.imgur.com/hvb1a4i.png) !important;
+}
+</code></pre>
+<p><code>.comment-avatar-idle</code> 클래스는 텍스트 스트리밍이 완료된 후에 나타나는 아이들 프레임을 변경합니다. 이 이미지는 일반적으로 <code>.comment-avatar</code> 클래스에서 사용하는 것과 동일할 수 있습니다.</p>
+<pre><code>.comment-name::after {
+    content: 'Nai-chan' !important;
+}
+</code></pre>
+<p><code>.comment-name::after</code> 클래스는 HypeBot의 이름을 변경합니다.</p>
+<p>위의 모든 항목을 합치면, Custom CSS 드롭다운은 다음과 같을 것이다.</p>
+<pre><code>.comment-avatar-box {
+    background-image: url(https://i.imgur.com/fPwZIbN.jpg);
+}
+.comment-avatar {
+    background-image: url(https://i.imgur.com/hvb1a4i.png) !important;
+    background-color: transparent !important;
+}
+.comment-arrow{
+    opacity: 0.0 !important;
+}
+.comment-avatar-speaking-active {
+    background-image: url(https://i.imgur.com/FqSGMHE.gif) !important;
+}
+.comment-avatar-thinking {
+    background-image: url(https://i.imgur.com/CrCTvlu.png) !important;
+}
+.comment-avatar-idle{
+    background-image: url(https://i.imgur.com/hvb1a4i.png) !important;
+}
+.comment-name::after {
+    content: 'Nai-chan' !important;
+}
+
+</code></pre>
+<table style="border: 1px solid">
+<tr>
+<td>
+<img src="./chanthink.png">
+</td>
+<td>
+<img src="./chanthink2.png">
+</td>
+<td>
+<img src="./NAIchan-talk.gif">
+</td>
+</tr>
+</table>
+<img src="./NaiChanShot.png">
+<h2 id="background-image"><a class="header" href="#background-image">Background Image</a></h2>
+<pre><code>#app {
+    background-image: url(https://i.imgur.com/2Xt07Ut.jpg);
+    background-size: cover;
+    background-position: center;
+}
+</code></pre>
+<p>위 코드는 에디터의 배경 이미지를 사용자가 좋아하는 것으로 바꿀 수 있습니다.</p>
+<h2 id="transparent-background"><a class="header" href="#transparent-background">Transparent Background</a></h2>
+<pre><code>.menubar, .infobar, .conversation, .module-trainer {
+    background-color: #0c0c1088 !important;
+    backdrop-filter: blur(5px);
+}
+</code></pre>
+<p>위 코드를 사용하면 에디터를 투명하고 약간 흐리게 만들어 배경 이미지를 더 많이 보이게 할 수 있습니다. <code>backdrop-filter</code> 값을 변경하여 블러 정도를 변경할 수 있습니다.</p>
+<h2 id="borders"><a class="header" href="#borders">Borders</a></h2>
+<pre><code>* {
+    border: none !important;
+    outline: none !important;
+}
+</code></pre>
+<p>위 코드는 여러 박스와 사이드바의 경계선을 제거한다. 애스터리스크를 잊지마세요! 이게 없으면 작동하지 않습니다!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="account"><a class="header" href="#account">Account</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
+<p><strong>Account</strong> 탭은 사용자의 다양한 정보에 관한 설정, 구독 관리, 스토리에 관한 몇가지 중요한 옵션이 있습니다. 이 페이지에서 <strong>Gift Keys</strong>를 확인하거나 구입할 수 있습니다.</p>
+<p align="center"><img src="./AccountSettingsMain.png"></p>
+<ul>
+<li>Manage</li>
+</ul>
+<p><strong>Manege</strong> 버튼을 누르면 <strong>Activate Gift Keys</strong>와 구독 페이지를 통해 <strong>Change your Subscription</strong>할 수 있는 팝업 메뉴가 열립니다.</p>
+<ul>
+<li>Pen Name</li>
+</ul>
+<p>사용자가 설정한 <strong>Pen Name</strong>은 <a href="./story_settings.html#export-story">시나리오로 내보내는</a> 모든 스토리에 표시됩니다.</p>
+<ul>
+<li>Email</li>
+</ul>
+<p>이메일 주소를 변경하려면 확인을 위해 현재 계정의 이메일과 암호가 필요합니다.</p>
+<ul>
+<li>Password</li>
+</ul>
+<p>NovelAi의 암호를 바꾸기 위해서는 확인을 위해 현재 이메일 주소와 암호가 필요합니다.</p>
+<blockquote>
+<p><img src="./goose.png" alt="" /> <strong>Goose tip:</strong>
+이메일이나 암호를 변경하기 전에 이야기들을 백업하세요! 변경하면 저장된 이야기가 삭제됩니다!</p>
+</blockquote>
+<ul>
+<li>Delete Account</li>
+</ul>
+<p>NovelAI 계정을 삭제하면 NovelAI는 사용자에게 확인 이메일을 전송하며 사용하길 원하는 이메일 주소를 입력하라는 팝업이 표시됩니다.</p>
+<ul>
+<li>Show Account ID</li>
+</ul>
+<p><strong>Show Account ID</strong> 버튼을 클릭하면 사용자의 고유 계정 IP가 표시됩니다.</p>
+<ul>
+<li>Get Persistent API Token</li>
+</ul>
+<p><strong>Get Persistent API Token</strong> 버튼을 누르면 사용자는 NovelAI API를 사용할 수 있는 API token이 발급됩니다. 버튼을 처음 사용하는 사용자도 'Overwrite' 메시지가 나타날 수 있으므로 놀라지 마십시오.</p>
+<img src="./OverWriteToken.png">
+<p><strong>Overwrite</strong> 버튼을 눌러 새로운 토큰을 생성하고 난 후, <strong>Copy Icon</strong>을 눌러 토큰을 클립보드로 복사하거나 <strong>Show Full Token</strong>를 클릭하여 풀토큰을 확인할 수 있습니다. 팝업창을 닫으면 <strong>다시 토큰을 확인할 수 없으므로</strong> 계속 진행하기 전에 안전한 곳에 보관하거나 필요한 곳에 복사하세요.</p>
+<img src="./TokenPic.png">
+<blockquote>
+<p><img src="./goose.png" alt="" /> <strong>Goose tip:</strong>
+새 <strong>Persistent API Token</strong>을 생성하면 기존의 API 토큰이 무효화됩니다. API 액세스 포인트나 이를 사용하는 다른 장소에서 Persistent API Token을 업데이트하는 것을 잊지마세요!</p>
+</blockquote>
+<h3 id="default-storage-location"><a class="header" href="#default-storage-location">Default Storage Location</a></h3>
+<img src="./AccountSettingsExtra.png">
+<p><strong>Default Storage Location</strong> 토글은 새 이야기에 사용될 기본 설정을 결정합니다. <strong>Server</strong>로 유지하는 것이 권장됩니다.</p>
+<h3 id="ignore-remote-story-conflicts"><a class="header" href="#ignore-remote-story-conflicts">Ignore Remote Story Conflicts</a></h3>
+<p><strong>Ignore Remote Story Conflicts</strong> 토글은 원격지와 로컬 버전의 스토리 사이에서 발견되는 충돌 팝업을 끌 수 있습니다.</p>
+<h3 id="download-all-stories"><a class="header" href="#download-all-stories">Download All Stories</a></h3>
+<p>모든 이야기를 다운로드하는 것은 어느정도 시간이 소요될 수 있습니다. 브라우저 다운로드 폴더에 <code>.zip</code> 파일로 표시됩니다.</p>
+<h3 id="gift-keys"><a class="header" href="#gift-keys">Gift Keys</a></h3>
+<img src="./AccountGiftKeys.png">
+<p>구입한 모든 <strong>Gift Keys</strong>가 여기에 나타난다. <strong>Purchase New Gift Key</strong> 버튼을 사용하여 가능한 구독 티어의 키를 구입하세요.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="text-to-speech"><a class="header" href="#text-to-speech">Text To Speech</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
 <p><strong>Text to Speech (TTS)</strong> 탭을 통해 로컬 TTS와 NovelAI의 스트리밍 TTS 기술을 설정하고 사용하여 사용자가 작성한 텍스트를 음성으로 읽게 할 수 있습니다.</p>
 <h2 id="text-to-speech-source"><a class="header" href="#text-to-speech-source">Text to Speech Source</a></h2>
 <p>가장 먼저해야 할 일은 <strong>Streamed</strong>를 사용 할지, <strong>Local</strong> TTS를 사용 할지를 고르는 것입니다.</p>
@@ -1152,7 +1511,7 @@ Minibar는 <strong>Desktop Only</strong> 기능입니다. 미니바를 활성화
 <h3 id="v2-settings"><a class="header" href="#v2-settings">v2 Settings</a></h3>
 <p align="center"><img src="./ttsv2settings.png"></p>
 <p><strong>v2</strong>는 더 최신의 강력한 TTS AI이기 때문에 둘러볼 수 있는 더 많은 옵션과 기능이 있습니다.</p>
-<p>v1과 차별화되는 첫번째 기능은 더 크고 더 많은 기본 목소리 라이브러리가 있다는 것 외에도, seed를 사용하여 &quot;제작&quot;한 새 목소리를 <em>&quot;custom default&quot;</em> 로 저장하여 나중에 쉽게 선택하고 수정할 수 있다는 것입니다.</p>
+<p>v1과 차별화되는 첫번째 기능은 더 크고 더 많은 기본 목소리 라이브러리가 있다는 것 외에도, seed를 사용하여 "제작"한 새 목소리를 <em>"custom default"</em> 로 저장하여 나중에 쉽게 선택하고 수정할 수 있다는 것입니다.</p>
 <p>게다가 <strong>v2</strong>는 더욱 심층적인 <em>seed 시스템</em>이 있어, 특수한 <em>seed 구문</em>을 사용하여 다양한 seed들을 믹스 앤 매치하여 원하는 최종 목소리를 더욱 세밀하게 조절할 수 있습니다.</p>
 <h4 id="seedmixing"><a class="header" href="#seedmixing">Seedmixing</a></h4>
 <p>문자열 <code>seedmix:</code>로 seed를 시작하면 <code>+</code> 기호를 사용하여 하나 이상의 시드를 결합하거나, <code>-</code> 기호를 사용하여 하나 이상의 시드를 기반으로 하는 최종 결과에 대한 네거티브 효과를 적용할 수 있습니다.</p>
@@ -1167,7 +1526,7 @@ Minibar는 <strong>Desktop Only</strong> 기능입니다. 미니바를 활성화
 <p>예를 들어 다음과 같이 각각의 매개변수를 개별적으로 고려하는 <strong>seedmix</strong>를 설정할 수 있습니다: <code>seedmix:|style:Kayra+Clio-Calliope|intonation:Krake+Euterpe-Sigurd|cadence:Genji+Snek</code></p>
 <p>결과물은 다음과 같습니다:</p>
 <img src="./seedmixseparated.png">
-<p><em><strong>seedmix</strong> 구문에 대해 참고할 사항: TTS seed는 일반적으로 빈 공백을 넣어도 되지만, seedmix는 빈 공백을 넣어서는 안됩니다. 차후 seed에 seedmix를 사용하게 될 수도 있으므로, 단일 seed에서도 빈 공백을 두는 것은 추천하지 않습니다.</em></p>
+<p><em><strong>seedmix</strong> 구문에 대해 참고할 사항: TTS seed는 일반적으로 <strong>빈 공백</strong>을 넣어도 되지만, seedmix는 <strong>빈 공백을 넣어서는 안됩니다</strong>. 차후 seed에 seedmix를 사용하게 될 수도 있으므로, 단일 seed에서도 빈 공백을 두는 것은 추천하지 않습니다.</em></p>
 <p>마지막으로 <strong>v2</strong>도 역시 <strong>Volume</strong>과 <strong>Speed</strong> 슬라이더가 있고, <em>v1과 같은 제약사항이 적용됩니다.</em></p>
 <blockquote>
 <p><img src="./goose.png" alt="" /> <strong>Goose tip:</strong>
@@ -1179,7 +1538,55 @@ Minibar는 <strong>Desktop Only</strong> 기능입니다. 미니바를 활성화
 <p align="center"><img src="./ttslocalsettings.png"></p>
 <p>할 수 있는 것은 사용할 <strong>Local</strong> 음성을 선택하고, 브라우저에서 테스트하고 슬라이더를 조절하는 것 뿐입니다.</p>
 <p><strong>Local TTS</strong>에도 고유한 <strong>Pitch</strong> 슬라이더가 있습니다만, <em><strong>Local TTS</strong>에서는 음성 파일을 다운로드할 수 없습니다.</em></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="default"><a class="header" href="#default">Default</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
+<p>새 이야기를 시작할 때, 현재 페이지의 설정이 적용됩니다. <strong>Defaults</strong> 탭에서 사용자는 기본 모델과 프리셋, 모듈, 선호하는 <strong>Lorebook</strong> 설정을 할 수 있습니다.</p>
+<h2 id="default-ai-model"><a class="header" href="#default-ai-model">Default AI Model</a></h2>
+<img src="./DefaultAIModel1.png">
+<p>기본값으로 설정하는 모델에 따라, 아래 드롭다운 메뉴에서 다른 프리셋과 모듈을 사용할 수 있습니다. 새로운 모델이 나왔을 때, 설정한 기본 모델은 자동으로 변경되지 않으니 반드시 변경하세요!</p>
+<img src="./DefaultPresetModule.png">
+<h3 id="default-preset"><a class="header" href="#default-preset">Default Preset</a></h3>
+<p>각 모델은 기본 프리셋 세트가 같이 제공되지만, 직접 저장하거나 임포트인 자신만의 프리셋을 기본값으로 설정하여 새 이야기를 시작할 때 사용할 수 있습니다.</p>
+<h3 id="default-ai-module"><a class="header" href="#default-ai-module">Default AI Module</a></h3>
+<p>가장 좋아하는 모듈이 있나요? 텍스트 어드벤쳐만 플레이하나요? <strong>Default AI Module</strong> 드롭다운 메뉴를 사용하여 좋아하는 모듈이 로드된 채로 모든 이야기를 시작하세요. 오래된 모델은 커스텀 모듈 훈련도 지원하며 여기에서 설정도 할 수 있습니다.</p>
+<h2 id="lorebook-generation-settings"><a class="header" href="#lorebook-generation-settings">Lorebook Generation Settings</a></h2>
+<img src="./DefaultLorebookSettings.png">
+<h3 id="lorebook-generation-model"><a class="header" href="#lorebook-generation-model">Lorebook Generation Model</a></h3>
+<p>로어북 생성에 사용되는 모델을 변경할 수 있습니다. 예전 모델의 스타일을 선호하거나 단순히 테스트해보고 싶을 경우 <strong>Lorebook Generation Model</strong> 드롭다운 메뉴를 사용하여 변경할 수 있습니다.</p>
+<h3 id="lore-generation-preset"><a class="header" href="#lore-generation-preset">Lore Generation Preset</a></h3>
+<p>프리셋은 로어북 생성에서 다르게 작동할 수 있으므로 자신에게 가장 적합한 것을 선택하세요. 커스텀 프리셋도 이 드롭다운 메뉴에서 지원됩니다.</p>
+<h3 id="legacy-lore-generation"><a class="header" href="#legacy-lore-generation">Legacy Lore Generation</a></h3>
+<p><strong>Legacy Lore Generation</strong> 토글을 사용하면 <strong>Lorebook</strong> 로어 생성 섹션의 레거시 모듈을 활성화합니다.</p>
+<p>레거시 모듈은 켜졌을 때의 면책조항에 명시된대로 일관성이 떨어지는 퓨샷 프롬프트 기반 생성기 입니다.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hotkeys"><a class="header" href="#hotkeys">Hotkeys</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
+<p>이 페이지는 <a href="./user_settings.html">User Settings Menu</a>의  <strong>Hotkeys</strong> 탭에 나타나는 바로가기 목록의 텍스트 복사본입니다.</p>
+<p><strong>Toggle Menu Bar</strong>: ⎇ Alt + Q
+<strong>Toggle Info Bar</strong>: ⎇ Alt + E
+<strong>Toggle Bars</strong>: ⎇ Alt + W
+<strong>Focus Editor</strong>: ⎇ Alt + F
+<strong>Request AI Generation</strong>: ⌃ Ctrl + Enter | ⌘ Cmd + Enter | ⎇ Alt + S
+<strong>Generate Inline</strong>: ⇧ Shift + ⌃ Ctrl + Enter | ⇧ Shift + ⌘ Cmd + Enter
+<strong>Focus Input Field</strong>: ⎇ Alt + G
+<strong>Redo</strong>: ⎇ Alt + Y
+<strong>Open Redo List</strong>: ⎇ Alt + ⇧ Shift + Y
+<strong>Undo</strong>: ⎇ Alt + Z
+<strong>Retry AI Generation</strong>: ⎇ Alt + R
+<strong>Open Lorebook</strong>: ⎇ Alt + L
+<strong>Open Context Viewer</strong>: ⎇ Alt + K
+<strong>Open Tokenizer</strong>: ⎇ Alt + T
+<strong>Open Token Probabilities</strong>: ⌃ Ctrl + ⎇ Alt + T
+<strong>Toggle Editor Token Probabilities</strong>: ⎇ Alt + ⇧ Shift + E
+<strong>Close Modal</strong>: Escape
+<strong>Toggle Input Box</strong>: ⎇ Alt + J
+<strong>Toggle Highlighting</strong>: ⎇ Alt + H
+<strong>Toggle Spellcheck</strong>: ⎇ Alt + C
+<strong>Create New Story</strong>: ⎇ Alt + N
+<strong>Reset Theme</strong>: ⎇ Alt + ⇧ Shift + P
+<strong>Delete Current Story</strong>: ⎇ Alt + ⇧ Shift + Delete
+<strong>Stop TTS</strong>: ⎇ Alt + ⇧ Shift + T</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="advanced-debug-settings"><a class="header" href="#advanced-debug-settings">Advanced: Debug Settings</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
 <p>디버그 세팅은 사용자의 계정 문제들을 해결하는데 도움을 줄 수 있는 고급 도구입니다.  <strong>일부 번경 사항은 의도치않은 효과가 발생할 수 있으니 디버그 세팅에 접근할 때는 주의해야 합니다.</strong></p>
 <h2 id="enabling-debug-settings"><a class="header" href="#enabling-debug-settings">Enabling Debug Settings</a></h2>
 <p>디버그 세팅 메뉴를 활성화하기 위해서는 <strong>goose</strong> 메뉴 하단의 <em>빌드 해시</em>를 21번 클릭하십시오.</p>
@@ -1195,9 +1602,9 @@ Minibar는 <strong>Desktop Only</strong> 기능입니다. 미니바를 활성화
 <p><strong>디버그 메뉴</strong>를 사용해서 다른 방법으로는 액세스할 수 없는 이야기를 <em>다운로드</em>하거나 <em>삭제</em>할 수 있습니다.</p>
 <p>브라우저 주소창에서 현재 선택된 이야기의 ID를 찾으십시오. 주소의 <code>/stories?id=</code>의 우측 부분 전체입니다. 예를 들어, 선택한 이야기의 주소가 <code>https://novelai.net/stories?id=be6a65e2-d7c8-4218-bba3-1234a1234a3a</code>이라면 <strong>스토리 ID</strong>는 <code>be6a65e2-d7c8-4218-bba3-1234a1234a3a</code> 입니다. 원하는 필드에서 ID를 입력하고나서 <strong>Download</strong>나 <strong>Delete</strong>를 클릭하십시오. 다운로드를 클릭한다면 해당 이야기는 즉시 다운로드될 것이고, 삭제를 클릭한다면 확인을 묻는 팝업이 표시됩니다.</p>
 <h2 id="logprobs-count"><a class="header" href="#logprobs-count">Logprobs Count</a></h2>
-<p>이 슬라이더를 사용하여 &quot;Token Probabilities&quot; 도구에서 얼마나 많은 대체 토큰을 표시할 지 설정할 수 있습니다. 최대 갯수는 30개입니다.</p>
+<p>이 슬라이더를 사용하여 "Token Probabilities" 도구에서 얼마나 많은 대체 토큰을 표시할 지 설정할 수 있습니다. 최대 갯수는 30개입니다.</p>
 <p align="center"><img src="./logprobextend.png"></p>
-<p>해당 설정은 영구적이며 로그아웃하거나 디버그 세팅을 숨겨도 계속 적용될 것입니다. <strong>기본값은 10</strong>입니다.</p>
+<p>해당 설정은 영구적이며 로그아웃하거나 디버그 세팅을 숨겨도 계속 적용될 것입니다. <strong>기본값은 10</strong>입니다. 경고: 너무 큰 값을 설정하면, 수직 공간이 부족할 때 Token Probabilities hover가 화면 밖으로 확장될 수도 있습니다.</p>
 <h2 id="apply--save"><a class="header" href="#apply--save">Apply &amp; Save</a></h2>
 <p>디버그 세팅 메뉴 최하단에는 몇 줄의 코드가 담긴 큰 텍스트 박스가 있습니다. 이것은 사용자의 NovelAI 설정으로서 필요한 경우 수동으로 값을 수정하거나 백업할 수 있습니다.</p>
 <p><strong>여기에 쓰여진 텍스트를 수정하는 것은 권장되지 않습니다.</strong></p>
@@ -1206,8 +1613,9 @@ Minibar는 <strong>Desktop Only</strong> 기능입니다. 미니바를 활성화
 Apply &amp; Save 버튼은 아래 텍스트 박스에서 수동으로 설정이 변경된 경우에만 사용됩니다. 다른 디버그 세팅의 기능을 적용하기 위해서 해당 버튼을 누를 필요는 없습니다.</p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="module-training"><a class="header" href="#module-training">Module Training</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
 <h2 id="modules-at-a-glance"><a class="header" href="#modules-at-a-glance">Modules At a Glance</a></h2>
-<p><strong>Tip</strong>에서 봤겠지만, 모듈은 &quot;AI를 스타일, 장르 혹은 설정에 집중시킬&quot; 수 있고, &quot;특정 주제를 다루거나 유명한 작가, 글쓰기 스타일을 흉내내거나, 참고 자료를 제공할 수 있습니다.&quot; 그런데 <strong>Module Trainer</strong>는 어떻게 사용하고, 어떻게 이것을 최대한 활용할 수 있을까요?</p>
+<p><strong>Tip</strong>에서 봤겠지만, 모듈은 "AI를 스타일, 장르 혹은 설정에 집중시킬" 수 있고, "특정 주제를 다루거나 유명한 작가, 글쓰기 스타일을 흉내내거나, 참고 자료를 제공할 수 있습니다." 그런데 <strong>Module Trainer</strong>는 어떻게 사용하고, 어떻게 이것을 최대한 활용할 수 있을까요?</p>
 <p><strong>Splash Screen</strong>에서 왼쪽의 <strong>Library Sidebar</strong>를 열고 Goose/Identicon을 클릭하여 <strong>User Menu</strong>를 여십시오. 그러면 <strong>Other</strong> 섹션에서 <strong>AI Module Training</strong>을 찾을 수 있을 겁니다. 이를 클릭하면 <strong>Module Trainer</strong>로 들어갈 수 있고 여기에서, 선택한 텍스트로 모듈을 학습할 수 있습니다. 학습이 끝난 모듈을 사용하면 AI의 출력물을 해당 텍스트와 비슷하게 만들 수 있습니다.</p>
 <h2 id="the-module-trainer"><a class="header" href="#the-module-trainer">The Module Trainer</a></h2>
 <p>자, <strong>Module Trainer</strong>를 열었을 때 약간 부담감이 생겼더라고 괜찮습니다. 모듈을 요리하는 데에는 여러 옵션과 방법이 있습니다! 하지만 가장 먼저 <strong>자료를 업로드<em>Upload Your Material</em></strong>해야 합니다.</p>
@@ -1246,35 +1654,38 @@ Apply &amp; Save 버튼은 아래 텍스트 박스에서 수동으로 설정이 
 <h3 id="the-provided-modules"><a class="header" href="#the-provided-modules">The Provided Modules</a></h3>
 <p><em>Specials</em> 섹션은 '추가 기능이 있는' 모듈을 위해 예약된 자리입니다. 여기에서 <a href="module_training.html#text-adventure">Text Adventure Module</a>를 찾을 수 있습니다. <em>General</em> 섹션에서는 스토리에 <strong>No Module</strong> 옵션을 선택하거나, 다양한 스토리 주제에 적합한 <strong>Cross-Genre</strong> 장르 옵션을 선택할 수 있습니다. <em>Style</em> 섹션은 특정 유명 작가의 자료를 포함하는 모듈이 있습니다. <em>Theme</em> 섹션은 가장 크며, 특정 문학 장르의 다양한 자료를 묶은 모듈의 큰 선택지를 제공합니다. <em>Inspiration</em> 섹션은 Theme 섹션과 유사하지만, 그 대신 더 좁은 범위의 작품을 샘플링하여 보다 구체적이고 집중된 출력을 내는 모듈이 있습니다.</p>
 <h4 id="text-adventure-1"><a class="header" href="#text-adventure-1">Text Adventure</a></h4>
-<p>이 모듈은 <strong>Editor</strong>의 외형을 Text Adventure 인터페이스로 바꾸기 때문에 <em>Specials</em>로 분류되었습니다! 간단히 말해, 이 모듈의 훈련 데이터는 완전히 이인칭(모든 문장에서 &quot;You&quot;를 사용함)으로 작성되었으며, <code>&gt;</code> 문자로 표시된 고유한 '플레이어 액션'을 가지고 있습니다. 텍스트 어드벤쳐 모드의 더 자세한 내용은 [documentation article](Matty’s Page Here)를 확인하십시오.</p>
+<p>이 모듈은 <strong>Editor</strong>의 외형을 Text Adventure 인터페이스로 바꾸기 때문에 <em>Specials</em>로 분류되었습니다! 간단히 말해, 이 모듈의 훈련 데이터는 완전히 이인칭(모든 문장에서 "You"를 사용함)으로 작성되었으며, <code>&gt;</code> 문자로 표시된 고유한 '플레이어 액션'을 가지고 있습니다. 텍스트 어드벤쳐 모드의 더 자세한 내용은 [documentation article](Matty’s Page Here)<sup class="footnote-reference"><a href="#1">1</a></sup>를 확인하십시오.</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>역자가 마크다운을 잘못 사용한 것이 아니다. 원문에 이렇게 표기되어 있다.</p>
+</div>
 <h2 id="advanced-module-engineering"><a class="header" href="#advanced-module-engineering">Advanced: Module Engineering</a></h2>
 <p>주의: 이 섹션은 <em>훨씬</em> 더 기술적인 언어를 사용하고 모듈을 최대한 활용하려는 고급 NovelAI 사용자를 대상으로 하고 있습니다. 이 섹션 내용의 이해를 위해 일부 기술 전문 용어와 기본적인 머신러닝 개념에 익숙하다고 가정합니다.</p>
 <h3 id="secret-tweaks"><a class="header" href="#secret-tweaks">Secret Tweaks</a></h3>
 <h4 id="images-for-custom-modules"><a class="header" href="#images-for-custom-modules">Images for Custom Modules</a></h4>
 <p>AI Modules Gallery를 둘러보다 보면, 제공된 모듈들은 스타일리쉬한 썸네일 이미지를 갖고 있지만 사용자의 모듈은 모두 같은 보물 더미 이미지를 한 것을 확인할 수 있습니다. 다행히 이 이미지를 바꿀 방법이 있습니다! UI에서 공식적으로 지원되지는 않고, 텍스트 에디터의 사용이 필요합니다. 단순한 메모장도 좋지만 Notepad++이나 VSCode를 사용하면 더 빠르게 문자열을 찾고 읽을 수 있습니다. 다운로드된 .Module 파일을 텍스트 에디터로 열고 최하단으로 스크롤하세요. 그럼 다음처럼 보이는 몇 줄의 텍스트가 있을 겁니다:</p>
 <pre><code>],
-&quot;mode&quot;: 0
+"mode": 0
 }
 </code></pre>
 <p>'mode' 뒤에 한줄을 추가하면 다음처럼 됩니다:</p>
 <pre><code>],
-&quot;mode&quot;: 0,
-&quot;image&quot;: &quot;&lt;image&gt;&quot;
+"mode": 0,
+"image": "&lt;image&gt;"
 </code></pre>
 <p>그런 다음 원하는 모듈 썸네일 이미지를 원하는 호스팅 사이트(예를 들면, imgur)에 업로드하고 해당 이미지의 링크를 위 예시의 <code>&lt;image&gt;</code> 플레이스홀더에 붙여넣습니다. 그러면 다음처럼 보일 것입니다:</p>
 <pre><code>],
-&quot;mode&quot;: 0,
-&quot;image&quot;: &quot;https://i.imgur.com/yourmoduleimagehere.png&quot;
+"mode": 0,
+"image": "https://i.imgur.com/yourmoduleimagehere.png"
 </code></pre>
 <h4 id="text-adventure-mode-for-custom-modules"><a class="header" href="#text-adventure-mode-for-custom-modules">Text Adventure Mode for Custom Modules</a></h4>
-<p>AI 출력을 대화형 Text Adventure처럼 동작하도록 변경하는 커스텀 모듈을 만들었다면, 해당 모듈을 선택했을 때 모듈이 Editor UI를 Text Adventure UI로 변경하도록 만들 수도 있습니다! 방금 위에서 이야기한 &quot;mode&quot; 라인을 <code>0</code>에서 <code>1</code>로 변경하면 됩니다.</p>
+<p>AI 출력을 대화형 Text Adventure처럼 동작하도록 변경하는 커스텀 모듈을 만들었다면, 해당 모듈을 선택했을 때 모듈이 Editor UI를 Text Adventure UI로 변경하도록 만들 수도 있습니다! 방금 위에서 이야기한 "mode" 라인을 <code>0</code>에서 <code>1</code>로 변경하면 됩니다.</p>
 <p>수정을 한 후에 모듈 파일을 저장하고 NovelAI로 해당 모듈 파일을 다시 임포트하는 것을 잊지마세요!</p>
 <h3 id="training-data-in-depth"><a class="header" href="#training-data-in-depth">Training Data In Depth</a></h3>
 <p>처음 모듈을 만들 때, 여러 이야기나 좋아하는 작품의 텍스트들을 모으고 이를 모두 모듈에 넣는 것은 일반적으로 흔히 볼 수 있는 광경입니다. 그러나 모듈의 성능을 최대한 활용하기 위해서는 모듈의 훈련 데이터를 모을 때 고려해야 할 여러 사항이 있습니다.</p>
 <p>무엇보다도 중요한 것은 모듈에 넣는 모든 훈련 데이터는 중심적인 초점을 가져야 한다는 것입니다. 즉, 모듈이 무엇을 하게 <em>하고</em> 싶은지, 그리고 추가하는 훈련 데이터가 그것을 어떻게 도울 것인지를 알아야 합니다. 그 이후에는 모듈 데이터의 형식화와 정리에 대한 기술적인 세부사항으로 들어갑니다.</p>
 <p>모둘 훈련 절차는 사용자가 제출한 훈련 자료에 존재하는 다양한 에러들에 의해 손상될 수 있으므로, 가능한 가장 깨끗한 데이터를 제공하는 것이 중요합니다! 아래 나열된 데이터 손상 요인을 제거하는데 도움이 되는 많은 도구가 있지만, 이런 잠재적 문제를 어떻게 해결할지는 사용자에게 달려있습니다.</p>
 <p>제일 먼저, 과도하고 잘못 배치된 공백 문자가 있습니다. 문단 사이를 포함하여 어느 곳에서나 빈 줄은 좋지 못하고, 개행 앞/뒤에 오는 공백과 패딩 문자가 있는 것도 역시 좋지 못합니다. 둘째, 모든 형태의 헤더, 풋터, 챕터 지시자, 기타 다른 섹션 제목도 제거해야 합니다. module trainer에게 순수한 주제만 제공해야하며, 그렇지 않다면 결과물이 이런 종류의 시작과 끝 자료가 포함될 위험성이 있습니다. 셋째, 장면 간 전환은 별도의 줄에 dinkus (<code>***</code>)를 추가하여 명확하게 표시되야 하고, 챕터의 전환은 별도의 줄에 asterism (<code>⁂</code>)를 추가하여 표시해야 합니다. 이것은 훈련 데이터에 있어야 하는 유일한 '구분자'의 형태입니다.</p>
-<p>네번째, 텍스트에 일반적이지 않은 타이포그래피 문자가 있어서는 안됩니다. 이것의 가장 흔한 예는 '바보 따옴표' (<code>&quot;</code>와 <code>'</code>)<sup class="footnote-reference"><a href="#바보 따옴표">2</a></sup>와 '똑똑한 따옴표' (<code>“”</code>와 <code>‘’</code>)<sup class="footnote-reference"><a href="#똑똑한 따옴표">3</a></sup>를 같은 모듈에서 혼용하는 것이며, 이는 AI의 출력을 혼동스럽게 만드는 쉬운 방법입니다! 마지막으로 이름, 단어, 혹은 구절이 과도하게 사용되지 않는지 확인해야 합니다. 이것들은 모듈을 이상한 방식으로 작동하게 만들 수 있습니다. 예를 들어, 텍스트 데이터에 Mr. Brown 캐릭터가 서류가방을 가지고 있다고 항상 언급되고 이것이 텍스트에서 너무 자주 발생한다면, 모듈은 서류가방이 언급될 때마다 Mr. Brown을 나타나게 할 것입니다!</p>
+<p>네번째, 텍스트에 일반적이지 않은 타이포그래피 문자가 있어서는 안됩니다. 이것의 가장 흔한 예는 '바보 따옴표' (<code>"</code>와 <code>'</code>)<sup class="footnote-reference"><a href="#바보 따옴표">2</a></sup>와 '똑똑한 따옴표' (<code>“”</code>와 <code>‘’</code>)<sup class="footnote-reference"><a href="#똑똑한 따옴표">3</a></sup>를 같은 모듈에서 혼용하는 것이며, 이는 AI의 출력을 혼동스럽게 만드는 쉬운 방법입니다! 마지막으로 이름, 단어, 혹은 구절이 과도하게 사용되지 않는지 확인해야 합니다. 이것들은 모듈을 이상한 방식으로 작동하게 만들 수 있습니다. 예를 들어, 텍스트 데이터에 Mr. Brown 캐릭터가 서류가방을 가지고 있다고 항상 언급되고 이것이 텍스트에서 너무 자주 발생한다면, 모듈은 서류가방이 언급될 때마다 Mr. Brown을 나타나게 할 것입니다!</p>
 <div class="footnote-definition" id="바보 따옴표"><sup class="footnote-definition-label">2</sup>
 <p>역주: 키보드에서 입력할 수 있는 직선모양의 일반적인 따옴표를 말한다.</p>
 </div>
@@ -1282,17 +1693,19 @@ Apply &amp; Save 버튼은 아래 텍스트 박스에서 수동으로 설정이 
 <p>역주: 구부러진 모양의 따옴표이다.</p>
 </div>
 <h3 id="training-mechanics"><a class="header" href="#training-mechanics">Training Mechanics</a></h3>
-<p>더 기술적으로 접근하면, 모듈을 훈련시키는 것이 무엇을 의미하는지 더 잘 이해하기위해 Module Trainer가 어떻게 작동하는지 정확하게 살펴보는 것은 가치가 있습니다. 이전 섹션에서 설명한 것처럼, 모듈을 훈련시키기 위해 제공한 데이터에는 &quot;스텝 수&quot;가 지정되고, 모든 훈련 데이터를 커버하기 위해 필요한 스텝의 수를 '100% 스텝'이라고 합니다.</p>
+<p>더 기술적으로 접근하면, 모듈을 훈련시키는 것이 무엇을 의미하는지 더 잘 이해하기위해 Module Trainer가 어떻게 작동하는지 정확하게 살펴보는 것은 가치가 있습니다. 이전 섹션에서 설명한 것처럼, 모듈을 훈련시키기 위해 제공한 데이터에는 "스텝 수"가 지정되고, 모든 훈련 데이터를 커버하기 위해 필요한 스텝의 수를 '100% 스텝'이라고 합니다.</p>
 <p>실제로 '스텝'은 실제적인 구체적 단위로, 256 토큰으로 구성됩니다. 훈련 데이터가 Module Trainer에 제공될 때, 훈련 데이터는 각각 256 토큰의 '청크<em>chunk</em>'로 나뉘고, 마지막 청크는 대부분의 데이터가 완전히 균등하게 가득찬 256 토큰으로 나누어지지 않기 때문에 패딩됩니다. 그래서 모듈을 100%의 스텝으로 훈련하는 것은 단순히 Module Trainer가 훈련 데이터가 나누어진 모든 256 토큰의 청크를 통과하게 하는 것을 의미합니다. 다음으로 가장 중요한 것은 Module Trainer가 실제로 이런 데이터의 청크로 훈련을 할 때, 이 청크들은 랜덤하게 섞이며 섞이는 순서는 각각 훈련 실행마다 고유하다는 것입니다.</p>
 <p>만약 백 퍼센트의 단위(100%, 200%, ...)로 훈련을 할 경우에는 괜찮습니다. 이 경우에 Module Trainer는 모든 청크를 한번, 두번 그리고 그 이상씩을 볼 것이고 섞임이 효과적으로 상쇄되기 때문입니다. 하지만 예를 들어 100%를 넘겨 훈련을 하기로 결정한다면, Module Trainer가 어떤 청크를 두번 보게 될 것인지, 한번반 보게 될 것인지 보장할 수 없습니다(알릴 방법도 없어요!). 같은 논리로 100% 미만의 훈련도 같은 위험을 갖고 있습니다. Module Trainer가 일부 청크를 볼 수 없기 때문입니다.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="guide-chat-format"><a class="header" href="#guide-chat-format">Guide: Chat Format</a></h1>
-<p>다음은 AI가 두 캐릭터 간의 &quot;채팅 스타일&quot;의 내러티브를 유지하면서, 동시에 사용자 컨트롤 하에 캐릭터 중 한 명의 역할을 엄격하게 유지시키는 방법에 대한 간단한 가이드입니다.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="advanecd-chat-format"><a class="header" href="#advanecd-chat-format">Advanecd: Chat Format</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
+<p>다음은 AI가 두 캐릭터 간의 "채팅 스타일"의 내러티브를 유지하면서, 동시에 사용자 컨트롤 하에 캐릭터 중 한 명의 역할을 엄격하게 유지시키는 방법에 대한 간단한 가이드입니다.</p>
 <p>이 페이지의 예제에서 아래 용어들을 다음과 같이 변경하십시오.</p>
 <ul>
 <li><code>memory_information</code>: 여기에 캐릭터에 대한 정보나 일반적으로 <strong>Memory</strong>에 기억하고 싶은 다른 정보들을 기입하십시오. 이 부분에는 특정한 양식이 필요하지 않으며, <strong>보통의 산문</strong>도 좋습니다.</li>
 <li><code>your_name</code>: 이것을 사용자 페르소나의 이름으로 바꾸십시오.</li>
 <li><code>bot_name</code>: 이것은 AI 캐릭터의 이름으로 바꾸십시오.</li>
 </ul>
+<p><strong>Memory</strong>와 <strong>Phrase Bias</strong>에 수동으로 설정하십시오.</p>
 <h2 id="memory-1"><a class="header" href="#memory-1">Memory</a></h2>
 <p>첫번째, <strong>Memory</strong>의 시작부분에 다음의 텍스트를 입력해야 합니다.</p>
 <pre><code>memory_information
@@ -1320,7 +1733,7 @@ your_name: How are you doing?
 </code></pre>
 <p>예를 들어, AI가 <em>Euterpe</em>라는 캐릭터를 연기할 것이라면 <code>\nEuterpe:</code>라고 적으면 됩니다. <em>이 경우 {중괄호}를 닫기 전에 공백을 만들어선 안됩니다.</em></p>
 <ul>
-<li><strong>두번째</strong> <em>Bias 값</em>이 정확히 0인 <em>Bias 그룹</em>을 만들어야 합니다. Bias를 <em>활성화</em>하고 <em>Ensure Completion After Start</em> 설정을 켜고(다른 하나는 이것에 대해 차이가 없음) 다음과 같은 문구를 입력합니다:</li>
+<li><strong>두번째</strong> <em>Bias 값</em>이 정확히 0인 별개의 <em>Bias 그룹</em>을 만들어야 합니다. Bias를 <em>활성화</em>하고 <em>Ensure Completion After Start</em> 설정을 켜고(다른 하나는 이것에 대해 차이가 없음) 다음과 같은 문구를 입력합니다:</li>
 </ul>
 <pre><code>{\nyour_character: }
 </code></pre>
@@ -1341,8 +1754,8 @@ your_name: How are you doing?
 <h2 id="playing"><a class="header" href="#playing">Playing</a></h2>
 <p>이제는 <strong>Send</strong> 버튼을 누를 때마다, 항상 AI에게 지정된 캐릭터로부터 메세지를 받고, 사용자의 새로운 입력을 받기 위한 사용자 캐릭터의 이름이 뒤따릅니다.</p>
 <img src="./sigurdchat.gif">
-<p>출력되는 크기와 상관없이 AI의 &quot;게시글&quot; 끝에서 항상 출력을 종료하므로, AI가 사용자에게 더 긴 답변을 줄 때를 대비해서 <strong>Output Length</strong>를 최대 값으로 설정하는 것을 권장합니다.</p>
-<p>하지만, 어떻게든 AI가 단일 출력에서 하나의 &quot;게시글&quot;을 끝내지 않는 경우에는 다음 출력에 대해 <em>봇 캐릭터의 Phrase Bias를 일시적으로 비활성화</em>할 필요가 있을 수도 있습니다.</p>
+<p>출력되는 크기와 상관없이 AI의 "게시글" 끝에서 항상 출력을 종료하므로, AI가 사용자에게 더 긴 답변을 줄 때를 대비해서 <strong>Output Length</strong>를 최대 값으로 설정하는 것을 권장합니다.</p>
+<p>하지만, 어떻게든 AI가 단일 출력에서 하나의 "게시글"을 끝내지 않는 경우에는 다음 출력에 대해 <em>봇 캐릭터의 Phrase Bias를 일시적으로 비활성화</em>할 필요가 있을 수도 있습니다.</p>
 <blockquote>
 <p><img src="./goose.png" alt="" /> <strong>Goose tip:</strong>
 AI는 일반적으로 하나의 최대 크기 출력에 맞지 않을 정도로 킨 메시지 출력을 하지 말아야 합니다. 만약 이러한 문제를 겪고 있다면, <em>Repetition Penalties</em>를 낮춰보세요!</p>
@@ -1352,15 +1765,16 @@ AI는 일반적으로 하나의 최대 크기 출력에 맞지 않을 정도로 
 <p><a href="https://docs.novelai.net/text/chatformat.html#scenario-file">NovelAI 공식문서 링크</a></p>
 <p>이것은 탬플릿으로 사용할 수 있는 단순한 베어본 예제라는 사실에 유의하세요. 더 나은 결과를 얻기 위해서 더욱 풍부한 <strong>Memory</strong>와 초기 대화를 작성하는 것이 이상적입니다.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="advanced-special-symbols"><a class="header" href="#advanced-special-symbols">Advanced: Special Symbols</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
 <p>NovelAI의 데이터셋에는 이야기의 특정 부분을 표시하기 위해 일부 <strong>symbols</strong>이 일관적으로 사용되었습니다. 텍스트 생성을 위한 프롬프팅을 할 때 이런 <strong>tokens</strong>를 직접 사용하면 특정 데이터의 분류를 끌어올 수 있습니다.</p>
 <h2 id="arrowing"><a class="header" href="#arrowing"><code>&gt;</code> Arrowing</a></h2>
-<p>&quot;~를 초과하는&quot;이라는 사인인 <code>&gt;</code>을 문장 앞에 <em><strong>right-pointing arrow</strong></em>로 사용하는 것은 문맥에 따라 다양한 용도로 사용됩니다.</p>
+<p>"~를 초과하는"이라는 사인인 <code>&gt;</code>을 문장 앞에 <em><strong>right-pointing arrow</strong></em>로 사용하는 것은 문맥에 따라 다양한 용도로 사용됩니다.</p>
 <p>가장 일반적인 용법은 <a href="./text_adventure.html">Text Adventure</a> 플레이어의 명령입니다만, 일반적인 <strong>text messages</strong>, <strong>email quotes</strong>, <strong>computer output</strong>에도 사용할 수 있습니다. 보통 텍스트 앞에 공백을 둡니다.</p>
 <h2 id="asterisking"><a class="header" href="#asterisking"><code>*</code>Asterisking<code>*</code></a></h2>
 <p>애스터리크로 둘러쌓인 텍스느는 <code>*bang*</code>이나 <code>*Kaboom!*</code>와 같은 소리 효과나 <code>*ahem</code>이나 <code>*sigh*</code>처럼 특정한 발성을 신호화하여 나타냅니다.</p>
-<p><code>&quot;Oh you know I just *love* chocolate milk.&quot;</code>와 같이 말의 특정 부분을 강조할 때도 쓰일 수 있습니다.</p>
+<p><code>"Oh you know I just *love* chocolate milk."</code>와 같이 말의 특정 부분을 강조할 때도 쓰일 수 있습니다.</p>
 <h2 id="chevronning"><a class="header" href="#chevronning"><code>&lt;</code>Chevronning<code>&gt;</code></a></h2>
-<p>일반적인 <code>&quot;</code>따옴표<code>&quot;</code> 대신, 꺽쇠 괄호로 알려진 <strong>chevrons</strong>로 <code>&lt;</code>보다 작고, 보다 큼<code>&gt;</code>을 사용하면 텔레파시 혹은 수화나 글<em>writing</em> 같은 비음성적 대화에 태그를 지정할 수 있습니다.</p>
+<p>일반적인 <code>"</code>따옴표<code>"</code> 대신, 꺽쇠 괄호로 알려진 <strong>chevrons</strong>로 <code>&lt;</code>보다 작고, 보다 큼<code>&gt;</code>을 사용하면 텔레파시 혹은 수화나 글<em>writing</em> 같은 비음성적 대화에 태그를 지정할 수 있습니다.</p>
 <p>예를 들어: <code>&lt;Be not afraid,&gt; the creature's inner voice resonated inside my mind.</code></p>
 <h2 id="-dinkusing"><a class="header" href="#-dinkusing"><code>***</code> Dinkusing</a></h2>
 <p>재미있는 이름을 한 <code>***</code> <strong>dinkus</strong>는 <em>장면</em>이나 <em>챕터를 나누는</em>데 사용됩니다.</p>
@@ -1375,12 +1789,13 @@ AI는 일반적으로 하나의 최대 크기 출력에 맞지 않을 정도로 
 <h2 id="-spaced-bracketing-"><a class="header" href="#-spaced-bracketing-">[ Spaced Bracketing ]</a></h2>
 <p>대괄호 사이에 빈 공백과 텍스트가 채워진 <strong>[ 대괄호 ]</strong> 는 다양한 케이스에서 사용될 수 있습니다..</p>
 <ol>
-<li>
-<p><strong>ATTG</strong>: [ <strong>A</strong>uthor: ; <strong>T</strong>itle: ; <strong>T</strong>ags: ; <strong>G</strong>enre: ]<p>
-스토리에 대한 선택적인 초기자로 사용될 수 있습니다. <strong>ATTG</strong>는 새로운 이야기와 강하게 관련이 되어있으므로, AI가 장기기억 문제를 겪지 않게 하려면 가장 위에 이것을 두십시오. <strong>Memory</strong>의 첫번째 행이 좋은 위치입니다. <em>Author</em>와 <em>Title</em>은 유용도가 가장 떨어지므로 원하지 않는다면 생략할 수 있습니다. <p>
-Example: <code>[ Tags: London, 1820s, dragons; Genre: steampunk, drama ]</code><p>
+<li><strong>ATTG</strong>: [ <strong>A</strong>uthor: ; <strong>T</strong>itle: ; <strong>T</strong>ags: ; <strong>G</strong>enre: ]<p>
+스토리에 대한 선택적인 초기자로 사용될 수 있습니다. <strong>ATTG</strong>는 새로운 이야기와 강하게 관련이 되어있으므로, AI가 장기기억 문제를 겪지 않게 하려면 가장 위에 이것을 두십시오. <strong>Memory</strong>의 첫번째 행이 좋은 위치입니다. <em>Author</em>와 <em>Title</em>은 유용도가 가장 떨어지므로 원하지 않는다면 생략할 수 있습니다. <p></li>
+</ol>
+<p><a href="./models.html#erato">Llama 3 Erato</a> 모델에만 있는 <code>[ S: X ]</code> 요소를 ATTG 끝에 추가하여 쓰기 품질을 지정할 수 있습니다. <code>X</code>는 1부터 까지의 숫자로서 <strong>별점</strong> 1-5개에 해당합니다. 별점 두개에서 네개까지가 제일 효과적인 것 같습니다.</p>
+<p>Example: <code>[ Tags: London, 1820s, dragons; Genre: steampunk, drama ]</code><p>
 (고유명사는 대문자로, 나머지는 소문자로)</p>
-</li>
+<ol>
 <li>
 <p><strong>장면</strong>을 전환하거나 설정<p>
 <code>[ London, 1821 ]</code>, <code>[ Woodstock, 1969, 22:30 ]</code>, <code>[ New York, 1935, Night Club ]</code>, <code>[ Monday, 8:00 A.M. ]</code>, <code>[ Five Minutes Later ]</code> 등. 이것은 <em>Author's Note</em>를 포함한 아무 곳에서 사용할 수 있습니다.</p>
@@ -1390,12 +1805,12 @@ Example: <code>[ Tags: London, 1820s, dragons; Genre: steampunk, drama ]</code><
 <code>[ John ]</code>, <code>[ Batman ]</code> 등. AI가 이름으로 인식하지 않으면 작동하지 않을 겁니다. Memory에 사용하여 AI가 주인공을 추적하는데 도움을 줄 수도 있습니다.</p>
 </li>
 <li>
-<p><strong>스타일</strong> 태그 (<strong>Krake</strong>, <strong>Clio</strong>와 <strong>Kayra</strong> 전용)<p>
+<p><strong>스타일</strong> 태그 (<strong>Krake</strong>, <strong>Clio</strong>, <strong>Kayra</strong>, <strong>Erato</strong> 전용)<p>
 Examples: <code>[ Style: essay, nonfiction ]</code>, <code>[ Style: verbose ]</code>, <code>[ Style: poetry ]</code>,<code> [ Style: text adventure ]</code>, <code>[ Style: chat ]</code>, 심지어 <code>[ Style: SFW ]</code> 등의 스타일 태그를 지정하면 AI가 <strong>더욱 더</strong> 스타일을 깔끔한 상태를 유지하는데 도움이 됩니다.<p>
 이것은 작가노트에 넣어도 스토리 진행을 방해하지 않습니다.</p>
 </li>
 <li>
-<p><strong>지식</strong> 태그 (<strong>Clio</strong>와 <strong>Kayra</strong> 전용)<p>
+<p><strong>지식</strong> 태그 (<strong>Clio</strong>,<strong>Kayra</strong>,<strong>Erato</strong> 전용)<p>
 <code>[ Knowledge: paradoxes ]</code>, <code>[ Knowledge: anime in 90s ]</code>. 이것은 모델이 표시된 주제에 대한 이야기를 하도록 유도합니다. 위의 스타일 태그와 결합하여 다양한 효과를 낼 수 있습니다.<p>
 Examples: <code>[ Knowledge: CRPGs; Style: blog post ]</code>, <code>[ Knowledge: supernatural; Style: podcast, transcript ]</code> 등.</p>
 </li>
@@ -1404,7 +1819,7 @@ Examples: <code>[ Knowledge: CRPGs; Style: blog post ]</code>, <code>[ Knowledge
 때떄로 AI이 숨겨진 컨텍스트의 내용을 그대로 <em>복사</em>하는 경우가 있는데, 이를 이처럼 공백있는 대괄호로 묶어두면 이를 피하는데 도움이 될 수 있습니다. <strong>Clio</strong>와 <strong>Kayra</strong>와 같은 최신 모델에서는 이런 일이 잘 발생하지 않으므로 이것이 필용하지 않을 수도 있습니다.</p>
 </li>
 <li>
-<p><code>[ An Unexpected Quest ]</code>, <code>[ The End of Many Things ]</code>, <code>[ Into the Wastes ]</code>, <code>[ Time Loop (3rd Restart) ]</code> 등과 같이 <em><strong>챕터의 제목</strong></em>으로 사용할 수도 있습니다. 비록 그 결과는 예측할 수 없지만요.<p>
+<p><code>[ An Unexpected Quest ]</code>, <code>[ The End of Many Things ]</code>, <code>[ Into the Wastes ]</code>, <code>[ Time Loop (3rd Restart) ]</code> 등과 같이 <em><strong>챕터의 제목</strong></em>으로 사용할 수도 있습니다. 비록 <em><strong>그 결과는 예측할 수 없지만요.</strong></em><p>
 <code>[ Prologue ]</code>나 <code>[ Epilogue ]</code>는 다소 일관된 효과를 보인다는 점은 주목할만 합니다.<p>
 <em>dinkus 다음에 나올 때 가장 잘 작동해야 합니다.</em></p>
 </li>
@@ -1415,15 +1830,15 @@ Examples: <code>[ Knowledge: CRPGs; Style: blog post ]</code>, <code>[ Knowledge
 다른 사용법으로 자유롭게 실험해보세요. 하지만 플라시보 효과를 주의해야해요. 위 용도를 제외하면 괄호를 제거하는 것이 더 좋은 결과를 얻을 수도 있어요.</p>
 </blockquote>
 <h2 id="-----horizontal-lining"><a class="header" href="#-----horizontal-lining">---- Horizontal Lining</a></h2>
-<p>한 줄에 <code>----</code> 이렇게 &quot;네개의 하이픈&quot;만 있으면 일반 스토리텔링이 아니라 정보를 제공하는 텍스트임을 가리킨다.</p>
-<p>예를 들어, 다음과 같은 정보를 덤프하는데 사용할 수 있다</p>
+<p>한 줄에 <code>----</code> 이렇게 "네개의 하이픈"만 있으면 일반 스토리텔링이 아니라 정보를 제공하는 텍스트임을 가리킵니다.</p>
+<p>예를 들어, 다음과 같은 정보를 덤프하는데 사용할 수 있습니다:</p>
 <pre><code>----
 Elves are very proud.
 They have pointy ears.
 ***
 </code></pre>
-<p>그리고나서 <code>***</code> dinkus와 함께 보통의 산문 스토리텔링을 다시 시작할 수 있고, 다른 정보 항목을 작성하고 싶은 경우에는 <strong>다른 수평 라인</strong> <code>----</code>을 다시 사용할 수도 있다.</p>
-<p>예를 들어 다음과 같이  <strong>수평 줄</strong> 바로 뒷 줄에 정보의 카테고리를 단독으로 작성하여 범주를 가리키는데 사용할 수도 있다:</p>
+<p>그리고나서 <code>***</code> <strong>dinkus와 함께 보통의 산문 스토리텔링</strong>을 다시 시작할 수 있고, 다른 정보 항목을 작성하고 싶은 경우에는 <strong>다른 수평 라인</strong> <code>----</code><strong>을 다시 사용할 수도 있습니다.</strong></p>
+<p>예를 들어 다음과 같이  <strong>수평 줄</strong> 바로 뒷 줄에 정보의 카테고리를 단독으로 작성하여 범주를 가리키는데 사용할 수도 있습니다:</p>
 <pre><code>----
 Characters:
 Sigurd, a strong warrior who wields a mighty sword.
@@ -1436,7 +1851,7 @@ Xenoarchaeologist: A scientist that studies ancient relics of alien origins.
 Peach Festival: A peach-themed festival that celebrates a bountiful harvest.
 ***
 </code></pre>
-<p>카테고리에 <code>?</code>를 추가하여 AI가 틀리기 쉬운 것에 대해 &quot;추가적인 정보를 제공&quot;할 수도 있습니다. 예시:</p>
+<p>카테고리에 <code>?</code>를 추가하여 AI가 틀리기 쉬운 것에 대해 "추가적인 정보를 제공"할 수도 있습니다. 예시:</p>
 <pre><code>----
 Snake
 Type: animal, reptile
@@ -1452,7 +1867,13 @@ Legs?: None (squamous land tetrapods are legless)
 <p><img src="./goose.png" alt="" /> <strong>Goose tip:</strong>
 문맥에 ----가 너무 많다면 AI는 ---- 자체를 출력으로 뱉기 시작할 수도 있어요. 그것을 막고 싶다면 해당 토큰에 대해 bias를 사용하거나 밴하는 것을 추천해요.</p>
 </blockquote>
-<h2 id="-horizontal-barring"><a class="header" href="#-horizontal-barring">====== Horizontal Barring</a></h2>
+<h2 id="-혹은--horizontal-barring-모델-별로"><a class="header" href="#-혹은--horizontal-barring-모델-별로">==== 혹은 ====== Horizontal Barring (모델 별로)</a></h2>
+<p><strong>Erato</strong> 전용으로, 4개의 등호로 이루어진 <strong>수평 막대</strong> <code>====</code>는 포럼의 게시글 구분자처럼 사용되는데 아래에 <strong>유저명</strong>을 입력하여 게시자를 가리키고 그 위에 <strong>스레드</strong>의 이름(선택 사항)을 입력할 수 있습니다.</p>
+<pre><code>Thread: Let's chat about AI!
+====
+Kurumuz
+</code></pre>
+<p>수평막대는 이메일 구분 기호로도 사용할 수 있습니다.</p>
 <p><strong>Clio</strong>와 <strong>Kayra</strong> 전용으로, 6개의 등호로 이루어진 <strong>수평 막대</strong> <code>======</code>는 포럼의 게시글 구분자처럼 사용되는데 아래에 <strong>유저명</strong>을 입력하여 게시자를 가리키고 그 위에 <strong>스레드</strong>의 이름(선택 사항)을 입력할 수 있습니다.</p>
 <pre><code>Thread: Let's chat about AI!
 ======
@@ -1460,7 +1881,7 @@ Kurumuz
 </code></pre>
 <p>수평 막대는 이메일의 구분자로도 사용될 수 있습니다.</p>
 <h2 id="wide-spacing"><a class="header" href="#wide-spacing">Wide spacing</a></h2>
-<p>데이터셋의 일부 위치에 <em>&quot;보통보다 넓은&quot;</em> 두개의 공백 문자 타입이 사용되었습니다. 필요하다면 NovelAI 에디터에서 마우스 오른쪽 버튼 메뉴를 띄워 쉽게 둘 다 입력할 수 있습니다.</p>
+<p>데이터셋의 일부 위치에 <em>"보통보다 넓은"</em> 두개의 공백 문자 타입이 사용되었습니다. 필요하다면 NovelAI 에디터에서 마우스 오른쪽 버튼 메뉴를 띄워 쉽게 둘 다 입력할 수 있습니다.</p>
 <h3 id="en-spacing"><a class="header" href="#en-spacing">En Spacing</a></h3>
 <p>(<code> </code>) En Space는 따옴표, 문자, 기호 등 텍스트 안의 다양한 상황에서 사용됩니다.</p>
 <h3 id="em-spacing"><a class="header" href="#em-spacing">Em Spacing</a></h3>
@@ -1470,13 +1891,13 @@ Kurumuz
 해당 띄어쓰기가 어떤 띄어쓰기인지 기억하기 쉬운 방법은 문자 <code>n</code>이 문자 <code>m</code>보다 더 얇은 글자이기 때문에 en spacing이 더 얇은 공백이고, em spacing이 더 넓은 공백이라고 기억하는 거에요.</p>
 </blockquote>
 <h2 id="-litrpging"><a class="header" href="#-litrpging"><code>─</code> LitRPGing</a></h2>
-<p><code>─</code> 문자는 기술적으로 <em>&quot;Box Drawings Light Horizontal&quot;</em> 이라고 불리지만 일반적으로는 <strong>&quot;LitRPG Line&quot;</strong> 이라고 불립니다. <code>─</code> 문자는 줄의 시작 부분에서 캐릭터의 스탯이나 속성, 소유하고 있는 것들 등, 일부 LitRPG 관련 텍스트를 표시할 때 사용됩니다.</p>
+<p><code>─</code> 문자는 기술적으로 <em>"Box Drawings Light Horizontal"</em> 이라고 불리지만 일반적으로는 <strong>"LitRPG Line"</strong> 이라고 불립니다. <code>─</code> 문자는 줄의 시작 부분에서 캐릭터의 스탯이나 속성, 소유하고 있는 것들 등, 일부 LitRPG 관련 텍스트를 표시할 때 사용됩니다.</p>
 <pre><code>─ You gained a level in Dragoon! You earned the Class Perk: Dragon Slayer!
 ─ Dragon Slayer: your attacks deal bonus damage on reptile and aquatic targets.
 </code></pre>
 <p><em>NovelAI의 텍스트 에디터에서 <strong>마우스 오른쪽 버튼의 메뉴</strong>를 통해 쉽게 이 문자를 입력할 수 있습니다.</em></p>
 <h2 id="noting-experimental"><a class="header" href="#noting-experimental">Noting: <em>Experimental</em></a></h2>
-<p><strong>Clio</strong>와 <strong>Kayra</strong>에서만 다음과 같이 작성하여</p>
+<p><strong>Clio</strong>와 <strong>Kayra</strong> 전용으로, 다음과 같이 작성하여</p>
 <pre><code>Notes:
 - 
 </code></pre>
@@ -1491,41 +1912,23 @@ Kurumuz
 ##just like the elves lol
 They have large beards.
 </code></pre>
-<p><strong>에디터</strong>에서 위처럼 작성했지만, AI는 글 전체가 아니라 아래와 같은 글을 &quot;볼&quot; 것입니다.</p>
+<p><strong>에디터</strong>에서 위처럼 작성했지만, AI는 글 전체가 아니라 아래와 같은 글을 "볼" 것입니다.</p>
 <pre><code>Dwarves are very proud.
 They have large beards.
 </code></pre>
 <p><code>##</code>은 다른 사람을 위해 만든 <strong>시나리오</strong>에 코멘트를 작성하거나 이야기 중간에 메모를 남기는데 유용할 것입니다.</p>
 <p><em><strong>주석처리</strong>를 하기 위해서는 ##이 해당 줄의 처음에 위치해야 한다는 사실을 기억하십시오. 그러므로 여러 줄을 <strong>주석처리</strong>하기 위해서는 각 줄의 시작부분에 ##를 입력해야 합니다.</em>
 <em>원한다면 ## 뒤에 공백을 둘 수 있습디만 기능적으로는 차이가 없습니다.</em></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="advanced-cfg"><a class="header" href="#advanced-cfg">Advanced: CFG</a></h1>
-<h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
-<p>Sampling 슬라이더에 새롭게 추가된 것이 바로 CFG(Classifier Free Guidance)입니다! 이 흥미롭고 새로운 <em><strong>실험적</strong></em> 샘플링 방법은 출력을 이전보다 더 생생하고 주제에 맞게 만들어주지만 최고의 결과를 위해서는 주의해서 사용해야 합니다. 고급 사용자 여러분, 다음의 실험적인 시도를 할 준비가 되었나요?</p>
-<img src="./cfgwhere.png">
-<h2 id="mechanics"><a class="header" href="#mechanics">Mechanics</a></h2>
-<p>그렇다면 샘플링 순서에 CFG를 넣기로 결정했을 때, 내부에서는 어떤 일이 벌어질까요? 곧 모든 것에 대한 설명을 하겠지만, 간단히 말하면 CFG는 한 쌍의 숨겨진 출력을 생성합니다: 하나는 '반대'이고, 하나는 '중립' 입니다. 그런 다음 편집기에서 제공되는 세번쨰 및 마지막 출력을 유도하기 위해 그 둘의 차이를 계산합니다. CFG가 활성화 상태에서 출력이 <strong>느리다는 느낌</strong>을 받는다면 이러한 다중-패스 동작<em>multi-pass behavior</em>이 그 이유입니다.</p>
-<p>조금 더 자세히 알아봅시다. <strong>&quot;Change Settings Order&quot;</strong> modal **(Options Sidebar -&gt; Sliders Tab -&gt; Sampling Section)**에서 CFG를 활성화하거나  CFG가 활성화된 프리셋을 불러오면 두가지의 요소가 있음을 알게 될 것입니다: <strong>&quot;CFG Scale: &quot;</strong> 라고 이름이 적힌 슬라이더와 <strong>텍스트 박스</strong>. 이 슬라이더와 텍스트 박스가 어떻게 같이 작동하는지 설명하기 위해 슬라이더를 중간 정도의 강도 값 —가령, 1.6—으로 설정하고 텍스트 박스를 비워둔 채 에디터에서 텍스트를 약간 생성해봅시다.</p>
-<p>빠르게 요약하자면, CFG를 사용한 생성은 두개의 숨겨진 출력으로 시작하고 사용자가 받는 세번째 출력으로 진행됩니다. 실제로 이것은 한번에 동시에 이뤄지는 것이 아니라 토큰 별로 수행되기 때문에 CFG를 사용하는 중에도 여전히 스트리밍된 출력 결과를 얻을 수 있습니다! 따라서 각각의 토큰에 대해 모델은 먼저 CFG 텍스트 박스에 입력한 내용을 제외한, <strong>컨텍스트 없이</strong> 숨겨진 토큰 확률을 생성합니다. 이것이 <em>반대 출력</em>입니다. 그 후, 모델은 평소처럼 스토리의 모든 컨텍스트를 가지고 숨겨진 다른 토큰 확률을 생성합니다. 이것이 <em>중립 출력</em>입니다. CFG는 이 두 개의 출력을 가지고 두 출력의 잠재적인 토큰 선택의 차이점을 비교합니다.</p>
-<p>그러므로 이 예제에서 모델은 일단 스토리가 비어있는 것처럼 출력을 생성합니다(비어있는 CFG 텍스트 박스를 가정했었습니다). 그 후 스토리와 컨텍스트에 대한 출력을 생성합니다. 이 두 출력에 차이점이 발견되고, 1.6의 배율로 조정된 다음, 에디터에서 나타나는 세번째의 '진짜' 출력을 선택하는데 사용됩니다. 이것이 <em>최종</em> 출력입니다. 이제 CFG 텍스트 박스에 대해 이야기해 보겠습니다.</p>
-<blockquote>
-<p><img src="./goose.png" alt="" /> <strong>Goose tip:</strong>
-이것이 토큰 별로 동작된다는 것을 기억하세요. 그러므로 실제로 최종 출력에 대한 숨겨진 &quot;역출력&quot;이라는 것은 <strong>존재하지 않으며</strong>, 각 토큰에 대한 느슨한 확률들만 있어요.</p>
-</blockquote>
-<h2 id="the-cfg-text-box-opposing-prompt"><a class="header" href="#the-cfg-text-box-opposing-prompt">The CFG Text Box (Opposing Prompt)</a></h2>
-<img src="./cfgbox.png">
-<p>CFG 텍스트 박스를 비워둔 것은 <em>의도된 사용 모드</em>라는 점을 유의해야 합니다. CFG 텍스트 박스를 비워둠으로써 CFG는 더 정확한 출력을 위해 AI의 기본 문체와 사용자의 이야기 스타일의 차이점을 강조하기 때문입니다. 하지만 박스가 있는 것은 이유가 있습니다. CFG 텍스트 박스에 내용을 입력하면 어떻게 될까요?</p>
-<p>예를 들어, 박스에 다음과 같은 내용을 추가했다고 가정해봅시다: <code>I felt a sharp pain in my side. to the box.</code></p>
-<p>이번에는 <em>반대 출력</em>을 생성할 때, <code>Suddenly, I felt a sharp pain in my side.. </code>만 있는 스토리가 주어졌을 때 AI가 생성한 것과 동일한 응답이 될 것입니다. 그리고나서 이 응답은 <em>중립 출력</em>과 비교하여 가중치를 매기고 <em>최종 출력</em>을 위해 지난번처럼 CFG 스케일에 의해 확대됩니다. CFG 텍스트 박스에 올바른 입력을 하면, AI가 특정 주제나 스타일, 행동 패턴 등을 피하도록 만들 수 있습니다! 다른 NovelAI의 기능들처럼 신중한 실험이 핵심입니다.</p>
-<p>게다가 CFG 스케일 값은 예측 가능한 방식으로 작동하지 않습니다. Randomness이나 Tail-Free Sampling 값과 같은 다른 슬라이더의 값의 사용 케이스들과는 다르게 말입니다. <strong>컨텍스트 사이즈, 출력 길이 혹은 다른 샘플링 값의 변경은 이전에 잘 조절된 CFG 스케일 값을 쓸모 없게 만들 것입니다.</strong> Amber Zippo 같은 프리셋을 사용할 때나 커뮤니티에서 발견한 CFG 샘플링을 사용하는 다른 프리셋을 사용할 때 이점을 염두에 둬야합니다.</p>
-<p>주요 출저가 당신의 관심사이고, 수학에서 많은 그리스어를 처리할 수 있다면 원래의 <a href="https://arxiv.org/abs/2306.17806">CFG 논문</a>을 확인하여 모든 작동 방식에 대한 더욱 많은 통찰력을 얻으십시오.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="advanced-phrase-repetition-penalty"><a class="header" href="#advanced-phrase-repetition-penalty">Advanced: Phrase Repetition Penalty</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
 <p>이것은 개별적인 토큰이 아니라 토큰 시퀀스에 영향을 주는 것을 목표로 하는 새로운 반복 페널티 방법입니다. 예를 들어, 이야기의 다른 지점에서 특정 문장이 계속 나타난다면 구문 반복 패널티(Phrase Repetition Penalty)를 통해 해당 문장을 완성하기 어렵게 만들 수 있습니다.</p>
 <p>첫번째 토큰은 생성되겠지만, 반복되는 문장의 두번째 토큰은 페널티를 받게 될 것이고, 그리고 세번째 토큰은 더욱 강한 페널티를 받는 식입니다.</p>
 <img src="./phrasereppen.png">
 <p><strong>구문 반복 패널티는 다른 반복 페널티 설정과 독립적으로 작동됩니다.</strong> 즉, <strong>Rep Pen Range</strong>이나 <strong>Rep Pen Slope</strong> 같은 다른 반복 패널티 설정에 영향을 받지 않음을 의미합니다. 하지만 <strong>구문 반복 페널티</strong>는 여전히 다른 반복 페널티와 함께 사용할 수 있으며 <em>이 반복 패널티들</em>은 동시에 <em>출력에 영향을 미칠 것입니다.</em></p>
-<p>해당 반복 패널티 방법의 또 다른 점은, 슬라이더를 갖지 않는다는 점입니다. 대신에 Phrase Repetition Penalty는 다음 중에서 선택할 수 있는 6개의 강도 증가 설정이 있습니다:<p>
-<code> Off, Very Light, Light, Medium, Agressive, Very Agressive.</code></p>
-</p><div style="break-before: page; page-break-before: always;"></div><h1 id="advanced-special-modules"><a class="header" href="#advanced-special-modules">Advanced: Special Modules</a></h1>
+<p>해당 반복 패널티 방법의 또 다른 점은, 슬라이더를 갖지 않는다는 점입니다. 대신에 Phrase Repetition Penalty는 다음 중에서 선택할 수 있는 6개의 강도 증가 설정이 있습니다:</p>
+<p><code> Off, Very Light, Light, Medium, Agressive, Very Agressive.</code></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="advanced-special-modules"><a class="header" href="#advanced-special-modules">Advanced: Special Modules</a></h1>
+<p><em>Last contents updated 9/24/2024</em></p>
 <p>다음은 Clio와 Kayra 모델에서만 지원하는, NovelAI Text Generation의 새롭고 실험적인 모듈입니다.</p>
 <img src="./specialmodules.png">
 <h2 id="instruct"><a class="header" href="#instruct">Instruct</a></h2>
@@ -1534,7 +1937,7 @@ They have large beards.
 <p align="center"><img src="./instructgalena.gif"></p>
 <p><em><strong>Insturction Blocks</strong>는 <a href="./editor.html#editor-v2">Editor V2</a>에서만 동작하므로 해당 기능을 이용하기 위해서는 구버전의 이야기를 V2로 업데이트해야 한다는 사실에 유의하십시오.</em></p>
 <p>Instruct Block에서 <em>백스페이스</em>를 눌러 이전 줄로 이동하거나 빈 Instruct Block에서 <em>백스페이스</em>를 눌러 <strong>Instruct Block</strong>을 삭제할 수도 있습니다.</p>
-<p>그리고 이 모듈의 독특한 점은 이것을 사용하기 위해 모듈 리스트에서 선택할 필요가 없다는 것입니다. 컨텍스트의 최근 1000자까지의 지시사항을 입력하기만 하면 모델은 출력을 위해 자동으로 <strong>Instruct Module</strong>을 사용합니다!</p>
+<p>그리고 이 모듈의 독특한 점은 이것을 사용하기 위해 모듈 리스트에서 선택할 필요가 없다는 것입니다. 컨텍스트의 최근 <em>1000자 이내</em>의 지시사항을 입력하기만 하면 모델은 출력을 위해 자동으로 <strong>Instruct Module</strong>을 사용합니다!</p>
 <blockquote>
 <p><img src="./goose.png" alt="" /> <strong>Goose tip:</strong>
 Instruct Module을 사용하지 않을 때, 지시사항은 이야기에서 컨텍스트에서 제외됩니다.</p>
@@ -1542,7 +1945,7 @@ Instruct Module을 사용하지 않을 때, 지시사항은 이야기에서 컨�
 <p>그리고 마지막으로 <strong>Instruction Blocks</strong>은 <em><strong>에디터</strong></em> 전용이지만 지시사항은 메모리나 작가 노트와 같은 다른 장소에서도 사용할 수 있습니다.</p>
 <p>{ 한칸 띄어쓰기한 중괄호 } 사이에 지시사항을 넣기만 하면 됩니다.</p>
 <p>예를 들어: <code>{ Make the witch do a backflip at some point in the fight. }</code></p>
-<p>메모리나 작가노트에서의 { 한칸 띄어쓰기한 중괄호 } 사이의 지시사항은, 지시사항이 컨텍스트 범위 내의 1000 글자 범위 내에 있는 한, Instruct Module를 자동으로 활성화하는데에 사용할 수도 있습니다.</p>
+<p>메모리나 작가노트에서의 { 한칸 띄어쓰기한 중괄호 } 사이의 지시사항은, 지시사항이 컨텍스트 범위 내의 <em>~1000자</em>에 있는 한, Instruct Module를 자동으로 활성화하는데에 사용할 수도 있습니다.</p>
 <blockquote>
 <p><img src="./goose.png" alt="" /> <strong>Goose tip:</strong>
 중괄호 지시문은 <em>로어북</em> 엔트리에서도 작동해요!</p>
@@ -1550,6 +1953,7 @@ Instruct Module을 사용하지 않을 때, 지시사항은 이야기에서 컨�
 </blockquote>
 <h2 id="prose-augmenter"><a class="header" href="#prose-augmenter">Prose Augmenter</a></h2>
 <p>이 특별한 모듈을 사용하면 AI가 더욱 설명적이고 풍성한 글쓰기를 하게 할 수 있습니다. 이야기가 약간 건조해지기 시작했다면 이 모듈은 이야기를 더 풍부하게 만드는 훌륭한 도구가 될 것입니다.</p>
+<p>모듈을 선택만 하면 되기 때문에 <strong>Instruct</strong>보다는 사용하기 쉽습니다.</p>
 <blockquote>
 <p><img src="./goose.png" alt="" /> <strong>Goose tip:</strong>
 <em>Prose Augmenter</em>은 적당히 사용하는 것이 좋아요! 이 모듈은 큰 도움이 되지만, 너무 많이 사용한다면 AI는 글을 너무 화려하게 만드는데 집중하고 실제 플롯에는 주의를 덜 기울이기 시작할 수도 있어요.</p>
