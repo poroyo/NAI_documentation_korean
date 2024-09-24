@@ -1,4 +1,5 @@
 # Interface
+*Last contents updated 9/24/2024*
 
 **Interface** 탭에는 텍스트 가독성과 버튼 사이즈 등을 조절하는데 필요한 모든 것들이 있습니다! 아래에서 각 기능에 대한 상세한 안내와 설명을 찾을 수 있습니다.
 
@@ -72,7 +73,7 @@
 
 
 - **Editor Highlighting**<p><img src="./ThemeTextColors.png"></p>
-**Editor Highlighting** 토글은 텍스트를 출처과 Theme 탭에서 설정한 색에 따라 4가지의 다른 색으로 강조합니다.
+**Editor Highlighting** 토글은 텍스트를 출처과 [Theme](./theme.md) 탭에서 설정한 색에 따라 4가지의 다른 색으로 강조합니다.
 
 <p align="center"><img src="./EditorHighlightShot.png"></p>
 
@@ -95,17 +96,44 @@
 - **Show Tips**<p align="center"><img src="./TipsShot.png"></p>
 **Tips**는 **Editor** 하단, 입력 표시줄*input bar* 위에 나타납니다.. **Show Tips** 토글은 이것을 켜고 끌 수 있습니다.
 
+- **Show Editor toolbox**
+
+  <img src="./EditorTBShot.png">
+
+  **Editor Toolbox**는 에디터에서 텍스트를 강조할 때마다 팝업되며, 텍스트 서식 지정, **Inline Generation**, **Text To Speech**으로 줄 읽기, **Context Menu** 열기 등을 할 수 있게 해줍니다.
+
+
+- **Use Editor V2 for New Stories**
+  **Editor V2**는 이 문서의 [Editor](./editor.md) 섹션에서 다루는 NovelAI Editor의 풀 리디자인된 에디터입니다. **Use Editor V2 for New Stories** 토글은 새 이야기를 작성할 때 적용됩니다. 해당 토글이 활성화되면 **Library Sidebar**를 통해 이전 이야기를 백업하고 **Editor V2**로 변환할 수도 있습니다!
+
+- **Paragraph Visibility Range**
+
+  <img src="./ParagraphRange.png">
+
+  **Paragraph Visibility Range** 슬라이더는 화면 밖에 설정된 문자 수에 도달하면 텍스트를 언로드하여, 큰 스토리에서 성능을 향상시키는 데 도움을 줍니다. 단, 텍스트를 복사할 때는 모든 내용을 복사하려면 스크롤을 올려서 확인하거나, [Story Settings](./story_settings.md#export-story)에서 내보내기 옵션 중 하나를 사용해야 한다는 점에 유의하세요.
+
+
 ## Experimental Settings
 
 <p align="center"><img src="./ExperimentalInterfaceShot.png"></p>
 
-- **Use Editor V2 for New Stories**<p>
-**Editor V2**는 이 문서의 [Editor](./editor.md) 섹션에서 다루는 NovelAI Editor의 풀 리디자인된 에디터입니다. **Use Editor V2 for New Stories** 토글은 새 이야기를 작성할 때 적용됩니다. 해당 토글이 활성화되면 **Library Sidebar**를 통해 이전 이야기를 백업하고 **Editor V2**로 변환할 수도 있습니다!
-</p>
+- **Highlight Speech**
+
+  <img src="./HighlightSpeechShot.png">
+
+  **Highlight Speech** 설정은 설정에 따라 **Editor** 따옴표로 묶인 텍스트와 그렇지 않은 텍스트가 표시되는 방식을 변경합니다. **Highlight** 설정은 따옴표 안의 텍스트를 기울임체로 표시합니다.
+  
+  <img src="./HighlightSpeechExample1.png">
+
+  **Inverted** 설정은 따옴표 안에 있지 않은 모든 텍스트를 기울임체로 표시합니다.
+
+  <img src="./HighlightSpeechExample2.png">
+
+  이 설정은 또한 텍스트의 색상을 부드럽게 변경하여 더 쉽게 구별할 수 있게 해줍니다!
 
 - **Show Identicon**<p>
 <img src="./IdenticonShot.png"><p>
-**Show Identicon** 토글은 **Library Sidebar** 상단에 NovelAI 거위 마스코트의 테마별 아바타를 활성화합니다. 이 거위 identicon은 Theme 탭에서 사양자가 선택한 NovelAI의 테마에 따라 색상이 바뀝니다.
+**Show Identicon** 토글은 **Library Sidebar** 상단에 NovelAI 거위 마스코트의 테마별 아바타를 활성화합니다. 이 거위 identicon은 [Theme](./theme.md) 탭에서 사양자가 선택한 NovelAI의 테마에 따라 색상이 바뀝니다.
 </p></p>
 
 - **Show Minibar (Desktop Only)**<p>

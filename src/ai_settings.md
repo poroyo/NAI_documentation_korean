@@ -1,4 +1,5 @@
 # AI Settings
+*Last contents updated 9/24/2024*
 
 **AI Settings** 탭에는 여러 가지의 중요한 옵션과 외관을 담당하는 옵션이 있습니다: 텍스트 스트리밍, 문장 다듬기, 이야기에 재미있는 의견을 하게 설계된 해설 동반자인 [HypeBot](#hypebot)! 토큰 확률 표시와 강조, 문맥 길이 등의 실험적인 기능은 [Experimental](#experimental) 섹션에서 사용할 수 있습니다.
 
@@ -80,11 +81,6 @@ AI에게 채팅이나 리스트, 통계 분석 등 스토리 형식이 아닌 �
 **Trim Excess Whitespace** 토글은 컨텍스트의 후행 공백과 반복되는 줄 바꿈을 제거합니다. 이것들은 AI의 생성에 문제를 일으킬 수 있기 때문입니다.
 
 
-<p align="center"><img src="./1024Shot.png"></p>
-
-사용자의 구독 등급에 따라(Tablet에선 1024, Scroll과 Opus에선 2048) **Force 1024 token limit** 토글을 통해 컨텍스트 사이즈를 1024 토큰과 2048 토큰 간 전환할 수 있습니다. AI가 최근의 문맥과 행동에 더욱 집중하게 만들고 싶거나 낮은 구독 티어에 대한 이야기나 프롬프트를 작성하고 있다면 작은 컨텍스트 사이즈가 이득이 될 수도 있습니다.
-
-
 <p align="center"><img src="./DefBiShot.png"></p>
 
 **Default Bias** 토글을 켜면, dinkus (***)와 asterism (⁂) 문자가 나타날 가능성을 줄이기 위해 `-0.12`의 바이어스가 적용됩니다. 결과적으로 스토리 중단이 줄어들고 스토리의 흐름이 길어집니다.
@@ -92,40 +88,29 @@ AI에게 채팅이나 리스트, 통계 분석 등 스토리 형식이 아닌 �
 > ![](./goose.png) **Goose tip:**
 Asterism (⁂)은 일반적으로 이야기의 시작이나 제목에 쓰이고, dinkus (***)는 챕터의 구분이나 시간이 지났음을 나타내요!
 
+<p align="center"><img src="./BidirInline.png"></p>
+
+컨텍스트 메뉴에서 **Generate Inline**을 사용하거나 인라인 생성 단축키 **(Shift + Ctrl + Enter/Shift + Command + Enter)** 를 사용할 때, Bidirectional Inline Generation 토글은 양쪽 컨텍스트를 고려하여 생성하는 특수 모델을 사용하는 것과 [Defaults](./default.md) 탭에서 선택한 모델을 사용하는 것 사이를 전환합니다.
+
 
 <p align="center"><img src="./LogShot.png"></p>
 
-**Enable Token Probabilities** 토글을 체크하면 출력을 생성한 후, [Editor](./editor.md) 화면 하단의 **Retry** 버튼 근처에 <img src="./Brain.svg" height="13"> 아이콘이 나타납니다. (Editor V2를 사용하고 있다면 ![](./LoreBook.svg) [Lorebook](./lorebook.md) 아이콘)
+**Enable Token Probabilities** 토글을 체크하면 출력을 생성한 후, [Editor](./editor.md) 화면 하단의 ![](./LoreBook.svg) [Lorebook](./lorebook.md) 아이콘 옆에 <img src="./Brain.svg" height="13"> 아이콘이 나타납니다.
 
+<img src="./BrainShot2.png">
 
 해당 아이콘을 클릭하면 **Token Probabilities** 창이 열립니다. 해당 창에서는 최근 생성에 대한 분석을 볼 수 있습니다. 토큰 또는 토큰 ID를 선택하면 각 토큰이 선택될 확률을 볼 수 있습니다.
-
-<p align="center">
-<table style="border: 1px solid">
-<tr>
-<td width="150px">
-<img src="./BrainShot.png">
-</td>
-<td width="150px">
-<img src="./BrainShot2.png">
-</td>
-</tr>
-</table>
-</p>
 
 <p align="center"><img src="./TokenProbWindowShot.png"></p>
 
 > ![](./goose.png) **Goose tip:**
 Theme 탭에서 *Low*, *Medium*, *High* 확률에 사용되는 색을 볼 수 있고 커스텀할 수 있어요!
 
-<p align="center"><img src="./BiShot.png"></p>
-
-**Editor V2**나 inline generation hotkeys **(Shift + Ctrl + Enter/ Shift + Command + Enter)** 를 사용할 때, **Bidirectional Inline Generation** 토글은 Default 탭에서 사용자가 선택한 기본 모델을 사용할 지, 양방향을 모두 고려하여 글을 생성하는 특수한 모델을 사용할 지를 전환합니다.
-
 
 <p align="center"><img src="./V2ProbShot.png"></p>
 
-**Editor V2**가 활성화되었다면, 해당 체크박스는 **Editor** 윈도우에서 가장 최근의 출력 token probabilities을 강조합니다. 사용된 색상은 [Context Viewer](./editor.md)나 [Logical Probability Viewer](./editor.md)와 같으며 Theme 탭에서 설정한 색을 사용하여 토큰 확률에 따라 색으로 구분됩니다.
+해당 체크박스는 **Editor** 윈도우에서 가장 최근의 출력 token probabilities을 강조합니다. 사용된 색상은 [Context Viewer](./editor.md)나 [Logical Probability Viewer](./editor.md)와 같으며 [Theme](./theme.md) 탭에서 설정한 색을 사용하여 토큰 확률에 따라 색으로 구분됩니다. **Editor V2**는 기본적으로 활성화되어 있습니다.
 
-<p align="center"><img src="./EditorProbShot.png"></p>
+<p align="center"><img src="./MaxContextShot.png"></p>
 
+**Max Context Size** 슬라이더는 컨텍스트의 최대 크기를 제한할 수 있게 해줍니다. 더 작은 컨텍스트 크기는 생성기 프롬프트나 다른 독특한 스타일을 사용할 때 도움이 될 수 있습니다.
