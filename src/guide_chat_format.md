@@ -1,4 +1,5 @@
-# Guide: Chat Format
+# Advanecd: Chat Format
+*Last contents updated 9/24/2024*
 
 다음은 AI가 두 캐릭터 간의 "채팅 스타일"의 내러티브를 유지하면서, 동시에 사용자 컨트롤 하에 캐릭터 중 한 명의 역할을 엄격하게 유지시키는 방법에 대한 간단한 가이드입니다.
 
@@ -8,6 +9,7 @@
 - `your_name`: 이것을 사용자 페르소나의 이름으로 바꾸십시오.
 - `bot_name`: 이것은 AI 캐릭터의 이름으로 바꾸십시오.
 
+**Memory**와 **Phrase Bias**에 수동으로 설정하십시오.
 
 ## Memory
 
@@ -54,7 +56,7 @@ your_name: How are you doing?
 
 예를 들어, AI가 *Euterpe*라는 캐릭터를 연기할 것이라면 `\nEuterpe:`라고 적으면 됩니다. *이 경우 {중괄호}를 닫기 전에 공백을 만들어선 안됩니다.*
 
-- **두번째** *Bias 값*이 정확히 0인 *Bias 그룹*을 만들어야 합니다. Bias를 *활성화*하고 *Ensure Completion After Start* 설정을 켜고(다른 하나는 이것에 대해 차이가 없음) 다음과 같은 문구를 입력합니다:
+- **두번째** *Bias 값*이 정확히 0인 별개의 *Bias 그룹*을 만들어야 합니다. Bias를 *활성화*하고 *Ensure Completion After Start* 설정을 켜고(다른 하나는 이것에 대해 차이가 없음) 다음과 같은 문구를 입력합니다:
 ```
 {\nyour_character: }
 ```

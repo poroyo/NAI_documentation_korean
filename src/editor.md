@@ -1,4 +1,5 @@
 # Editor
+*Last contents updated 9/24/2024*
 
 **Editor**는 NovelAI에서 스토리를 작성할 때 상호작용하게 될 인터페이스의 주요 섹션입니다. 먼저 Editor에서 직접 글을 쓴 다음 **Send >** 버튼이나 **Ctrl + Enter (맥에서는 ⌘Command + Enter)** 를 누르면 AI가 생성을 시작합니다.
 
@@ -23,6 +24,7 @@ Editor는 스토리에서의 글의 소스를 보여주기 위해 다양한 색�
 ## Title
 
 Editor 최상단에는 현재 스토리의 제목이 있습니다. 이것은 단지 관리적인 목적일 뿐이며 AI에는 영향을 미치지 않습니다.
+
 ![](./title_gen.svg) **Title Generation** 버튼은 스토리의 내용을 기반으로 창의적인 제목을 만들어냅니다 - AI가 어떤 제목을 만들지는 알 수 없습니다!
 
 제목을 만든 후에는, <img src="./title-gen-his.svg" height="14"> **Title Generation History** 버튼을 눌러 뒤로 돌아가거나 AI가 만들어낸 제목의 마지막 50개 중에 선택할 수 있습니다. *Note: Title Generation History는 현재 세션에서만 적용이 되며 NovelAI가 닫히면 지워집니다.*
@@ -42,7 +44,7 @@ Hypebot의 위트있는 코멘트가 마음에 들지 않나요? ![](./setting.s
 
 ## Input Box
 
-**Input Box**는 Editor에 글을 작성하는 대신, 스토리에 글을 추가할 수 있는 대체 방법입니다. input box는 기본적으로는 꺼져 있지만 ![](./setting.svg) **User Settings**의 인터페이스 탭에서 활성화할 수 있습니다.
+**Input Box**는 Editor에 글을 작성하는 대신, 스토리에 글을 추가할 수 있는 또 다른 방법입니다. input box는 기본적으로는 꺼져 있지만 ![](./setting.svg) **User Settings**의 인터페이스 탭에서 활성화할 수 있습니다.
 
 *Note: Input box는 Editor V2에서는 사용할 수 없습니다.*
 
@@ -59,9 +61,9 @@ Hypebot의 위트있는 코멘트가 마음에 들지 않나요? ![](./setting.s
 
 ![](./context%20menu.png)
 
-마우스 오른쪽 버튼을 클릭하면 선택한 글과 상호작용할 수 있는 바로바기로 채워진 특수한 컨텐스트 메뉴를 불러옵니다. 이 바로가기들은 선택한 텍스트를 로어북에 빠르게 추가하는 것부터, 더 많은 로어를 생성하기 위한 입력으로 사용하거나, 이야기의 스크린샷을 찍거나, TTS를 사용하여 글을 읽게 하는 것까지 다양합니다.
+마우스 오른쪽 버튼을 클릭하면 선택한 글과 상호작용할 수 있는 바로바기로 가득한 특수한 컨텐스트 메뉴를 불러옵니다. 이 바로가기들은 선택한 텍스트를 로어북에 빠르게 추가하는 것부터, 더 많은 로어를 생성하기 위한 입력으로 사용하거나, 이야기의 스크린샷을 찍거나, TTS를 사용하여 글을 읽게 하는 것까지 다양합니다.
 
-엠-대시(—)나 애스터리즘(⁂) 등의 특수 문자를 추가하는 바로가기도 있습니다.
+엠-대시(—)나 애스터리스즘(⁂) 등의 특수 문자를 추가하는 바로가기도 있습니다.
 
 > ![](./goose.png) **Goose tip:**
 **Ctrl + Right Click**을 눌러 브라우저의 기본 컨텐스트 메뉴를 여는 것도 가능해요. ![](./setting.svg) **User Settings**의 인터페이스 탭에서 *Swap Context Menu Controls*을 활성화해서 이 동작을 바꿀 수도 있답니다. 터치 스크린 장치에서는 이 설정과 상관없이 **Ctrl + Right Click**을 누르고 있을 때만 특수한 컨텍스트 메뉴가 보여져요.
@@ -77,7 +79,7 @@ Hypebot의 위트있는 코멘트가 마음에 들지 않나요? ![](./setting.s
 
 ## Token Probabilities
 
-활성화되면, 모든 AI 생성은 응답에 대한 Token Probabilities를 반환하며, <img src="./Brainwhite.svg" height="13"> 버튼을 클릭하여 이를 확인할 수 있습니다.
+활성화되면, 모든 AI 생성은 응답에 대한 Token Probabilities를 반환하며, <img src="./Brainwhite.svg" height="13"> **Token Probabilities** 버튼을 클릭하여 이를 확인할 수 있습니다.
 
 토큰은 그 확률에 따라 색깔로 구분됩니다: <span style="color:#1BD9D6">Low</span>-Medium-<span style="color:#FB6065">High</span>
 
@@ -92,9 +94,9 @@ Token Probabilities은 기본적으로 꺼져 있으며 Token Probabilities을 �
 
 ### Editor Token Probabilities
 
-이 고급 사용자용 기능을 사용하면, Editor 자체에서 최근 AI 생성에 대한 토큰 선택을 볼 수 있습니다.
+이 고급 사용자용 기능을 통해 Editor 자체에서 최근 AI 생성에 대한 토큰 선택을 볼 수 있습니다.
 
-**Editor Token Probabilities**을 통해, 당신은 직접 작성할 필요없이 즉석에서 쉽게 AI를 올바른 방향으로 조정할 수 있습니다.
+**Editor Token Probabilities**을 통해, 직접 작성할 필요없이 즉석에서 쉽게 AI를 올바른 방향으로 조정할 수 있습니다.
 
 ![](./tokenprobs.gif)
 
@@ -107,7 +109,7 @@ Editor Token Probabilities는 **Editor V2**를 사용한 스토리에서만 가�
 
 ## Text Formatting
 
-Editor V2에서 배타적으로 글꼴 서식을 지정할 수 있습니다: *기울임*, **굵게**, <u>밑줄</u> 그리고 ~~취소선~~. 글자를 선택하고 서식 버튼을 누르거나 Ctrl+i (_기울임_), Ctrl+b (**굵게**), Ctrl+u (<u>밑줄</u>) 그리고 Ctrl+d (~~취소선~~)으로 같은 작업을 수행할 수 있습니다.
+Editor V2에서만 사용할 수 있는 기능으로, 글꼴 서식을 지정할 수 있습니다: *기울임*, **굵게**, <u>밑줄</u> 그리고 ~~취소선~~. 글자를 선택하고 서식 버튼을 누르거나 Ctrl+i (_기울임_), Ctrl+b (**굵게**), Ctrl+u (<u>밑줄</u>) 그리고 Ctrl+d (~~취소선~~)으로 같은 작업을 수행할 수 있습니다.
 
 ![](./textformatting.png)
 
@@ -132,21 +134,21 @@ Editor V2에서 배타적으로 글꼴 서식을 지정할 수 있습니다: *�
 
 ## Editor V2
 
-**Editor V2**는 기존의 텍스트 에디터의 개선판으로, 모바일 기기에서의 향상된 성능과 접근성을 위해 처음부터 만들어졌습니다.
+**Editor V2**는 기존의 텍스트 에디터의 개선판으로, 모바일 기기에서의 향상된 성능과 접근성을 위해 밑바닥에서부터 만들어졌습니다.
 
 Editor V2의 주요 특징은 다음과 같습니다:
 
 - 자동, 그리고 수정 텍스트 포매팅.
 - 긴 이야기에서 더 나은 성능을 위한 스토리 섹션의 다이내믹 로딩.
 - 텍스트 포매팅과 다른 옵션에 빠르게 접근할 수 있는 에디터 도구상자.
-- 텍스트 출처의 실시간 감지
-- 히스토리 트리의 실행 취소/다시 실행 통합
-- Editor를 떠나지 않고 이야기 저장하는 기능
-- 모바일에서의 컨텍스트 메뉴
-- Editor Token Probabilities 지원
-- 더 쉬워진 지시 입력
+- 텍스트 출처의 실시간 감지.
+- 히스토리 트리의 실행 취소/다시 실행 통합.
+- Editor를 떠나지 않고 이야기 저장하는 기능.
+- 모바일에서의 컨텍스트 메뉴.
+- Editor Token Probabilities 지원.
+- 더 쉬워진 지시 입력.
 
-기본적으로 **Editor V2**은 모든 사용자에 대해 켜져 있습니다. 여러 이유로 구버전 에디터로 돌아가고 싶다면, ![](./setting.svg) **User Settings**의 인터페이스 탭에 가서 *Use Editor V2 for New Stories*를 끌 수 있습니다.
+기본적으로 **Editor V2**은 모든 사용자에 대해 켜져 있습니다. 특정 이유로 인해 구버전 에디터로 돌아가고 싶다면, ![](./setting.svg) **User Settings**의 인터페이스 탭에 가서 *Use Editor V2 for New Stories*를 끌 수 있습니다.
 
 장래에 Editor V2가 구버전 에디터를 완전하게 대체할 거라는 것을 명심하십시오.
 

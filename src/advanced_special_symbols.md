@@ -1,4 +1,5 @@
 # Advanced: Special Symbols
+*Last contents updated 9/24/2024*
 
 NovelAI의 데이터셋에는 이야기의 특정 부분을 표시하기 위해 일부 **symbols**이 일관적으로 사용되었습니다. 텍스트 생성을 위한 프롬프팅을 할 때 이런 **tokens**를 직접 사용하면 특정 데이터의 분류를 끌어올 수 있습니다.
 
@@ -53,6 +54,9 @@ Dinkus의 큰 형님인 `⁂` **asterism**은 완전히 새로운 이야기로�
 
 1. **ATTG**: [ **A**uthor: ; **T**itle: ; **T**ags: ; **G**enre: ]<p>
 스토리에 대한 선택적인 초기자로 사용될 수 있습니다. **ATTG**는 새로운 이야기와 강하게 관련이 되어있으므로, AI가 장기기억 문제를 겪지 않게 하려면 가장 위에 이것을 두십시오. **Memory**의 첫번째 행이 좋은 위치입니다. *Author*와 *Title*은 유용도가 가장 떨어지므로 원하지 않는다면 생략할 수 있습니다. <p>
+
+[Llama 3 Erato](./models.md#erato) 모델에만 있는 `[ S: X ]` 요소를 ATTG 끝에 추가하여 쓰기 품질을 지정할 수 있습니다. `X`는 1부터 까지의 숫자로서 **별점** 1-5개에 해당합니다. 별점 두개에서 네개까지가 제일 효과적인 것 같습니다.
+
 Example: `[ Tags: London, 1820s, dragons; Genre: steampunk, drama ]`<p>
 (고유명사는 대문자로, 나머지는 소문자로)
 
@@ -64,12 +68,12 @@ Example: `[ Tags: London, 1820s, dragons; Genre: steampunk, drama ]`<p>
 `[ John ]`, `[ Batman ]` 등. AI가 이름으로 인식하지 않으면 작동하지 않을 겁니다. Memory에 사용하여 AI가 주인공을 추적하는데 도움을 줄 수도 있습니다.
 
 
-1. **스타일** 태그 (**Krake**, **Clio**와 **Kayra** 전용)<p>
+1. **스타일** 태그 (**Krake**, **Clio**, **Kayra**, **Erato** 전용)<p>
 Examples: `[ Style: essay, nonfiction ]`, `[ Style: verbose ]`, `[ Style: poetry ]`,` [ Style: text adventure ]`, `[ Style: chat ]`, 심지어 `[ Style: SFW ]` 등의 스타일 태그를 지정하면 AI가 **더욱 더** 스타일을 깔끔한 상태를 유지하는데 도움이 됩니다.<p>
 이것은 작가노트에 넣어도 스토리 진행을 방해하지 않습니다.
 
 
-1. **지식** 태그 (**Clio**와 **Kayra** 전용)<p>
+1. **지식** 태그 (**Clio**,**Kayra**,**Erato** 전용)<p>
 `[ Knowledge: paradoxes ]`, `[ Knowledge: anime in 90s ]`. 이것은 모델이 표시된 주제에 대한 이야기를 하도록 유도합니다. 위의 스타일 태그와 결합하여 다양한 효과를 낼 수 있습니다.<p>
 Examples: `[ Knowledge: CRPGs; Style: blog post ]`, `[ Knowledge: supernatural; Style: podcast, transcript ]` 등.
 
@@ -78,7 +82,7 @@ Examples: `[ Knowledge: CRPGs; Style: blog post ]`, `[ Knowledge: supernatural; 
 때떄로 AI이 숨겨진 컨텍스트의 내용을 그대로 *복사*하는 경우가 있는데, 이를 이처럼 공백있는 대괄호로 묶어두면 이를 피하는데 도움이 될 수 있습니다. **Clio**와 **Kayra**와 같은 최신 모델에서는 이런 일이 잘 발생하지 않으므로 이것이 필용하지 않을 수도 있습니다.
 
 
-1. `[ An Unexpected Quest ]`, `[ The End of Many Things ]`, `[ Into the Wastes ]`, `[ Time Loop (3rd Restart) ]` 등과 같이 ***챕터의 제목***으로 사용할 수도 있습니다. 비록 그 결과는 예측할 수 없지만요.<p>
+1. `[ An Unexpected Quest ]`, `[ The End of Many Things ]`, `[ Into the Wastes ]`, `[ Time Loop (3rd Restart) ]` 등과 같이 ***챕터의 제목***으로 사용할 수도 있습니다. 비록 ***그 결과는 예측할 수 없지만요.***<p>
 `[ Prologue ]`나 `[ Epilogue ]`는 다소 일관된 효과를 보인다는 점은 주목할만 합니다.<p>
 *dinkus 다음에 나올 때 가장 잘 작동해야 합니다.*
 
@@ -90,9 +94,9 @@ Note: 이러한 용도의 경우, 대괄호는 **항상** 텍스트의 시작과
 
 ## ---- Horizontal Lining
 
-한 줄에 `----` 이렇게 "네개의 하이픈"만 있으면 일반 스토리텔링이 아니라 정보를 제공하는 텍스트임을 가리킨다.
+한 줄에 `----` 이렇게 "네개의 하이픈"만 있으면 일반 스토리텔링이 아니라 정보를 제공하는 텍스트임을 가리킵니다.
 
-예를 들어, 다음과 같은 정보를 덤프하는데 사용할 수 있다
+예를 들어, 다음과 같은 정보를 덤프하는데 사용할 수 있습니다:
 ```
 ----
 Elves are very proud.
@@ -100,9 +104,9 @@ They have pointy ears.
 ***
 ```
 
-그리고나서 `***` dinkus와 함께 보통의 산문 스토리텔링을 다시 시작할 수 있고, 다른 정보 항목을 작성하고 싶은 경우에는 **다른 수평 라인** `----`을 다시 사용할 수도 있다.
+그리고나서 `***` **dinkus와 함께 보통의 산문 스토리텔링**을 다시 시작할 수 있고, 다른 정보 항목을 작성하고 싶은 경우에는 **다른 수평 라인** `----`**을 다시 사용할 수도 있습니다.**
 
-예를 들어 다음과 같이  **수평 줄** 바로 뒷 줄에 정보의 카테고리를 단독으로 작성하여 범주를 가리키는데 사용할 수도 있다:
+예를 들어 다음과 같이  **수평 줄** 바로 뒷 줄에 정보의 카테고리를 단독으로 작성하여 범주를 가리키는데 사용할 수도 있습니다:
 
 ```
 ----
@@ -137,7 +141,17 @@ Legs?: None (squamous land tetrapods are legless)
 문맥에 ----가 너무 많다면 AI는 ---- 자체를 출력으로 뱉기 시작할 수도 있어요. 그것을 막고 싶다면 해당 토큰에 대해 bias를 사용하거나 밴하는 것을 추천해요.
 
 
-## ====== Horizontal Barring
+## ==== 혹은 ====== Horizontal Barring (모델 별로)
+
+**Erato** 전용으로, 4개의 등호로 이루어진 **수평 막대** `====`는 포럼의 게시글 구분자처럼 사용되는데 아래에 **유저명**을 입력하여 게시자를 가리키고 그 위에 **스레드**의 이름(선택 사항)을 입력할 수 있습니다.
+
+```
+Thread: Let's chat about AI!
+====
+Kurumuz
+```
+
+수평막대는 이메일 구분 기호로도 사용할 수 있습니다.
 
 **Clio**와 **Kayra** 전용으로, 6개의 등호로 이루어진 **수평 막대** `======`는 포럼의 게시글 구분자처럼 사용되는데 아래에 **유저명**을 입력하여 게시자를 가리키고 그 위에 **스레드**의 이름(선택 사항)을 입력할 수 있습니다.
 
@@ -180,7 +194,7 @@ Kurumuz
 
 ## Noting: *Experimental*
 
-**Clio**와 **Kayra**에서만 다음과 같이 작성하여
+**Clio**와 **Kayra** 전용으로, 다음과 같이 작성하여
 
 ```
 Notes:

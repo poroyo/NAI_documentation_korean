@@ -1,4 +1,5 @@
 # Text To Speech
+*Last contents updated 9/24/2024*
 
 **Text to Speech (TTS)** 탭을 통해 로컬 TTS와 NovelAI의 스트리밍 TTS 기술을 설정하고 사용하여 사용자가 작성한 텍스트를 음성으로 읽게 할 수 있습니다.
 
@@ -96,7 +97,7 @@ v1과 차별화되는 첫번째 기능은 더 크고 더 많은 기본 목소리
 
 <img src="./seedmixseparated.png">
 
-***seedmix** 구문에 대해 참고할 사항: TTS seed는 일반적으로 빈 공백을 넣어도 되지만, seedmix는 빈 공백을 넣어서는 안됩니다. 차후 seed에 seedmix를 사용하게 될 수도 있으므로, 단일 seed에서도 빈 공백을 두는 것은 추천하지 않습니다.*
+***seedmix** 구문에 대해 참고할 사항: TTS seed는 일반적으로 **빈 공백**을 넣어도 되지만, seedmix는 **빈 공백을 넣어서는 안됩니다**. 차후 seed에 seedmix를 사용하게 될 수도 있으므로, 단일 seed에서도 빈 공백을 두는 것은 추천하지 않습니다.*
 
 마지막으로 **v2**도 역시 **Volume**과 **Speed** 슬라이더가 있고, *v1과 같은 제약사항이 적용됩니다.*
 

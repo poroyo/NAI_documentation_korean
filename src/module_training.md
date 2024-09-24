@@ -1,4 +1,5 @@
 # Module Training
+*Last contents updated 9/24/2024*
 
 ## Modules At a Glance
 
@@ -72,8 +73,9 @@
 
 #### Text Adventure
 
-이 모듈은 **Editor**의 외형을 Text Adventure 인터페이스로 바꾸기 때문에 *Specials*로 분류되었습니다! 간단히 말해, 이 모듈의 훈련 데이터는 완전히 이인칭(모든 문장에서 "You"를 사용함)으로 작성되었으며, `>` 문자로 표시된 고유한 '플레이어 액션'을 가지고 있습니다. 텍스트 어드벤쳐 모드의 더 자세한 내용은 [documentation article](Matty’s Page Here)를 확인하십시오.
+이 모듈은 **Editor**의 외형을 Text Adventure 인터페이스로 바꾸기 때문에 *Specials*로 분류되었습니다! 간단히 말해, 이 모듈의 훈련 데이터는 완전히 이인칭(모든 문장에서 "You"를 사용함)으로 작성되었으며, `>` 문자로 표시된 고유한 '플레이어 액션'을 가지고 있습니다. 텍스트 어드벤쳐 모드의 더 자세한 내용은 [documentation article](Matty’s Page Here)[^1]를 확인하십시오.
 
+[^1]: 역자가 마크다운을 잘못 사용한 것이 아니다. 원문에 이렇게 표기되어 있다.
 
 ## Advanced: Module Engineering
 

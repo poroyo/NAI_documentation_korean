@@ -1,12 +1,13 @@
 # Story Settings
+*Last contents updated 9/24/2024*
 
-옵션 사이드바의 첫번째 탭인 **Story** 탭은 NovelAI 모험을 시작하는 첫 번째 단계라고 할 수 있습니다. 이 곳에서, 사용하길 원하는 **AI Model**을 선택하고 **Config Preset**을 고르고, **Memory**와 **Author's Note** 정보를 채우는 등의 일을 할 수 있습니다! [Editor](./editor.md) 오른쪽 사이드의 편리한 위치에 있는 이 곳에서 **Lorebook Quick Access** 바에서 로어북 엔트리들을 빠르게 검색하고, 스토리 통계를 보고, 스토리 파일을 추출하거나 지우는 이 모든 작업을 할 수 있습니다.
+옵션 사이드바의 첫번째 탭인 **Story** 탭은 NovelAI 모험을 시작하는 첫 번째 단계라고 할 수 있습니다. 이 곳에서, 사용하길 원하는 **AI Model**을 선택하고 **Config Preset**을 고르고, **Memory**와 **Author's Note** 정보를 채우는 등의 일을 할 수 있습니다! **Lorebook Quick Access** 바에서 로어북 엔트리들을 빠르게 검색하고, 스토리 통계를 보고, 스토리 파일을 추출하거나 지우는 이 모든 작업을 [Editor](./editor.md) 오른쪽 사이드의 편리한 위치에 있는 이 곳에서 할 수 있습니다.
 
 ## AI Model
 
 <p align="center"><img src="./AIModelDropdown.gif"></p>
 
-**Story** 탭 오른쪽 최상단의 AI Model 셀렉터에서, 파인튜닝되고 실험적인 모델을 선택할 수 있습니다!
+**Story** 탭 오른쪽 최상단의 AI Model 셀렉터에서, 자사의 파인튜닝되고 실험적인 모델을 선택할 수 있습니다!
 
 **Change Default** 버튼을 클릭하면 [AI Settings](./ai_settings.md) 메뉴로 들어갈 수 있고, 그곳에서 기본 스토리 모델과 프리셋, 모듈을 포함하여 **Lorebook** 생성에 사용할 모델을 선택할 수 있습니다. **AI Settings** 메뉴에서 선택한 기본 세팅은 새 스토리를 만들 때 적용됩니다.
 
@@ -19,6 +20,7 @@
 <p align="center"><img src="./AIModuleDropdown.gif"></p>
 
 **AI Modules**은 AI를 원하는 장르, 설정, 혹은 월드에 집중시키게 하는 강력한 도구입니다. 영향력 있는 작가나 문체에 초점을 맞추거나 특정한 주제 혹은 텍스트 어드벤쳐 등이 될 수 있습니다. 60가지가 넘는 다양한 모듈을 선택 가능하기 때문에 그 가능성은 무궁무진합니다! **All Modules** 버튼을 클릭하면 사용자가 임포트한 사용자 모듈을 포함하여 설명과 함께 모든 모듈의 라이브러리를 확인할 수 있습니다! 또한 이 메뉴의 드롭다운 메뉴를 통해 모델을 삭제할 수도 있습니다.
+
 [Special AI Modules](./advanced_special_modules.md) 섹션을 클릭하여 Clio나 Kayra 모듈에 관한 자세한 정보를 얻고, [Modules](./module_training.md) 섹션에서 구모델들을 확인하세요.
 
 <p align="center"><img src="./AllModules.png"></p>
@@ -51,7 +53,7 @@ Memory Box는 당신이 원하는 거의 모든 방식으로 사용할 수 있�
 
 <p align="center"><img src="./authorsnotebox.png"></p>
 
-**Author's Note** 박스에 입력되는 정보는 AI가 [Story Context](./advanced_settings.md#context)에서 보는 것들 중에서 가장 최신의 텍스트 중 하나입니다. **Author's Note**는 기본적으로 [Memory](#memory)보다 더 최근의 컨텍스트에 삽입되므로 메모리의 더 강력한 버전처럼 작동합니다! 약간의 짧은 문장을 넣어서 '일어났으면' 하고 바라는 이야기, AI가 더 집중해줬으면 하는 이야기의 디테일, 원하는 방향으로 AI가 출력물을 생성할 수 있게 은근슬쩍 쿡 찔러볼 수 있는 모든 것을 설명하고 사용할 수 있습니다. Author's Note 박스에 입력되는 모든 것은 AI에 강한 영향력을 미치므로 이 박스를 부지런히 업데이트하십시오.
+**Author's Note** 박스에 입력되는 정보는 AI가 [Story Context](./advanced_settings.md#context)에서 보는 것들 중에서 가장 최신의 텍스트 중 하나입니다. **Author's Note**는 기본적으로 [Memory](#memory)보다 더 최근의 컨텍스트에 삽입되므로 메모리의 더 강력한 버전처럼 작동합니다! 짧은 문장을 넣어서 발생했으면 하는 이야기, AI가 더 집중해줬으면 하는 이야기의 디테일, 원하는 방향으로 AI가 출력물을 생성할 수 있게 은근슬쩍 쿡 찔러볼 수 있는 모든 것을 설명하고 사용할 수 있습니다. Author's Note 박스에 입력되는 모든 것은 AI에 강한 영향력을 미치므로 이 박스를 부지런히 업데이트하십시오.
 
 
 ## Lorebook Quick Access

@@ -1,4 +1,5 @@
 # Advanced Settings
+*Last contents updated 9/24/2024*
 
 <img src="./AdvancedSettingsTab.gif" style="float: right; height: 800px; width: 40%; margin: 10px;">
 
@@ -76,7 +77,7 @@
 
 <p align="center"><img src="./ContextViewerShowNonActivated.png"></p>
 
-**Show non-activated entries** 토글을 켜면 하단의 **Context Viewer Information** 박스를 확장하여 켜져는 있지만 비활성화 상태의 모든 로어북 항목을 보여줍니다.
+**Show non-activated entries** 토글을 켜면 하단의 **Context Viewer Information** 박스를 확장하여, 켜져는 있지만 비활성화 상태의 모든 로어북 항목을 보여줍니다.
 
 <p align="center"><img src="./ContextViewerIdentifiers.png"></p>
 
@@ -94,8 +95,7 @@
 
 <p align="center"><img src="./ContextViewerPhraseBiases.png"></p>
 
-마지막으로, **Included Phrase Bias Groups** 섹션은 
-
+마지막으로, **Included Phrase Bias Groups** 섹션에서는 활성화된 `Lorebook` 엔트리 내에서 활성화된 모든 **Phrase Biases**를 보여주며, 왼쪽에는 로어북 항목의 이름이, 오른쪽에는 phrase bias 그룹의 수를 표시합니다.
 
 
 ### Context Settings
