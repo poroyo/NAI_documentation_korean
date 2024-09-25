@@ -198,13 +198,13 @@
 <h2 id="-spaced-bracketing-"><a class="header" href="#-spaced-bracketing-">[ Spaced Bracketing ]</a></h2>
 <p>대괄호 사이에 빈 공백과 텍스트가 채워진 <strong>[ 대괄호 ]</strong> 는 다양한 케이스에서 사용될 수 있습니다..</p>
 <ol>
-<li><strong>ATTG</strong>: [ <strong>A</strong>uthor: ; <strong>T</strong>itle: ; <strong>T</strong>ags: ; <strong>G</strong>enre: ]<p>
-스토리에 대한 선택적인 초기자로 사용될 수 있습니다. <strong>ATTG</strong>는 새로운 이야기와 강하게 관련이 되어있으므로, AI가 장기기억 문제를 겪지 않게 하려면 가장 위에 이것을 두십시오. <strong>Memory</strong>의 첫번째 행이 좋은 위치입니다. <em>Author</em>와 <em>Title</em>은 유용도가 가장 떨어지므로 원하지 않는다면 생략할 수 있습니다. <p></li>
-</ol>
-<p><a href="./models.html#erato">Llama 3 Erato</a> 모델에만 있는 <code>[ S: X ]</code> 요소를 ATTG 끝에 추가하여 쓰기 품질을 지정할 수 있습니다. <code>X</code>는 1부터 까지의 숫자로서 <strong>별점</strong> 1-5개에 해당합니다. 별점 두개에서 네개까지가 제일 효과적인 것 같습니다.</p>
-<p>Example: <code>[ Tags: London, 1820s, dragons; Genre: steampunk, drama ]</code><p>
+<li>
+<p><strong>ATTG</strong>: [ <strong>A</strong>uthor: ; <strong>T</strong>itle: ; <strong>T</strong>ags: ; <strong>G</strong>enre: ]<p>
+스토리에 대한 선택적인 초기자로 사용될 수 있습니다. <strong>ATTG</strong>는 새로운 이야기와 강하게 관련이 되어있으므로, AI가 장기기억 문제를 겪지 않게 하려면 가장 위에 이것을 두십시오. <strong>Memory</strong>의 첫번째 행이 좋은 위치입니다. <em>Author</em>와 <em>Title</em>은 유용도가 가장 떨어지므로 원하지 않는다면 생략할 수 있습니다. <p>
+<a href="./models.html#erato">Llama 3 Erato</a> 모델에만 있는 <code>[ S: X ]</code> 요소를 ATTG 끝에 추가하여 쓰기 품질을 지정할 수 있습니다. <code>X</code>는 1부터 까지의 숫자로서 <strong>별점</strong> 1-5개에 해당합니다. 별점 두개에서 네개까지가 제일 효과적인 것 같습니다.<p>
+Example: <code>[ Tags: London, 1820s, dragons; Genre: steampunk, drama ]</code><p>
 (고유명사는 대문자로, 나머지는 소문자로)</p>
-<ol>
+</li>
 <li>
 <p><strong>장면</strong>을 전환하거나 설정<p>
 <code>[ London, 1821 ]</code>, <code>[ Woodstock, 1969, 22:30 ]</code>, <code>[ New York, 1935, Night Club ]</code>, <code>[ Monday, 8:00 A.M. ]</code>, <code>[ Five Minutes Later ]</code> 등. 이것은 <em>Author's Note</em>를 포함한 아무 곳에서 사용할 수 있습니다.</p>
