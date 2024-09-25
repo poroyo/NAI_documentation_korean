@@ -79,18 +79,17 @@ AI 출력, 유저 입력, 수정된 텍스트의 각 비트는 **Data Block**으
 
 <p align="center"><img src="./ExperimentalStoryStats.png"></p>
 
-- **Trim Story**
-
+- **Trim Story**<p>
 **Trim Story** 버튼을 누르면 [Story Context](./advanced_settings.md#context)와 현재 [Editor](./editor.md) 창에 나타나는 스토리만 남기고, 실행취소/다시실행/리트라이의 브랜치가 삭제됩니다. `.story` 파일에 이야기를 저장할 때, 결과물에 같이 저장되길 원하지 않는 브랜치들을 잘라내고 싶을 때 사용하십시오.
+<p>
 
-- **Flatten Story**
-
+- **Flatten Story**<p>
 **Flatten Story** 버튼은 스토리에 있는 모든 실행취소/다시실행 히스토리와 브랜치를 삭제하여 현재 진행되고 있는 스토리의 텍스트를 시작 프롬프트로 취급합니다.
+</p>
 
-- **Reset to Prompt**
-
+- **Reset to Prompt**<p>
 **Reset to Prompt** 버튼은 에디터의 모든 것을 잘라내어 시작 프롬프트로 입력한 내용으로 되돌아갑니다. 이야기의 모든 브랜치와 히스토리 역시 삭제됩니다.
-
+</p>
 
 ## Remote Storage
 
